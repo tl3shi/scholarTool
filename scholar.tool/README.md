@@ -1,7 +1,7 @@
 scholar.tool 
 ====
 
-The tool used in http://www.tanglei.name/bibtex-batch-export/, which can Batch download or export bibtex data from google scholar.
+The tool used in http://www.tanglei.name/bibtex-batch-export/, which can Batch download or export bibtex data from google scholar.　Before you use this tool, you should have the python environment. You are welcome to give some sugguestion in [my blog](http://www.tanglei.name/bibtex-batch-export/).
 
 Usage:
 
