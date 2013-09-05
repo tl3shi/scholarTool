@@ -28,3 +28,4 @@ thumbs.db
 *.a
 
 *.pyc
+*.private
