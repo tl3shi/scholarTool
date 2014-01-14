@@ -1,72 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-    
-<TextView
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	android:gravity="center_horizontal"
-	android:textColor="#0000ff"
-	android:text="@string/tips"/> 
-	
-<LinearLayout 
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content" 
-	android:gravity="center_horizontal"
-	android:layout_marginTop="40sp">
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="点击设置开启飞行模式的时间 : "/> 
-	<Button 
-		android:id="@+id/startTimeBtn"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="00:30" 
-		android:textSize="20sp"
-		android:width="100sp"
-		android:textStyle="bold"/>
-</LinearLayout>
-<LinearLayout 
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content" 
-	android:gravity="center_horizontal">		
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="点击设置关闭飞行模式的时间 : "/> 
-	<Button 
-		android:id="@+id/endTimeBtn"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="06:00" 
-		android:textSize="20sp"
-		android:width="100sp"
-		android:textStyle="bold"/>
-</LinearLayout>
+    android:layout_height="wrap_content"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:orientation="vertical" >
 
-<TextView
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	android:gravity="center_horizontal"
-	android:text="@string/state"/> 
-<RadioGroup 
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	android:orientation="horizontal"
-	android:gravity="center_horizontal">
-	<RadioButton 
-		android:id="@+id/start"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="开启"/>
-	<RadioButton 
-		android:id="@+id/stop"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="关闭"/>
-</RadioGroup>
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/line1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:textSize="20sp"
+            android:text="@string/starttime_tip" />
+
+        <TimePicker
+            android:id="@+id/startTimePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/line2"
+        android:layout_below="@id/line1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:text="@string/endtime_tip" />
+
+        <TimePicker
+            android:id="@+id/endTimePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/currentstate"
+        android:layout_below="@id/line2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:textSize="20sp"
+            android:text="@string/state" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/start" />
+
+            <RadioButton
+                android:id="@+id/stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stop" />
+        </RadioGroup>
+        
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/belowtip"
+        />
+</RelativeLayout>

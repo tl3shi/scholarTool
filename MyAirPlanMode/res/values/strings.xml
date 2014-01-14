@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">tl3shi_airmode</string>
-	<string name="state">状态</string>
-	<string name="tips">自己做着玩玩-bug多多</string>
+    <string name="app_name">飞行模式自动切换器</string>
+	<string name="belowtip">意见反馈：admin@tanglei.name</string>
+	<string name="endtime_tip">关闭飞行模式</string>
+	<string name="starttime_tip">开启飞行模式</string>
+	<string name="state">        当 前 状 态</string>
+	<string name="start">开启</string>
+	<string name="stop">关闭</string>
+	<string name="airplanemode_on_tip">正在开启飞行模式</string>
+    <string name="airplanemode_off_tip">正在关闭飞行模式</string>
+    <string name="airplanemode_error">飞行模式设置失败</string>
 </resources>

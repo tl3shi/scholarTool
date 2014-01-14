@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.i3zhai"
+      package="name.tanglei.www"
       android:versionCode="1"
       android:versionName="1.0">
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
-        <receiver android:name=".AlarmReceiver">
-			<intent-filter>
-				<action android:name="com.i3zhai.ALARM_ACTION_START"/>
-				<action android:name="com.i3zhai.ALARM_ACTION_END"/>
-			</intent-filter>
-		</receiver>
-        <activity android:name=".AirPlaneModeActivity"
+     
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="19" />
+     
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    
+     <!-- android:theme="@android:style/Theme.Black" -->
+    <application 
+        android:icon="@drawable/icon" 
+        android:allowBackup="true"
+        android:label="@string/app_name">
+		
+        <activity android:name="name.tanglei.www.FlightModeSwitcher"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +28,5 @@
 
     </application>
 
-	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
-	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	
 </manifest> 
