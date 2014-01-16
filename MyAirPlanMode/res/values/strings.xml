@@ -10,4 +10,15 @@
 	<string name="airplanemode_on_tip">正在开启飞行模式</string>
     <string name="airplanemode_off_tip">正在关闭飞行模式</string>
     <string name="airplanemode_error">飞行模式设置失败</string>
+    <string name="setup_on">设置已经启用</string>
+    <string name="setup_off">设置已经关闭</string>
+    <string name="menuAbout">关于</string>
+    <string name="menuHelp">帮助</string>
+    <string name="aboutTitle">关于</string>
+    <string name="aboutContent">意见反馈：admin@tanglei.name</string>
+    <string name="helpContent">应该不用教吧?</string>
+    <string name="helpTitle">帮助</string>
+    <string name="nextStartTipPref">下次飞行模式时间是： </string>
+    <string name="timeFormat">MM月dd日  HH:mm</string>
+    <string name="noRootError">您的手机没有Root，我搞不定。。。</string>
 </resources>

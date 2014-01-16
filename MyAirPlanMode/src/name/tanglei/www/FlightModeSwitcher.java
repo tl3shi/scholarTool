@@ -1,18 +1,25 @@
 package name.tanglei.www;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
-import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.Settings.System;
+import android.os.SystemClock;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TimePicker;
 import android.widget.TimePicker.OnTimeChangedListener;
@@ -21,9 +28,6 @@ import android.widget.Toast;
 public class FlightModeSwitcher extends Activity implements OnTimeChangedListener
 {
 	static final String TAG = FlightModeSwitcher.class.getName();
-	
-	private static final String ALARM_ACTION_START = "name.tanglei.ALARM_ACTION_START";
-	private static final String ALARM_ACTION_END = "name.tanglei.ALARM_ACTION_END";
 	
 	private static final String PreferenceKey = FlightModeSwitcher.class.getName();
 	
@@ -38,6 +42,12 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 	private int startMinute = 0;
 	private int stopHour = 0;
 	private int stopMinute = 0;
+	private boolean currentState = false;
+	
+	private Intent startIntent = null;
+	private Intent endIntent = null;
+	private PendingIntent startPendingIntent;
+	private PendingIntent endPendingIntent;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState)
@@ -54,13 +64,16 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 		startTimePicker.setOnTimeChangedListener(this);
 		stopTimePicker.setOnTimeChangedListener(this);
 		
-		// 根据之前的设置，恢复开始时间和结束时间
 		SharedPreferences preferences = getSharedPreferences(
-				"TimerAirPlaneMode", MODE_PRIVATE);
+				PreferenceKey, Context.MODE_PRIVATE);
 		startHour = preferences.getInt("startHour", 0);
 		startMinute = preferences.getInt("startMinute", 30);
 		stopHour = preferences.getInt("endHour", 7);
 		stopMinute = preferences.getInt("endMinute", 0);
+		boolean firsttime = false;
+		if(!preferences.contains("currentState"))
+			firsttime = true;
+		currentState = preferences.getBoolean("currentState", true);
 		
 		startTimePicker.setCurrentHour(startHour);
 		startTimePicker.setCurrentMinute(startMinute);
@@ -68,25 +81,50 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 		stopTimePicker.setCurrentMinute(stopMinute);
 
 		startBtn = (RadioButton) findViewById(R.id.start);
-		startBtn.setOnClickListener(new ControlButtonClickListener(true));
+		startBtn.setOnClickListener(controlBtnClickListener);
 		stopBtn = (RadioButton) findViewById(R.id.stop);
-		stopBtn.setOnClickListener(new ControlButtonClickListener(false));
+		stopBtn.setOnClickListener(controlBtnClickListener);
+		if(firsttime)
+		{
+			startBtn.setChecked(false);
+			stopBtn.setChecked(false);
+		}else
+		{
+			startBtn.setChecked(currentState);
+			stopBtn.setChecked(!currentState);
+		}
+		
+	}
+	void test()
+	{
+		Log.i(TAG, "testxxxxx");
+		AlarmManager alarmMgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);  
+		Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);  
+		int requestCode = 0;  
+		PendingIntent pendIntent = PendingIntent.getBroadcast(getApplicationContext(),  
+		        requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);  
+		long triggerAtTime = SystemClock.elapsedRealtime()  + 5 * 1000;  
+		alarmMgr.set(AlarmManager.ELAPSED_REALTIME, triggerAtTime, pendIntent);  
 	}
 
-	class ControlButtonClickListener implements RadioButton.OnClickListener
+	public void onResume()
 	{
-		private boolean flag;
-
-		public ControlButtonClickListener(boolean flag)
-		{
-			this.flag = flag;
-		}
-
+		super.onResume();
+	}
+	
+	//when activity is not visible
+	public void onStop()
+	{
+		startSchedule(false);
+		super.onStop();
+	}
+	
+	private RadioButton.OnClickListener controlBtnClickListener = new RadioButton.OnClickListener()
+	{
 		@Override
-		public void onClick(View arg0)
+		public void onClick(View v)
 		{
-			// 已经选择了
-			if (startBtn.isChecked())
+			/*if (startBtn.isChecked())
 			{
 				startBtn.setEnabled(false);
 				stopBtn.setEnabled(true);
@@ -95,118 +133,98 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 			{
 				stopBtn.setEnabled(false);
 				startBtn.setEnabled(true);
-			}
-			if (flag)
+			}*/
+			
+			startSchedule(true);
+		}
+	};
+
+	
+	
+	public void startSchedule(boolean showTip)
+	{
+		if(!(startBtn.isChecked() || stopBtn.isChecked()))
+		{	
+			showAlertDialog("", "");
+			return;
+		}
+		Log.d(TAG, " auto flight mode start ?" + startBtn.isChecked());
+		if(startBtn.isChecked())
+		{
+			calendar.setTimeInMillis(System.currentTimeMillis());
+			calendar.set(Calendar.HOUR_OF_DAY, startHour);
+			calendar.set(Calendar.MINUTE, startMinute);
+			Log.i(TAG, "current:" + System.currentTimeMillis());
+			startIntent = new Intent(this, AlarmReceiver.class);
+			startIntent.putExtra("startState", 1);
+			startPendingIntent = PendingIntent.getBroadcast(
+					FlightModeSwitcher.this, 0, startIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+			AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+					
+			long nextStarttime = calendar.getTimeInMillis();
+			if(nextStarttime < System.currentTimeMillis())
+				nextStarttime += 24 * 60 * 60 * 1000;
+			
+			alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
+					nextStarttime, 24 * 60 * 60 * 1000, startPendingIntent);
+					
+			endIntent = new Intent(this, AlarmReceiver.class);
+			endIntent.putExtra("endState", 1);
+			endPendingIntent = PendingIntent.getBroadcast(
+					FlightModeSwitcher.this, 1, endIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+			
+			calendar.set(Calendar.HOUR_OF_DAY, stopHour);
+			calendar.set(Calendar.MINUTE, stopMinute);
+			
+			long nextEndtime = calendar.getTimeInMillis();
+			if(nextEndtime < System.currentTimeMillis())
+				nextEndtime += 24 * 60 * 60 * 1000;
+			
+			alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
+					nextEndtime, 24 * 60 * 60 * 1000,
+					endPendingIntent);
+			
+			Log.i(TAG, "next start:" + nextStarttime);
+			Log.i(TAG, "next end:" + nextEndtime);
+			
+			if(showTip)
 			{
-				Log.d(TAG, "start the auto fly mode");
-				
-				SharedPreferences preferences = getSharedPreferences(
-						PreferenceKey, MODE_PRIVATE);
-
-				// 设置日历的时间，主要是让日历的年月日和当前同步
-				calendar.setTimeInMillis(java.lang.System.currentTimeMillis());
-				// 设置日历的小时和分钟
-				calendar.set(Calendar.HOUR_OF_DAY, startHour);
-				calendar.set(Calendar.MINUTE, startMinute);
-				
-				
-				Intent startIntent = new Intent(ALARM_ACTION_START);
-				startIntent.putExtra("startState", 1);
-				PendingIntent startPendingIntent = PendingIntent.getBroadcast(
-						FlightModeSwitcher.this, 0, startIntent, 0);
-
-				AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-				
-				alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
-						calendar.getTimeInMillis(), 24 * 60 * 60 * 1000,
-						startPendingIntent);
-
-				Intent endIntent = new Intent(ALARM_ACTION_END);
-				endIntent.putExtra("endState", 1);
-				PendingIntent endPendingIntent = PendingIntent.getBroadcast(
-						FlightModeSwitcher.this, 1, endIntent, 0);
-				calendar.set(Calendar.HOUR_OF_DAY, stopHour);
-				calendar.set(Calendar.MINUTE, stopMinute);
-				
-				alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
-						calendar.getTimeInMillis(), 24 * 60 * 60 * 1000,
-						endPendingIntent);
-				
-				Toast.makeText(FlightModeSwitcher.this, "设置已经启用",
+				Toast.makeText(FlightModeSwitcher.this, getString(R.string.setup_on),
+					Toast.LENGTH_SHORT).show();
+				Toast.makeText(this, getString(R.string.nextStartTipPref) + this.formatTime(nextStarttime), 
 						Toast.LENGTH_LONG).show();
-			} else
-			{
-				Log.d(TAG, "shutdown the auto flight mode");
-				Intent intent = new Intent(ALARM_ACTION_START);
-				PendingIntent pendingIntent = PendingIntent.getBroadcast(
-						FlightModeSwitcher.this, 0, intent, 0);
-
-				AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-
-				alarmManager.cancel(pendingIntent);
-
-				Intent intent2 = new Intent(ALARM_ACTION_END);
-				PendingIntent pendingIntent2 = PendingIntent.getBroadcast(
-						FlightModeSwitcher.this, 1, intent2, 0);
-				alarmManager.cancel(pendingIntent2);
-				
-				System.putString(getContentResolver(), System.AIRPLANE_MODE_ON,
-						"0");
-				
-				Intent flyIntent = new Intent(
-						Intent.ACTION_AIRPLANE_MODE_CHANGED);
-				flyIntent.putExtra("state", false);
-				sendBroadcast(flyIntent);
-				
-				Toast.makeText(FlightModeSwitcher.this, "设置已经取消！",
-						Toast.LENGTH_SHORT).show();
 			}
+		} else
+		{
+			AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+			alarmManager.cancel(startPendingIntent);
+			alarmManager.cancel(endPendingIntent);
+			
+			AirplaneModeService.setAirplane(FlightModeSwitcher.this, false);
+			if(showTip)
+				Toast.makeText(FlightModeSwitcher.this, getString(R.string.setup_off),
+						Toast.LENGTH_SHORT).show();
 		}
 	}
-
 	
 	public void setTimeToPreference()
 	{
 		SharedPreferences preferences = getSharedPreferences(
-				PreferenceKey, 0);
+				PreferenceKey, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = preferences
 				.edit();
 		editor.putInt("startHour", startHour);
 		editor.putInt("startMinute", startMinute);
 		editor.putInt("endHour", stopHour);
 		editor.putInt("endMinute", stopMinute);
+		editor.putBoolean("currentState", currentState);
 		
 		editor.commit();
 	}
 
-	/**
-	 * 格式化时间为00:00
-	 * 
-	 * @param h
-	 * @param m
-	 * @return
-	 */
-	public String formatTime(int h, int m)
-	{
-		StringBuffer buf = new StringBuffer();
-		if (h < 10)
-		{
-			buf.append("0" + h);
-		} else
-		{
-			buf.append(h);
-		}
-		buf.append(" : ");
-
-		if (m < 10)
-		{
-			buf.append("0" + m);
-		} else
-		{
-			buf.append(m);
-		}
-		return buf.toString();
-	}
+	
 
 	@Override
 	public void onTimeChanged(TimePicker view, int hourOfDay, int minute)
@@ -214,16 +232,66 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 		
 		if(view == this.startTimePicker)
 		{
-			Log.i(TAG, "start time change to" + (hourOfDay) + ":" + minute);
+			Log.i(TAG, "start time change to  " + (hourOfDay) + ":" + minute);
 			startHour = hourOfDay;
 			startMinute = minute;
 			
 		}else
 		{
-			Log.i(TAG, "end time change to" + (hourOfDay) + ":" + minute);
+			Log.i(TAG, "end time change to  " + (hourOfDay) + ":" + minute);
 			stopHour = hourOfDay;
 			stopMinute = minute;
 		}
+		
 		setTimeToPreference();
 	}
+	
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		menu.add(Menu.NONE, Menu.FIRST, 1, getString(R.string.menuHelp));
+		menu.add(Menu.NONE, Menu.FIRST+1, 2, getString(R.string.menuAbout));
+		return true;
+	}
+	
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		switch(item.getItemId())
+		{
+			case Menu.FIRST:
+				showAlertDialog(getString(R.string.helpTitle), getString(R.string.helpContent));
+				break;
+			case Menu.FIRST + 1:
+				showAlertDialog(getString(R.string.aboutTitle), getString(R.string.aboutContent));
+				break;
+		}
+		return true;
+	}
+	
+	public void showAlertDialog(String title, String content) {
+        showAlertDialog(title, content, new OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+    }
+
+    public void showAlertDialog(String title, String content,
+            DialogInterface.OnClickListener listener) {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+        alertDialogBuilder.setTitle(title);
+        alertDialogBuilder.setMessage(content);
+        alertDialogBuilder.setCancelable(true);
+        alertDialogBuilder.setPositiveButton(
+        		this.getString(android.R.string.ok), listener);
+        alertDialogBuilder.show();
+    }
+    
+    public String formatTime(long mini)
+    {
+    	Date date = new Date(mini);
+    	SimpleDateFormat formatter = new SimpleDateFormat(getString(R.string.timeFormat), Locale.getDefault());  
+        return formatter.format(date); 
+    }
 }

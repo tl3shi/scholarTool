@@ -10,6 +10,7 @@
         android:id="@+id/line1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="10dp"
         android:gravity="center_horizontal" >
 
         <TextView
@@ -35,6 +36,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingTop="10dp"
         >
 
         <TextView
@@ -60,6 +62,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingTop="10dp"
         >
 
         <TextView
@@ -92,13 +95,14 @@
         </RadioGroup>
         
     </RelativeLayout>
-
+    <!-- remote the bottom tip
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="20dp"
         android:layout_alignParentBottom="true"
         android:text="@string/belowtip"
-        />
+        /> -->
+        
 </RelativeLayout>
