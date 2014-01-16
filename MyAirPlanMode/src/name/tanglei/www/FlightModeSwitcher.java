@@ -149,26 +149,23 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 			return;
 		}
 		Log.d(TAG, " auto flight mode start ? " + startBtn.isChecked());
+		currentState = startBtn.isChecked();
 		if(startBtn.isChecked())
 		{
-			calendar.setTimeInMillis(System.currentTimeMillis());
+			long currentTime = System.currentTimeMillis();
+			Log.i(TAG, "current:" + currentTime);
+
+			calendar.setTimeInMillis(currentTime);
+		
 			calendar.set(Calendar.HOUR_OF_DAY, startHour);
 			calendar.set(Calendar.MINUTE, startMinute);
-			Log.i(TAG, "current:" + System.currentTimeMillis());
+			long nextStarttime = calendar.getTimeInMillis();
+
 			startIntent = new Intent(this, AlarmReceiver.class);
 			startIntent.putExtra("startState", 1);
 			startPendingIntent = PendingIntent.getBroadcast(
 					FlightModeSwitcher.this, 0, startIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-			AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-					
-			long nextStarttime = calendar.getTimeInMillis();
-			if(nextStarttime < System.currentTimeMillis())
-				nextStarttime += 24 * 60 * 60 * 1000;
-			
-			alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
-					nextStarttime - 55*1000, 24 * 60 * 60 * 1000, startPendingIntent);
-					
 			endIntent = new Intent(this, AlarmReceiver.class);
 			endIntent.putExtra("endState", 1);
 			endPendingIntent = PendingIntent.getBroadcast(
@@ -176,11 +173,20 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 			
 			calendar.set(Calendar.HOUR_OF_DAY, stopHour);
 			calendar.set(Calendar.MINUTE, stopMinute);
-			
 			long nextEndtime = calendar.getTimeInMillis();
-			if(nextEndtime < System.currentTimeMillis())
+			
+			boolean rightNow = false;
+			if(currentTime < nextEndtime && currentTime > nextStarttime)
+				rightNow = true;//no add, apply to airmode
+			else if(nextStarttime < currentTime)
+				nextStarttime += 24 * 60 * 60 * 1000;
+			else if(nextEndtime < currentTime)
 				nextEndtime += 24 * 60 * 60 * 1000;
 			
+			AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+			
+			alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
+					nextStarttime - 55*1000, 24 * 60 * 60 * 1000, startPendingIntent);
 			alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
 					nextEndtime - 55*1000, 24 * 60 * 60 * 1000,
 					endPendingIntent);
@@ -192,7 +198,8 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 			{
 				Toast.makeText(FlightModeSwitcher.this, getString(R.string.setup_on),
 					Toast.LENGTH_SHORT).show();
-				Toast.makeText(this, getString(R.string.nextStartTipPref) + this.formatTime(nextStarttime), 
+				if(!rightNow)
+					Toast.makeText(this, getString(R.string.nextStartTipPref) + this.formatTime(nextStarttime), 
 						Toast.LENGTH_LONG).show();
 			}
 		} else

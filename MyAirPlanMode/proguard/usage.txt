@@ -1,0 +1,14 @@
+name.tanglei.www.AirplaneModeService:
+    11:11:public AirplaneModeService()
+name.tanglei.www.BuildConfig
+name.tanglei.www.FlightModeSwitcher:
+    100:108:void test()
+name.tanglei.www.R
+name.tanglei.www.R$attr
+name.tanglei.www.R$drawable
+name.tanglei.www.R$id
+name.tanglei.www.R$layout
+name.tanglei.www.R$string
+name.tanglei.www.ShellUtil:
+    10:10:public ShellUtil()
+    16:36:public static java.lang.String runCommand(java.lang.String)

@@ -1,0 +1,2999 @@
+_____________________________________________________________________
++ Program class: name/tanglei/www/a
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class name.tanglei.www.a extends java.lang.Object
+
+Interfaces (count = 0):
+
+Constant Pool (count = 152):
+  + Integer [17]
+  + Integer [2130968598]
+  + String [;]
+  + String [ACTION_AIRPLANE_MODE_CHANGED: ]
+  + String [airplane_mode_on]
+  + String [am broadcast -a android.intent.action.AIRPLANE_MODE --ez state ]
+  + String [android.intent.action.AIRPLANE_MODE]
+  + String [false]
+  + String [result=0]
+  + String [settings put global airplane_mode_on ]
+  + String [state]
+  + String [true]
+  + String [www.tanglei.name]
+  + Class [android/content/Context]
+  + Class [android/content/Intent]
+  + Class [android/os/Build$VERSION]
+  + Class [android/provider/Settings$Global]
+  + Class [android/provider/Settings$System]
+  + Class [android/util/Log]
+  + Class [android/widget/Toast]
+  + Class [java/lang/Object]
+  + Class [java/lang/String]
+  + Class [java/lang/StringBuilder]
+  + Class [name/tanglei/www/FlightModeSwitcher]
+  + Class [name/tanglei/www/a]
+  + Class [name/tanglei/www/d]
+  + Fieldref [android/os/Build$VERSION.SDK_INT I]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+  + Fieldref [name/tanglei/www/a.a I]
+  + Fieldref [name/tanglei/www/a.b Ljava/lang/String;]
+  + Fieldref [name/tanglei/www/a.c Ljava/lang/String;]
+  + Methodref [android/content/Context.getContentResolver ()Landroid/content/ContentResolver;]
+  + Methodref [android/content/Context.getString (I)Ljava/lang/String;]
+  + Methodref [android/content/Context.sendBroadcast (Landroid/content/Intent;)V]
+  + Methodref [android/content/Intent.<init> (Ljava/lang/String;)V]
+  + Methodref [android/content/Intent.putExtra (Ljava/lang/String;Z)Landroid/content/Intent;]
+  + Methodref [android/provider/Settings$Global.getInt (Landroid/content/ContentResolver;Ljava/lang/String;I)I]
+  + Methodref [android/provider/Settings$System.getInt (Landroid/content/ContentResolver;Ljava/lang/String;I)I]
+  + Methodref [android/provider/Settings$System.putInt (Landroid/content/ContentResolver;Ljava/lang/String;I)Z]
+  + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+  + Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + Methodref [android/widget/Toast.show ()V]
+  + Methodref [java/lang/String.contains (Ljava/lang/CharSequence;)Z]
+  + Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
+  + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+  + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+  + Methodref [name/tanglei/www/a.a (Landroid/content/Context;)Z]
+  + Methodref [name/tanglei/www/a.a (Landroid/content/Context;I)V]
+  + Methodref [name/tanglei/www/a.b (Landroid/content/Context;)Z]
+  + Methodref [name/tanglei/www/a.b (Landroid/content/Context;I)V]
+  + Methodref [name/tanglei/www/a.c (Landroid/content/Context;)Z]
+  + Methodref [name/tanglei/www/a.c (Landroid/content/Context;I)V]
+  + Methodref [name/tanglei/www/d.a (Ljava/lang/String;)Ljava/lang/String;]
+  + NameAndType [<init> (Ljava/lang/String;)V]
+  + NameAndType [SDK_INT I]
+  + NameAndType [a (Landroid/content/Context;)Z]
+  + NameAndType [a (Landroid/content/Context;I)V]
+  + NameAndType [a (Ljava/lang/String;)Ljava/lang/String;]
+  + NameAndType [a I]
+  + NameAndType [a Ljava/lang/String;]
+  + NameAndType [append (I)Ljava/lang/StringBuilder;]
+  + NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + NameAndType [b (Landroid/content/Context;)Z]
+  + NameAndType [b (Landroid/content/Context;I)V]
+  + NameAndType [b Ljava/lang/String;]
+  + NameAndType [c (Landroid/content/Context;)Z]
+  + NameAndType [c (Landroid/content/Context;I)V]
+  + NameAndType [c Ljava/lang/String;]
+  + NameAndType [contains (Ljava/lang/CharSequence;)Z]
+  + NameAndType [getContentResolver ()Landroid/content/ContentResolver;]
+  + NameAndType [getInt (Landroid/content/ContentResolver;Ljava/lang/String;I)I]
+  + NameAndType [getString (I)Ljava/lang/String;]
+  + NameAndType [i (Ljava/lang/String;Ljava/lang/String;)I]
+  + NameAndType [makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + NameAndType [putExtra (Ljava/lang/String;Z)Landroid/content/Intent;]
+  + NameAndType [putInt (Landroid/content/ContentResolver;Ljava/lang/String;I)Z]
+  + NameAndType [sendBroadcast (Landroid/content/Intent;)V]
+  + NameAndType [show ()V]
+  + NameAndType [toString ()Ljava/lang/String;]
+  + NameAndType [valueOf (Ljava/lang/Object;)Ljava/lang/String;]
+  + Utf8 [()Landroid/content/ContentResolver;]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()V]
+  + Utf8 [(I)Ljava/lang/String;]
+  + Utf8 [(I)Ljava/lang/StringBuilder;]
+  + Utf8 [(Landroid/content/ContentResolver;Ljava/lang/String;I)I]
+  + Utf8 [(Landroid/content/ContentResolver;Ljava/lang/String;I)Z]
+  + Utf8 [(Landroid/content/Context;)Z]
+  + Utf8 [(Landroid/content/Context;I)V]
+  + Utf8 [(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + Utf8 [(Landroid/content/Context;Z)V]
+  + Utf8 [(Landroid/content/Intent;)V]
+  + Utf8 [(Ljava/lang/CharSequence;)Z]
+  + Utf8 [(Ljava/lang/Object;)Ljava/lang/String;]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/String;]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Utf8 [(Ljava/lang/String;)V]
+  + Utf8 [(Ljava/lang/String;Ljava/lang/String;)I]
+  + Utf8 [(Ljava/lang/String;Z)Landroid/content/Intent;]
+  + Utf8 [;]
+  + Utf8 [<clinit>]
+  + Utf8 [<init>]
+  + Utf8 [ACTION_AIRPLANE_MODE_CHANGED: ]
+  + Utf8 [Code]
+  + Utf8 [I]
+  + Utf8 [Landroid/annotation/TargetApi;]
+  + Utf8 [Ljava/lang/String;]
+  + Utf8 [RuntimeInvisibleAnnotations]
+  + Utf8 [SDK_INT]
+  + Utf8 [StackMapTable]
+  + Utf8 [a]
+  + Utf8 [airplane_mode_on]
+  + Utf8 [am broadcast -a android.intent.action.AIRPLANE_MODE --ez state ]
+  + Utf8 [android.intent.action.AIRPLANE_MODE]
+  + Utf8 [android/content/Context]
+  + Utf8 [android/content/Intent]
+  + Utf8 [android/os/Build$VERSION]
+  + Utf8 [android/provider/Settings$Global]
+  + Utf8 [android/provider/Settings$System]
+  + Utf8 [android/util/Log]
+  + Utf8 [android/widget/Toast]
+  + Utf8 [append]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [contains]
+  + Utf8 [false]
+  + Utf8 [getContentResolver]
+  + Utf8 [getInt]
+  + Utf8 [getString]
+  + Utf8 [i]
+  + Utf8 [java/lang/Object]
+  + Utf8 [java/lang/String]
+  + Utf8 [java/lang/StringBuilder]
+  + Utf8 [makeText]
+  + Utf8 [name/tanglei/www/FlightModeSwitcher]
+  + Utf8 [name/tanglei/www/a]
+  + Utf8 [name/tanglei/www/d]
+  + Utf8 [putExtra]
+  + Utf8 [putInt]
+  + Utf8 [result=0]
+  + Utf8 [sendBroadcast]
+  + Utf8 [settings put global airplane_mode_on ]
+  + Utf8 [show]
+  + Utf8 [state]
+  + Utf8 [toString]
+  + Utf8 [true]
+  + Utf8 [value]
+  + Utf8 [valueOf]
+  + Utf8 [www.tanglei.name]
+
+Fields (count = 3):
+  + Field:        a I
+    Access flags: 0x9
+      = public static int a
+  + Field:        b Ljava/lang/String;
+    Access flags: 0x9
+      = public static java.lang.String b
+  + Field:        c Ljava/lang/String;
+    Access flags: 0x9
+      = public static java.lang.String c
+
+Methods (count = 8):
+  - Method:       <clinit>()V
+    Access flags: 0x8
+      = static void <clinit>()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 16, locals = 0, stack = 1):
+      [0] bipush 17
+      [2] putstatic #29
+        + Fieldref [name/tanglei/www/a.a I]
+      [5] ldc #10
+        + String [settings put global airplane_mode_on ]
+      [7] putstatic #30
+        + Fieldref [name/tanglei/www/a.b Ljava/lang/String;]
+      [10] ldc #6
+        + String [am broadcast -a android.intent.action.AIRPLANE_MODE --ez state ]
+      [12] putstatic #31
+        + Fieldref [name/tanglei/www/a.c Ljava/lang/String;]
+      [15] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Landroid/content/Context;Z)V
+    Access flags: 0x9
+      = public static void a(android.content.Context,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 25, locals = 3, stack = 2):
+      [0] aload_0 v0
+      [1] invokestatic #49
+        + Methodref [name/tanglei/www/a.a (Landroid/content/Context;)Z]
+      [4] istore_2 v2
+      [5] iload_2 v2
+      [6] iload_1 v1
+      [7] ificmpne +4 (target=11)
+      [10] return
+      [11] aload_0 v0
+      [12] iload_1 v1
+      [13] ifeq +7 (target=20)
+      [16] iconst_1
+      [17] goto +4 (target=21)
+      [20] iconst_0
+      [21] invokestatic #50
+        + Methodref [name/tanglei/www/a.a (Landroid/content/Context;I)V]
+      [24] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 3):
+        - [11] Var: ...[i], Stack: (empty)
+        - [20] Var: ..., Stack: [a:android/content/Context]
+        - [21] Var: [a:android/content/Context][i][i], Stack: [a:android/content/Context][i]
+  + Method:       a(Landroid/content/Context;)Z
+    Access flags: 0x9
+      = public static boolean a(android.content.Context)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 18, locals = 1, stack = 2):
+      [0] getstatic #27
+        + Fieldref [android/os/Build$VERSION.SDK_INT I]
+      [3] bipush 17
+      [5] ificmpge +8 (target=13)
+      [8] aload_0 v0
+      [9] invokestatic #51
+        + Methodref [name/tanglei/www/a.b (Landroid/content/Context;)Z]
+      [12] ireturn
+      [13] aload_0 v0
+      [14] invokestatic #53
+        + Methodref [name/tanglei/www/a.c (Landroid/content/Context;)Z]
+      [17] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 1):
+        - [13] Var: ..., Stack: (empty)
+  + Method:       b(Landroid/content/Context;)Z
+    Access flags: 0xa
+      = private static boolean b(android.content.Context)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 1, stack = 3):
+      [0] aload_0 v0
+      [1] invokevirtual #32
+        + Methodref [android/content/Context.getContentResolver ()Landroid/content/ContentResolver;]
+      [4] ldc #5
+        + String [airplane_mode_on]
+      [6] iconst_0
+      [7] invokestatic #38
+        + Methodref [android/provider/Settings$System.getInt (Landroid/content/ContentResolver;Ljava/lang/String;I)I]
+      [10] ifeq +5 (target=15)
+      [13] iconst_1
+      [14] ireturn
+      [15] iconst_0
+      [16] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 1):
+        - [15] Var: ..., Stack: (empty)
+  + Method:       a(Landroid/content/Context;I)V
+    Access flags: 0xa
+      = private static void a(android.content.Context,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 77, locals = 3, stack = 4):
+      [0] getstatic #27
+        + Fieldref [android/os/Build$VERSION.SDK_INT I]
+      [3] bipush 17
+      [5] ificmpge +11 (target=16)
+      [8] aload_0 v0
+      [9] iload_1 v1
+      [10] invokestatic #54
+        + Methodref [name/tanglei/www/a.c (Landroid/content/Context;I)V]
+      [13] goto +8 (target=21)
+      [16] aload_0 v0
+      [17] iload_1 v1
+      [18] invokestatic #52
+        + Methodref [name/tanglei/www/a.b (Landroid/content/Context;I)V]
+      [21] new #15
+        + Class [android/content/Intent]
+      [24] dup
+      [25] ldc #7
+        + String [android.intent.action.AIRPLANE_MODE]
+      [27] invokespecial #35
+        + Methodref [android/content/Intent.<init> (Ljava/lang/String;)V]
+      [30] astore_2 v2
+      [31] aload_2 v2
+      [32] ldc #11
+        + String [state]
+      [34] iload_1 v1
+      [35] iconst_1
+      [36] ificmpne +7 (target=43)
+      [39] iconst_1
+      [40] goto +4 (target=44)
+      [43] iconst_0
+      [44] invokevirtual #36
+        + Methodref [android/content/Intent.putExtra (Ljava/lang/String;Z)Landroid/content/Intent;]
+      [47] pop
+      [48] aload_0 v0
+      [49] aload_2 v2
+      [50] invokevirtual #34
+        + Methodref [android/content/Context.sendBroadcast (Landroid/content/Intent;)V]
+      [53] getstatic #28
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [56] new #23
+        + Class [java/lang/StringBuilder]
+      [59] dup
+      [60] ldc #4
+        + String [ACTION_AIRPLANE_MODE_CHANGED: ]
+      [62] invokespecial #45
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [65] iload_1 v1
+      [66] invokevirtual #46
+        + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [69] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [72] invokestatic #40
+        + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+      [75] pop
+      [76] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 4):
+        - [16] Var: ..., Stack: (empty)
+        - [21] Var: ..., Stack: (empty)
+        - [43] Var: [a:android/content/Context][i][a:android/content/Intent], Stack: [a:android/content/Intent][a:java/lang/String]
+        - [44] Var: [a:android/content/Context][i][a:android/content/Intent], Stack: [a:android/content/Intent][a:java/lang/String][i]
+  + Method:       c(Landroid/content/Context;)Z
+    Access flags: 0xa
+      = private static boolean c(android.content.Context)
+    Class member attributes (count = 2):
+    + Code attribute instructions (code length = 17, locals = 1, stack = 3):
+      [0] aload_0 v0
+      [1] invokevirtual #32
+        + Methodref [android/content/Context.getContentResolver ()Landroid/content/ContentResolver;]
+      [4] ldc #5
+        + String [airplane_mode_on]
+      [6] iconst_0
+      [7] invokestatic #37
+        + Methodref [android/provider/Settings$Global.getInt (Landroid/content/ContentResolver;Ljava/lang/String;I)I]
+      [10] ifeq +5 (target=15)
+      [13] iconst_1
+      [14] ireturn
+      [15] iconst_0
+      [16] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 1):
+        - [15] Var: ..., Stack: (empty)
+    + Runtime invisible annotations attribute:
+      - Annotation [Landroid/annotation/TargetApi;]:
+        - Constant element value [value '73']
+          + Integer [17]
+  + Method:       b(Landroid/content/Context;I)V
+    Access flags: 0xa
+      = private static void b(android.content.Context,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 122, locals = 4, stack = 3):
+      [0] new #23
+        + Class [java/lang/StringBuilder]
+      [3] dup
+      [4] getstatic #30
+        + Fieldref [name/tanglei/www/a.b Ljava/lang/String;]
+      [7] invokestatic #44
+        + Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
+      [10] invokespecial #45
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [13] iload_1 v1
+      [14] invokevirtual #46
+        + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [17] ldc #3
+        + String [;]
+      [19] invokevirtual #47
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [22] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [25] astore_2 v2
+      [26] iload_1 v1
+      [27] iconst_1
+      [28] ificmpne +32 (target=60)
+      [31] new #23
+        + Class [java/lang/StringBuilder]
+      [34] dup
+      [35] aload_2 v2
+      [36] invokestatic #44
+        + Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
+      [39] invokespecial #45
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [42] getstatic #31
+        + Fieldref [name/tanglei/www/a.c Ljava/lang/String;]
+      [45] invokevirtual #47
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [48] ldc #12
+        + String [true]
+      [50] invokevirtual #47
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [53] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [56] astore_2 v2
+      [57] goto +29 (target=86)
+      [60] new #23
+        + Class [java/lang/StringBuilder]
+      [63] dup
+      [64] aload_2 v2
+      [65] invokestatic #44
+        + Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
+      [68] invokespecial #45
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [71] getstatic #31
+        + Fieldref [name/tanglei/www/a.c Ljava/lang/String;]
+      [74] invokevirtual #47
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [77] ldc #8
+        + String [false]
+      [79] invokevirtual #47
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [82] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [85] astore_2 v2
+      [86] ldc #13
+        + String [www.tanglei.name]
+      [88] aload_2 v2
+      [89] invokestatic #40
+        + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+      [92] pop
+      [93] aload_2 v2
+      [94] invokestatic #55
+        + Methodref [name/tanglei/www/d.a (Ljava/lang/String;)Ljava/lang/String;]
+      [97] astore_3 v3
+      [98] aload_3 v3
+      [99] ldc #9
+        + String [result=0]
+      [101] invokevirtual #43
+        + Methodref [java/lang/String.contains (Ljava/lang/CharSequence;)Z]
+      [104] ifne +17 (target=121)
+      [107] aload_0 v0
+      [108] aload_0 v0
+      [109] ldc #2
+        + Integer [2130968598]
+      [111] invokevirtual #33
+        + Methodref [android/content/Context.getString (I)Ljava/lang/String;]
+      [114] iconst_0
+      [115] invokestatic #41
+        + Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+      [118] invokevirtual #42
+        + Methodref [android/widget/Toast.show ()V]
+      [121] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 3):
+        - [60] Var: ...[a:java/lang/String], Stack: (empty)
+        - [86] Var: ..., Stack: (empty)
+        - [121] Var: ...[a:java/lang/String], Stack: (empty)
+  + Method:       c(Landroid/content/Context;I)V
+    Access flags: 0xa
+      = private static void c(android.content.Context,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 12, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] invokevirtual #32
+        + Methodref [android/content/Context.getContentResolver ()Landroid/content/ContentResolver;]
+      [4] ldc #5
+        + String [airplane_mode_on]
+      [6] iload_1 v1
+      [7] invokestatic #39
+        + Methodref [android/provider/Settings$System.putInt (Landroid/content/ContentResolver;Ljava/lang/String;I)Z]
+      [10] pop
+      [11] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: name/tanglei/www/AlarmReceiver
+  Superclass:    android/content/BroadcastReceiver
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class name.tanglei.www.AlarmReceiver extends android.content.BroadcastReceiver
+
+Interfaces (count = 0):
+
+Constant Pool (count = 99):
+  + Integer [2130968583]
+  + Integer [2130968584]
+  + Integer [2130968585]
+  + String []
+  + String [end state:]
+  + String [endState]
+  + String [set the fly mode false]
+  + String [set the fly mode true]
+  + String [start state:]
+  + String [startState]
+  + String [the alarm time is up]
+  + Class [android/content/BroadcastReceiver]
+  + Class [android/content/Context]
+  + Class [android/content/Intent]
+  + Class [android/util/Log]
+  + Class [android/widget/Toast]
+  + Class [java/lang/Exception]
+  + Class [java/lang/String]
+  + Class [java/lang/StringBuilder]
+  + Class [name/tanglei/www/AlarmReceiver]
+  + Class [name/tanglei/www/FlightModeSwitcher]
+  + Class [name/tanglei/www/a]
+  + Fieldref [name/tanglei/www/AlarmReceiver.a Landroid/content/Context;]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+  + Methodref [android/content/BroadcastReceiver.<init> ()V]
+  + Methodref [android/content/Context.getString (I)Ljava/lang/String;]
+  + Methodref [android/content/Intent.getIntExtra (Ljava/lang/String;I)I]
+  + Methodref [android/util/Log.d (Ljava/lang/String;Ljava/lang/String;)I]
+  + Methodref [android/util/Log.e (Ljava/lang/String;Ljava/lang/String;)I]
+  + Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + Methodref [android/widget/Toast.show ()V]
+  + Methodref [java/lang/Exception.getMessage ()Ljava/lang/String;]
+  + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+  + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+  + Methodref [name/tanglei/www/AlarmReceiver.a (Z)V]
+  + Methodref [name/tanglei/www/a.a (Landroid/content/Context;Z)V]
+  + NameAndType [<init> ()V]
+  + NameAndType [<init> (Ljava/lang/String;)V]
+  + NameAndType [a (Landroid/content/Context;Z)V]
+  + NameAndType [a (Z)V]
+  + NameAndType [a Landroid/content/Context;]
+  + NameAndType [a Ljava/lang/String;]
+  + NameAndType [append (I)Ljava/lang/StringBuilder;]
+  + NameAndType [d (Ljava/lang/String;Ljava/lang/String;)I]
+  + NameAndType [e (Ljava/lang/String;Ljava/lang/String;)I]
+  + NameAndType [getIntExtra (Ljava/lang/String;I)I]
+  + NameAndType [getMessage ()Ljava/lang/String;]
+  + NameAndType [getString (I)Ljava/lang/String;]
+  + NameAndType [makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + NameAndType [show ()V]
+  + NameAndType [toString ()Ljava/lang/String;]
+  + Utf8 []
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()V]
+  + Utf8 [(I)Ljava/lang/String;]
+  + Utf8 [(I)Ljava/lang/StringBuilder;]
+  + Utf8 [(Landroid/content/Context;Landroid/content/Intent;)V]
+  + Utf8 [(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + Utf8 [(Landroid/content/Context;Z)V]
+  + Utf8 [(Ljava/lang/String;)V]
+  + Utf8 [(Ljava/lang/String;I)I]
+  + Utf8 [(Ljava/lang/String;Ljava/lang/String;)I]
+  + Utf8 [(Z)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Landroid/content/Context;]
+  + Utf8 [Ljava/lang/String;]
+  + Utf8 [StackMapTable]
+  + Utf8 [a]
+  + Utf8 [android/content/BroadcastReceiver]
+  + Utf8 [android/content/Context]
+  + Utf8 [android/content/Intent]
+  + Utf8 [android/util/Log]
+  + Utf8 [android/widget/Toast]
+  + Utf8 [append]
+  + Utf8 [d]
+  + Utf8 [e]
+  + Utf8 [end state:]
+  + Utf8 [endState]
+  + Utf8 [getIntExtra]
+  + Utf8 [getMessage]
+  + Utf8 [getString]
+  + Utf8 [java/lang/Exception]
+  + Utf8 [java/lang/String]
+  + Utf8 [java/lang/StringBuilder]
+  + Utf8 [makeText]
+  + Utf8 [name/tanglei/www/AlarmReceiver]
+  + Utf8 [name/tanglei/www/FlightModeSwitcher]
+  + Utf8 [name/tanglei/www/a]
+  + Utf8 [onReceive]
+  + Utf8 [set the fly mode false]
+  + Utf8 [set the fly mode true]
+  + Utf8 [show]
+  + Utf8 [start state:]
+  + Utf8 [startState]
+  + Utf8 [the alarm time is up]
+  + Utf8 [toString]
+
+Fields (count = 1):
+  + Field:        a Landroid/content/Context;
+    Access flags: 0x2
+      = private android.content.Context a
+
+Methods (count = 3):
+  - Method:       <init>()V
+    Access flags: 0x1
+      = public AlarmReceiver()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] invokespecial #25
+        + Methodref [android/content/BroadcastReceiver.<init> ()V]
+      [4] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    Access flags: 0x1
+      = public void onReceive(android.content.Context,android.content.Intent)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 118, locals = 5, stack = 4):
+      [0] getstatic #24
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [3] ldc #11
+        + String [the alarm time is up]
+      [5] invokestatic #28
+        + Methodref [android/util/Log.d (Ljava/lang/String;Ljava/lang/String;)I]
+      [8] pop
+      [9] aload_0 v0
+      [10] aload_1 v1
+      [11] putfield #23
+        + Fieldref [name/tanglei/www/AlarmReceiver.a Landroid/content/Context;]
+      [14] aload_2 v2
+      [15] ldc #10
+        + String [startState]
+      [17] iconst_m1
+      [18] invokevirtual #27
+        + Methodref [android/content/Intent.getIntExtra (Ljava/lang/String;I)I]
+      [21] istore_3 v3
+      [22] aload_2 v2
+      [23] ldc #6
+        + String [endState]
+      [25] iconst_m1
+      [26] invokevirtual #27
+        + Methodref [android/content/Intent.getIntExtra (Ljava/lang/String;I)I]
+      [29] istore v4
+      [31] getstatic #24
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [34] new #19
+        + Class [java/lang/StringBuilder]
+      [37] dup
+      [38] ldc #9
+        + String [start state:]
+      [40] invokespecial #33
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [43] iload_3 v3
+      [44] invokevirtual #34
+        + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [47] invokevirtual #35
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [50] invokestatic #28
+        + Methodref [android/util/Log.d (Ljava/lang/String;Ljava/lang/String;)I]
+      [53] pop
+      [54] getstatic #24
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [57] new #19
+        + Class [java/lang/StringBuilder]
+      [60] dup
+      [61] ldc #5
+        + String [end state:]
+      [63] invokespecial #33
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [66] iload v4
+      [68] invokevirtual #34
+        + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [71] invokevirtual #35
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [74] invokestatic #28
+        + Methodref [android/util/Log.d (Ljava/lang/String;Ljava/lang/String;)I]
+      [77] pop
+      [78] iload_3 v3
+      [79] iconst_1
+      [80] ificmpne +17 (target=97)
+      [83] getstatic #24
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [86] ldc #8
+        + String [set the fly mode true]
+      [88] invokestatic #28
+        + Methodref [android/util/Log.d (Ljava/lang/String;Ljava/lang/String;)I]
+      [91] pop
+      [92] aload_0 v0
+      [93] iconst_1
+      [94] invokevirtual #36
+        + Methodref [name/tanglei/www/AlarmReceiver.a (Z)V]
+      [97] iload v4
+      [99] iconst_1
+      [100] ificmpne +17 (target=117)
+      [103] getstatic #24
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [106] ldc #7
+        + String [set the fly mode false]
+      [108] invokestatic #28
+        + Methodref [android/util/Log.d (Ljava/lang/String;Ljava/lang/String;)I]
+      [111] pop
+      [112] aload_0 v0
+      [113] iconst_0
+      [114] invokevirtual #36
+        + Methodref [name/tanglei/www/AlarmReceiver.a (Z)V]
+      [117] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 2):
+        - [97] Var: ...[i][i], Stack: (empty)
+        - [117] Var: ..., Stack: (empty)
+  + Method:       a(Z)V
+    Access flags: 0x1
+      = public void a(boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 86, locals = 3, stack = 3):
+      [0] aload_0 v0
+      [1] getfield #23
+        + Fieldref [name/tanglei/www/AlarmReceiver.a Landroid/content/Context;]
+      [4] iload_1 v1
+      [5] invokestatic #37
+        + Methodref [name/tanglei/www/a.a (Landroid/content/Context;Z)V]
+      [8] ldc #4
+        + String []
+      [10] astore_2 v2
+      [11] iload_1 v1
+      [12] ifeq +16 (target=28)
+      [15] aload_0 v0
+      [16] getfield #23
+        + Fieldref [name/tanglei/www/AlarmReceiver.a Landroid/content/Context;]
+      [19] ldc #1
+        + Integer [2130968583]
+      [21] invokevirtual #26
+        + Methodref [android/content/Context.getString (I)Ljava/lang/String;]
+      [24] astore_2 v2
+      [25] goto +13 (target=38)
+      [28] aload_0 v0
+      [29] getfield #23
+        + Fieldref [name/tanglei/www/AlarmReceiver.a Landroid/content/Context;]
+      [32] ldc #2
+        + Integer [2130968584]
+      [34] invokevirtual #26
+        + Methodref [android/content/Context.getString (I)Ljava/lang/String;]
+      [37] astore_2 v2
+      [38] aload_0 v0
+      [39] getfield #23
+        + Fieldref [name/tanglei/www/AlarmReceiver.a Landroid/content/Context;]
+      [42] aload_2 v2
+      [43] iconst_0
+      [44] invokestatic #30
+        + Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+      [47] invokevirtual #31
+        + Methodref [android/widget/Toast.show ()V]
+      [50] goto +35 (target=85)
+      [53] astore_2 v2
+      [54] getstatic #24
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [57] aload_2 v2
+      [58] invokevirtual #32
+        + Methodref [java/lang/Exception.getMessage ()Ljava/lang/String;]
+      [61] invokestatic #29
+        + Methodref [android/util/Log.e (Ljava/lang/String;Ljava/lang/String;)I]
+      [64] pop
+      [65] aload_0 v0
+      [66] getfield #23
+        + Fieldref [name/tanglei/www/AlarmReceiver.a Landroid/content/Context;]
+      [69] aload_0 v0
+      [70] getfield #23
+        + Fieldref [name/tanglei/www/AlarmReceiver.a Landroid/content/Context;]
+      [73] ldc #3
+        + Integer [2130968585]
+      [75] invokevirtual #26
+        + Methodref [android/content/Context.getString (I)Ljava/lang/String;]
+      [78] iconst_0
+      [79] invokestatic #30
+        + Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+      [82] invokevirtual #31
+        + Methodref [android/widget/Toast.show ()V]
+      [85] return
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (0 -> 50: 53):
+      + Class [java/lang/Exception]
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 4):
+        - [28] Var: ...[a:java/lang/String], Stack: (empty)
+        - [38] Var: ..., Stack: (empty)
+        - [53] Var: [a:name/tanglei/www/AlarmReceiver][i], Stack: [a:java/lang/Exception]
+        - [85] Var: ..., Stack: (empty)
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: name/tanglei/www/FlightModeSwitcher
+  Superclass:    android/app/Activity
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class name.tanglei.www.FlightModeSwitcher extends android.app.Activity
+
+Interfaces (count = 1):
+  + Class [android/widget/TimePicker$OnTimeChangedListener]
+
+Constant Pool (count = 420):
+  + Integer [17039370]
+  + Integer [134217728]
+  + Integer [2130903040]
+  + Integer [2130968586]
+  + Integer [2130968587]
+  + Integer [2130968588]
+  + Integer [2130968589]
+  + Integer [2130968590]
+  + Integer [2130968591]
+  + Integer [2130968592]
+  + Integer [2130968593]
+  + Integer [2130968594]
+  + Integer [2130968595]
+  + Integer [2130968596]
+  + Integer [2130968597]
+  + Integer [2131034113]
+  + Integer [2131034115]
+  + Integer [2131034117]
+  + Integer [2131034118]
+  + String [ auto flight mode start ? ]
+  + String [:]
+  + String [alarm]
+  + String [current:]
+  + String [currentState]
+  + String [end time change to  ]
+  + String [endHour]
+  + String [endMinute]
+  + String [endState]
+  + String [load time data from preference:]
+  + String [next end:]
+  + String [next start:]
+  + String [save time to preference:]
+  + String [start time change to  ]
+  + String [startHour]
+  + String [startMinute]
+  + String [startState]
+  + Class [android/app/Activity]
+  + Class [android/app/AlarmManager]
+  + Class [android/app/AlertDialog$Builder]
+  + Class [android/app/PendingIntent]
+  + Class [android/content/Intent]
+  + Class [android/content/SharedPreferences]
+  + Class [android/content/SharedPreferences$Editor]
+  + Class [android/os/Bundle]
+  + Class [android/util/Log]
+  + Class [android/view/Menu]
+  + Class [android/view/MenuItem]
+  + Class [android/widget/RadioButton]
+  + Class [android/widget/TimePicker]
+  + Class [android/widget/TimePicker$OnTimeChangedListener]
+  + Class [android/widget/Toast]
+  + Class [java/lang/Boolean]
+  + Class [java/lang/Class]
+  + Class [java/lang/Integer]
+  + Class [java/lang/String]
+  + Class [java/lang/StringBuilder]
+  + Class [java/lang/System]
+  + Class [java/text/SimpleDateFormat]
+  + Class [java/util/Calendar]
+  + Class [java/util/Date]
+  + Class [java/util/Locale]
+  + Class [name/tanglei/www/AlarmReceiver]
+  + Class [name/tanglei/www/FlightModeSwitcher]
+  + Class [name/tanglei/www/a]
+  + Class [name/tanglei/www/b]
+  + Class [name/tanglei/www/c]
+  + Long [55000]
+  + Long [86400000]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.b Ljava/lang/String;]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.c Ljava/util/Calendar;]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.d Landroid/widget/RadioButton;]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.e Landroid/widget/RadioButton;]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.f Landroid/widget/TimePicker;]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.g Landroid/widget/TimePicker;]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.h I]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.i I]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.j I]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.k I]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.l Z]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.m Landroid/content/Intent;]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.n Landroid/content/Intent;]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.o Landroid/app/PendingIntent;]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.p Landroid/app/PendingIntent;]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.q Landroid/view/View$OnClickListener;]
+  + Methodref [android/app/Activity.<init> ()V]
+  + Methodref [android/app/Activity.onCreate (Landroid/os/Bundle;)V]
+  + Methodref [android/app/Activity.onResume ()V]
+  + Methodref [android/app/Activity.onStop ()V]
+  + Methodref [android/app/AlarmManager.cancel (Landroid/app/PendingIntent;)V]
+  + Methodref [android/app/AlarmManager.setRepeating (IJJLandroid/app/PendingIntent;)V]
+  + Methodref [android/app/AlertDialog$Builder.<init> (Landroid/content/Context;)V]
+  + Methodref [android/app/AlertDialog$Builder.setCancelable (Z)Landroid/app/AlertDialog$Builder;]
+  + Methodref [android/app/AlertDialog$Builder.setMessage (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;]
+  + Methodref [android/app/AlertDialog$Builder.setPositiveButton (Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
+  + Methodref [android/app/AlertDialog$Builder.setTitle (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;]
+  + Methodref [android/app/AlertDialog$Builder.show ()Landroid/app/AlertDialog;]
+  + Methodref [android/app/PendingIntent.getBroadcast (Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;]
+  + Methodref [android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V]
+  + Methodref [android/content/Intent.putExtra (Ljava/lang/String;I)Landroid/content/Intent;]
+  + Methodref [android/util/Log.d (Ljava/lang/String;Ljava/lang/String;)I]
+  + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+  + Methodref [android/widget/RadioButton.isChecked ()Z]
+  + Methodref [android/widget/RadioButton.setChecked (Z)V]
+  + Methodref [android/widget/RadioButton.setOnClickListener (Landroid/view/View$OnClickListener;)V]
+  + Methodref [android/widget/TimePicker.setCurrentHour (Ljava/lang/Integer;)V]
+  + Methodref [android/widget/TimePicker.setCurrentMinute (Ljava/lang/Integer;)V]
+  + Methodref [android/widget/TimePicker.setIs24HourView (Ljava/lang/Boolean;)V]
+  + Methodref [android/widget/TimePicker.setOnTimeChangedListener (Landroid/widget/TimePicker$OnTimeChangedListener;)V]
+  + Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + Methodref [android/widget/Toast.show ()V]
+  + Methodref [java/lang/Boolean.valueOf (Z)Ljava/lang/Boolean;]
+  + Methodref [java/lang/Class.getName ()Ljava/lang/String;]
+  + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+  + Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
+  + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+  + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.append (J)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.append (Z)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+  + Methodref [java/lang/System.currentTimeMillis ()J]
+  + Methodref [java/text/SimpleDateFormat.<init> (Ljava/lang/String;Ljava/util/Locale;)V]
+  + Methodref [java/text/SimpleDateFormat.format (Ljava/util/Date;)Ljava/lang/String;]
+  + Methodref [java/util/Calendar.getInstance ()Ljava/util/Calendar;]
+  + Methodref [java/util/Calendar.getTimeInMillis ()J]
+  + Methodref [java/util/Calendar.set (II)V]
+  + Methodref [java/util/Calendar.setTimeInMillis (J)V]
+  + Methodref [java/util/Date.<init> (J)V]
+  + Methodref [java/util/Locale.getDefault ()Ljava/util/Locale;]
+  + Methodref [name/tanglei/www/FlightModeSwitcher.a ()V]
+  + Methodref [name/tanglei/www/FlightModeSwitcher.a (J)Ljava/lang/String;]
+  + Methodref [name/tanglei/www/FlightModeSwitcher.a (Ljava/lang/String;Ljava/lang/String;)V]
+  + Methodref [name/tanglei/www/FlightModeSwitcher.a (Ljava/lang/String;Ljava/lang/String;Landroid/content/DialogInterface$OnClickListener;)V]
+  + Methodref [name/tanglei/www/FlightModeSwitcher.a (Z)V]
+  + Methodref [name/tanglei/www/FlightModeSwitcher.findViewById (I)Landroid/view/View;]
+  + Methodref [name/tanglei/www/FlightModeSwitcher.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
+  + Methodref [name/tanglei/www/FlightModeSwitcher.getString (I)Ljava/lang/String;]
+  + Methodref [name/tanglei/www/FlightModeSwitcher.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
+  + Methodref [name/tanglei/www/FlightModeSwitcher.setContentView (I)V]
+  + Methodref [name/tanglei/www/a.a (Landroid/content/Context;Z)V]
+  + Methodref [name/tanglei/www/b.<init> (Lname/tanglei/www/FlightModeSwitcher;)V]
+  + Methodref [name/tanglei/www/c.<init> (Lname/tanglei/www/FlightModeSwitcher;)V]
+  + InterfaceMethodref [android/content/SharedPreferences.contains (Ljava/lang/String;)Z]
+  + InterfaceMethodref [android/content/SharedPreferences.edit ()Landroid/content/SharedPreferences$Editor;]
+  + InterfaceMethodref [android/content/SharedPreferences.getBoolean (Ljava/lang/String;Z)Z]
+  + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
+  + InterfaceMethodref [android/content/SharedPreferences$Editor.commit ()Z]
+  + InterfaceMethodref [android/content/SharedPreferences$Editor.putBoolean (Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;]
+  + InterfaceMethodref [android/content/SharedPreferences$Editor.putInt (Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;]
+  + InterfaceMethodref [android/view/Menu.add (IIILjava/lang/CharSequence;)Landroid/view/MenuItem;]
+  + InterfaceMethodref [android/view/MenuItem.getItemId ()I]
+  + NameAndType [<init> ()V]
+  + NameAndType [<init> (J)V]
+  + NameAndType [<init> (Landroid/content/Context;)V]
+  + NameAndType [<init> (Landroid/content/Context;Ljava/lang/Class;)V]
+  + NameAndType [<init> (Ljava/lang/String;)V]
+  + NameAndType [<init> (Ljava/lang/String;Ljava/util/Locale;)V]
+  + NameAndType [<init> (Lname/tanglei/www/FlightModeSwitcher;)V]
+  + NameAndType [a ()V]
+  + NameAndType [a (J)Ljava/lang/String;]
+  + NameAndType [a (Landroid/content/Context;Z)V]
+  + NameAndType [a (Ljava/lang/String;Ljava/lang/String;)V]
+  + NameAndType [a (Ljava/lang/String;Ljava/lang/String;Landroid/content/DialogInterface$OnClickListener;)V]
+  + NameAndType [a (Z)V]
+  + NameAndType [a Ljava/lang/String;]
+  + NameAndType [add (IIILjava/lang/CharSequence;)Landroid/view/MenuItem;]
+  + NameAndType [append (I)Ljava/lang/StringBuilder;]
+  + NameAndType [append (J)Ljava/lang/StringBuilder;]
+  + NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + NameAndType [append (Z)Ljava/lang/StringBuilder;]
+  + NameAndType [b Ljava/lang/String;]
+  + NameAndType [c Ljava/util/Calendar;]
+  + NameAndType [cancel (Landroid/app/PendingIntent;)V]
+  + NameAndType [commit ()Z]
+  + NameAndType [contains (Ljava/lang/String;)Z]
+  + NameAndType [currentTimeMillis ()J]
+  + NameAndType [d (Ljava/lang/String;Ljava/lang/String;)I]
+  + NameAndType [d Landroid/widget/RadioButton;]
+  + NameAndType [e Landroid/widget/RadioButton;]
+  + NameAndType [edit ()Landroid/content/SharedPreferences$Editor;]
+  + NameAndType [f Landroid/widget/TimePicker;]
+  + NameAndType [findViewById (I)Landroid/view/View;]
+  + NameAndType [format (Ljava/util/Date;)Ljava/lang/String;]
+  + NameAndType [g Landroid/widget/TimePicker;]
+  + NameAndType [getBoolean (Ljava/lang/String;Z)Z]
+  + NameAndType [getBroadcast (Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;]
+  + NameAndType [getDefault ()Ljava/util/Locale;]
+  + NameAndType [getInstance ()Ljava/util/Calendar;]
+  + NameAndType [getInt (Ljava/lang/String;I)I]
+  + NameAndType [getItemId ()I]
+  + NameAndType [getName ()Ljava/lang/String;]
+  + NameAndType [getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
+  + NameAndType [getString (I)Ljava/lang/String;]
+  + NameAndType [getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
+  + NameAndType [getTimeInMillis ()J]
+  + NameAndType [h I]
+  + NameAndType [i (Ljava/lang/String;Ljava/lang/String;)I]
+  + NameAndType [i I]
+  + NameAndType [isChecked ()Z]
+  + NameAndType [j I]
+  + NameAndType [k I]
+  + NameAndType [l Z]
+  + NameAndType [m Landroid/content/Intent;]
+  + NameAndType [makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + NameAndType [n Landroid/content/Intent;]
+  + NameAndType [o Landroid/app/PendingIntent;]
+  + NameAndType [onCreate (Landroid/os/Bundle;)V]
+  + NameAndType [onResume ()V]
+  + NameAndType [onStop ()V]
+  + NameAndType [p Landroid/app/PendingIntent;]
+  + NameAndType [putBoolean (Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;]
+  + NameAndType [putExtra (Ljava/lang/String;I)Landroid/content/Intent;]
+  + NameAndType [putInt (Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;]
+  + NameAndType [q Landroid/view/View$OnClickListener;]
+  + NameAndType [set (II)V]
+  + NameAndType [setCancelable (Z)Landroid/app/AlertDialog$Builder;]
+  + NameAndType [setChecked (Z)V]
+  + NameAndType [setContentView (I)V]
+  + NameAndType [setCurrentHour (Ljava/lang/Integer;)V]
+  + NameAndType [setCurrentMinute (Ljava/lang/Integer;)V]
+  + NameAndType [setIs24HourView (Ljava/lang/Boolean;)V]
+  + NameAndType [setMessage (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;]
+  + NameAndType [setOnClickListener (Landroid/view/View$OnClickListener;)V]
+  + NameAndType [setOnTimeChangedListener (Landroid/widget/TimePicker$OnTimeChangedListener;)V]
+  + NameAndType [setPositiveButton (Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
+  + NameAndType [setRepeating (IJJLandroid/app/PendingIntent;)V]
+  + NameAndType [setTimeInMillis (J)V]
+  + NameAndType [setTitle (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;]
+  + NameAndType [show ()Landroid/app/AlertDialog;]
+  + NameAndType [show ()V]
+  + NameAndType [toString ()Ljava/lang/String;]
+  + NameAndType [valueOf (I)Ljava/lang/Integer;]
+  + NameAndType [valueOf (Ljava/lang/Object;)Ljava/lang/String;]
+  + NameAndType [valueOf (Z)Ljava/lang/Boolean;]
+  + Utf8 [ auto flight mode start ? ]
+  + Utf8 [()I]
+  + Utf8 [()J]
+  + Utf8 [()Landroid/app/AlertDialog;]
+  + Utf8 [()Landroid/content/SharedPreferences$Editor;]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()Ljava/util/Calendar;]
+  + Utf8 [()Ljava/util/Locale;]
+  + Utf8 [()V]
+  + Utf8 [()Z]
+  + Utf8 [(I)Landroid/view/View;]
+  + Utf8 [(I)Ljava/lang/Integer;]
+  + Utf8 [(I)Ljava/lang/String;]
+  + Utf8 [(I)Ljava/lang/StringBuilder;]
+  + Utf8 [(I)V]
+  + Utf8 [(II)V]
+  + Utf8 [(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;]
+  + Utf8 [(IJJLandroid/app/PendingIntent;)V]
+  + Utf8 [(J)Ljava/lang/String;]
+  + Utf8 [(J)Ljava/lang/StringBuilder;]
+  + Utf8 [(J)V]
+  + Utf8 [(Landroid/app/PendingIntent;)V]
+  + Utf8 [(Landroid/content/Context;)V]
+  + Utf8 [(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;]
+  + Utf8 [(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + Utf8 [(Landroid/content/Context;Ljava/lang/Class;)V]
+  + Utf8 [(Landroid/content/Context;Z)V]
+  + Utf8 [(Landroid/os/Bundle;)V]
+  + Utf8 [(Landroid/view/Menu;)Z]
+  + Utf8 [(Landroid/view/MenuItem;)Z]
+  + Utf8 [(Landroid/view/View$OnClickListener;)V]
+  + Utf8 [(Landroid/widget/TimePicker$OnTimeChangedListener;)V]
+  + Utf8 [(Landroid/widget/TimePicker;II)V]
+  + Utf8 [(Ljava/lang/Boolean;)V]
+  + Utf8 [(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;]
+  + Utf8 [(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
+  + Utf8 [(Ljava/lang/Integer;)V]
+  + Utf8 [(Ljava/lang/Object;)Ljava/lang/String;]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/Object;]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Utf8 [(Ljava/lang/String;)V]
+  + Utf8 [(Ljava/lang/String;)Z]
+  + Utf8 [(Ljava/lang/String;I)I]
+  + Utf8 [(Ljava/lang/String;I)Landroid/content/Intent;]
+  + Utf8 [(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;]
+  + Utf8 [(Ljava/lang/String;I)Landroid/content/SharedPreferences;]
+  + Utf8 [(Ljava/lang/String;Ljava/lang/String;)I]
+  + Utf8 [(Ljava/lang/String;Ljava/lang/String;)V]
+  + Utf8 [(Ljava/lang/String;Ljava/lang/String;Landroid/content/DialogInterface$OnClickListener;)V]
+  + Utf8 [(Ljava/lang/String;Ljava/util/Locale;)V]
+  + Utf8 [(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;]
+  + Utf8 [(Ljava/lang/String;Z)Z]
+  + Utf8 [(Ljava/util/Date;)Ljava/lang/String;]
+  + Utf8 [(Lname/tanglei/www/FlightModeSwitcher;)V]
+  + Utf8 [(Z)Landroid/app/AlertDialog$Builder;]
+  + Utf8 [(Z)Ljava/lang/Boolean;]
+  + Utf8 [(Z)Ljava/lang/StringBuilder;]
+  + Utf8 [(Z)V]
+  + Utf8 [:]
+  + Utf8 [<clinit>]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [I]
+  + Utf8 [Landroid/app/PendingIntent;]
+  + Utf8 [Landroid/content/Intent;]
+  + Utf8 [Landroid/view/View$OnClickListener;]
+  + Utf8 [Landroid/widget/RadioButton;]
+  + Utf8 [Landroid/widget/TimePicker;]
+  + Utf8 [Ljava/lang/String;]
+  + Utf8 [Ljava/util/Calendar;]
+  + Utf8 [StackMapTable]
+  + Utf8 [Z]
+  + Utf8 [a]
+  + Utf8 [add]
+  + Utf8 [alarm]
+  + Utf8 [android/app/Activity]
+  + Utf8 [android/app/AlarmManager]
+  + Utf8 [android/app/AlertDialog$Builder]
+  + Utf8 [android/app/PendingIntent]
+  + Utf8 [android/content/Intent]
+  + Utf8 [android/content/SharedPreferences]
+  + Utf8 [android/content/SharedPreferences$Editor]
+  + Utf8 [android/os/Bundle]
+  + Utf8 [android/util/Log]
+  + Utf8 [android/view/Menu]
+  + Utf8 [android/view/MenuItem]
+  + Utf8 [android/widget/RadioButton]
+  + Utf8 [android/widget/TimePicker]
+  + Utf8 [android/widget/TimePicker$OnTimeChangedListener]
+  + Utf8 [android/widget/Toast]
+  + Utf8 [append]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [cancel]
+  + Utf8 [commit]
+  + Utf8 [contains]
+  + Utf8 [current:]
+  + Utf8 [currentState]
+  + Utf8 [currentTimeMillis]
+  + Utf8 [d]
+  + Utf8 [e]
+  + Utf8 [edit]
+  + Utf8 [end time change to  ]
+  + Utf8 [endHour]
+  + Utf8 [endMinute]
+  + Utf8 [endState]
+  + Utf8 [f]
+  + Utf8 [findViewById]
+  + Utf8 [format]
+  + Utf8 [g]
+  + Utf8 [getBoolean]
+  + Utf8 [getBroadcast]
+  + Utf8 [getDefault]
+  + Utf8 [getInstance]
+  + Utf8 [getInt]
+  + Utf8 [getItemId]
+  + Utf8 [getName]
+  + Utf8 [getSharedPreferences]
+  + Utf8 [getString]
+  + Utf8 [getSystemService]
+  + Utf8 [getTimeInMillis]
+  + Utf8 [h]
+  + Utf8 [i]
+  + Utf8 [isChecked]
+  + Utf8 [j]
+  + Utf8 [java/lang/Boolean]
+  + Utf8 [java/lang/Class]
+  + Utf8 [java/lang/Integer]
+  + Utf8 [java/lang/String]
+  + Utf8 [java/lang/StringBuilder]
+  + Utf8 [java/lang/System]
+  + Utf8 [java/text/SimpleDateFormat]
+  + Utf8 [java/util/Calendar]
+  + Utf8 [java/util/Date]
+  + Utf8 [java/util/Locale]
+  + Utf8 [k]
+  + Utf8 [l]
+  + Utf8 [load time data from preference:]
+  + Utf8 [m]
+  + Utf8 [makeText]
+  + Utf8 [n]
+  + Utf8 [name/tanglei/www/AlarmReceiver]
+  + Utf8 [name/tanglei/www/FlightModeSwitcher]
+  + Utf8 [name/tanglei/www/a]
+  + Utf8 [name/tanglei/www/b]
+  + Utf8 [name/tanglei/www/c]
+  + Utf8 [next end:]
+  + Utf8 [next start:]
+  + Utf8 [o]
+  + Utf8 [onCreate]
+  + Utf8 [onCreateOptionsMenu]
+  + Utf8 [onOptionsItemSelected]
+  + Utf8 [onResume]
+  + Utf8 [onStop]
+  + Utf8 [onTimeChanged]
+  + Utf8 [p]
+  + Utf8 [putBoolean]
+  + Utf8 [putExtra]
+  + Utf8 [putInt]
+  + Utf8 [q]
+  + Utf8 [save time to preference:]
+  + Utf8 [set]
+  + Utf8 [setCancelable]
+  + Utf8 [setChecked]
+  + Utf8 [setContentView]
+  + Utf8 [setCurrentHour]
+  + Utf8 [setCurrentMinute]
+  + Utf8 [setIs24HourView]
+  + Utf8 [setMessage]
+  + Utf8 [setOnClickListener]
+  + Utf8 [setOnTimeChangedListener]
+  + Utf8 [setPositiveButton]
+  + Utf8 [setRepeating]
+  + Utf8 [setTimeInMillis]
+  + Utf8 [setTitle]
+  + Utf8 [show]
+  + Utf8 [start time change to  ]
+  + Utf8 [startHour]
+  + Utf8 [startMinute]
+  + Utf8 [startState]
+  + Utf8 [toString]
+  + Utf8 [valueOf]
+
+Fields (count = 17):
+  + Field:        a Ljava/lang/String;
+    Access flags: 0x18
+      = static final java.lang.String a
+  + Field:        b Ljava/lang/String;
+    Access flags: 0x1a
+      = private static final java.lang.String b
+  + Field:        c Ljava/util/Calendar;
+    Access flags: 0x2
+      = private java.util.Calendar c
+  + Field:        d Landroid/widget/RadioButton;
+    Access flags: 0x2
+      = private android.widget.RadioButton d
+  + Field:        e Landroid/widget/RadioButton;
+    Access flags: 0x2
+      = private android.widget.RadioButton e
+  + Field:        f Landroid/widget/TimePicker;
+    Access flags: 0x2
+      = private android.widget.TimePicker f
+  + Field:        g Landroid/widget/TimePicker;
+    Access flags: 0x2
+      = private android.widget.TimePicker g
+  + Field:        h I
+    Access flags: 0x2
+      = private int h
+  + Field:        i I
+    Access flags: 0x2
+      = private int i
+  + Field:        j I
+    Access flags: 0x2
+      = private int j
+  + Field:        k I
+    Access flags: 0x2
+      = private int k
+  + Field:        l Z
+    Access flags: 0x2
+      = private boolean l
+  + Field:        m Landroid/content/Intent;
+    Access flags: 0x2
+      = private android.content.Intent m
+  + Field:        n Landroid/content/Intent;
+    Access flags: 0x2
+      = private android.content.Intent n
+  + Field:        o Landroid/app/PendingIntent;
+    Access flags: 0x2
+      = private android.app.PendingIntent o
+  + Field:        p Landroid/app/PendingIntent;
+    Access flags: 0x2
+      = private android.app.PendingIntent p
+  + Field:        q Landroid/view/View$OnClickListener;
+    Access flags: 0x2
+      = private android.view.View$OnClickListener q
+
+Methods (count = 13):
+  - Method:       <clinit>()V
+    Access flags: 0x8
+      = static void <clinit>()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 0, stack = 1):
+      [0] ldc #63
+        + Class [name/tanglei/www/FlightModeSwitcher]
+      [2] invokevirtual #115
+        + Methodref [java/lang/Class.getName ()Ljava/lang/String;]
+      [5] putstatic #71
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [8] ldc #63
+        + Class [name/tanglei/www/FlightModeSwitcher]
+      [10] invokevirtual #115
+        + Methodref [java/lang/Class.getName ()Ljava/lang/String;]
+      [13] putstatic #72
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.b Ljava/lang/String;]
+      [16] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  - Method:       <init>()V
+    Access flags: 0x1
+      = public FlightModeSwitcher()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 72, locals = 1, stack = 4):
+      [0] aload_0 v0
+      [1] invokespecial #88
+        + Methodref [android/app/Activity.<init> ()V]
+      [4] aload_0 v0
+      [5] aconst_null
+      [6] putfield #74
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.d Landroid/widget/RadioButton;]
+      [9] aload_0 v0
+      [10] aconst_null
+      [11] putfield #75
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.e Landroid/widget/RadioButton;]
+      [14] aload_0 v0
+      [15] aconst_null
+      [16] putfield #76
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.f Landroid/widget/TimePicker;]
+      [19] aload_0 v0
+      [20] aconst_null
+      [21] putfield #77
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.g Landroid/widget/TimePicker;]
+      [24] aload_0 v0
+      [25] iconst_0
+      [26] putfield #78
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.h I]
+      [29] aload_0 v0
+      [30] iconst_0
+      [31] putfield #79
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.i I]
+      [34] aload_0 v0
+      [35] iconst_0
+      [36] putfield #80
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.j I]
+      [39] aload_0 v0
+      [40] iconst_0
+      [41] putfield #81
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.k I]
+      [44] aload_0 v0
+      [45] iconst_0
+      [46] putfield #82
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.l Z]
+      [49] aload_0 v0
+      [50] aconst_null
+      [51] putfield #83
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.m Landroid/content/Intent;]
+      [54] aload_0 v0
+      [55] aconst_null
+      [56] putfield #84
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.n Landroid/content/Intent;]
+      [59] aload_0 v0
+      [60] new #65
+        + Class [name/tanglei/www/b]
+      [63] dup
+      [64] aload_0 v0
+      [65] invokespecial #144
+        + Methodref [name/tanglei/www/b.<init> (Lname/tanglei/www/FlightModeSwitcher;)V]
+      [68] putfield #87
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.q Landroid/view/View$OnClickListener;]
+      [71] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCreate(Landroid/os/Bundle;)V
+    Access flags: 0x1
+      = public void onCreate(android.os.Bundle)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 369, locals = 4, stack = 4):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] invokespecial #89
+        + Methodref [android/app/Activity.onCreate (Landroid/os/Bundle;)V]
+      [5] aload_0 v0
+      [6] ldc #3
+        + Integer [2130903040]
+      [8] invokevirtual #142
+        + Methodref [name/tanglei/www/FlightModeSwitcher.setContentView (I)V]
+      [11] aload_0 v0
+      [12] invokestatic #127
+        + Methodref [java/util/Calendar.getInstance ()Ljava/util/Calendar;]
+      [15] putfield #73
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.c Ljava/util/Calendar;]
+      [18] aload_0 v0
+      [19] aload_0 v0
+      [20] ldc #16
+        + Integer [2131034113]
+      [22] invokevirtual #138
+        + Methodref [name/tanglei/www/FlightModeSwitcher.findViewById (I)Landroid/view/View;]
+      [25] checkcast #49
+        + Class [android/widget/TimePicker]
+      [28] putfield #76
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.f Landroid/widget/TimePicker;]
+      [31] aload_0 v0
+      [32] aload_0 v0
+      [33] ldc #17
+        + Integer [2131034115]
+      [35] invokevirtual #138
+        + Methodref [name/tanglei/www/FlightModeSwitcher.findViewById (I)Landroid/view/View;]
+      [38] checkcast #49
+        + Class [android/widget/TimePicker]
+      [41] putfield #77
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.g Landroid/widget/TimePicker;]
+      [44] aload_0 v0
+      [45] getfield #76
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.f Landroid/widget/TimePicker;]
+      [48] iconst_1
+      [49] invokestatic #114
+        + Methodref [java/lang/Boolean.valueOf (Z)Ljava/lang/Boolean;]
+      [52] invokevirtual #110
+        + Methodref [android/widget/TimePicker.setIs24HourView (Ljava/lang/Boolean;)V]
+      [55] aload_0 v0
+      [56] getfield #77
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.g Landroid/widget/TimePicker;]
+      [59] iconst_1
+      [60] invokestatic #114
+        + Methodref [java/lang/Boolean.valueOf (Z)Ljava/lang/Boolean;]
+      [63] invokevirtual #110
+        + Methodref [android/widget/TimePicker.setIs24HourView (Ljava/lang/Boolean;)V]
+      [66] aload_0 v0
+      [67] getstatic #72
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.b Ljava/lang/String;]
+      [70] iconst_0
+      [71] invokevirtual #139
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
+      [74] astore_2 v2
+      [75] aload_0 v0
+      [76] aload_2 v2
+      [77] ldc #34
+        + String [startHour]
+      [79] iconst_0
+      [80] invokeinterface #149
+        + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
+      [85] putfield #78
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.h I]
+      [88] aload_0 v0
+      [89] aload_2 v2
+      [90] ldc #35
+        + String [startMinute]
+      [92] bipush 30
+      [94] invokeinterface #149
+        + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
+      [99] putfield #79
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.i I]
+      [102] aload_0 v0
+      [103] aload_2 v2
+      [104] ldc #26
+        + String [endHour]
+      [106] bipush 7
+      [108] invokeinterface #149
+        + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
+      [113] putfield #80
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.j I]
+      [116] aload_0 v0
+      [117] aload_2 v2
+      [118] ldc #27
+        + String [endMinute]
+      [120] iconst_0
+      [121] invokeinterface #149
+        + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
+      [126] putfield #81
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.k I]
+      [129] iconst_0
+      [130] istore_3 v3
+      [131] aload_2 v2
+      [132] ldc #24
+        + String [currentState]
+      [134] invokeinterface #146
+        + InterfaceMethodref [android/content/SharedPreferences.contains (Ljava/lang/String;)Z]
+      [139] ifne +5 (target=144)
+      [142] iconst_1
+      [143] istore_3 v3
+      [144] aload_0 v0
+      [145] aload_2 v2
+      [146] ldc #24
+        + String [currentState]
+      [148] iconst_1
+      [149] invokeinterface #148
+        + InterfaceMethodref [android/content/SharedPreferences.getBoolean (Ljava/lang/String;Z)Z]
+      [154] putfield #82
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.l Z]
+      [157] getstatic #71
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [160] new #56
+        + Class [java/lang/StringBuilder]
+      [163] dup
+      [164] ldc #29
+        + String [load time data from preference:]
+      [166] invokespecial #118
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [169] aload_0 v0
+      [170] getfield #78
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.h I]
+      [173] invokevirtual #119
+        + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [176] ldc #21
+        + String [:]
+      [178] invokevirtual #121
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [181] aload_0 v0
+      [182] getfield #79
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.i I]
+      [185] invokevirtual #119
+        + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [188] invokevirtual #123
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [191] invokestatic #104
+        + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+      [194] pop
+      [195] aload_0 v0
+      [196] getfield #76
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.f Landroid/widget/TimePicker;]
+      [199] aload_0 v0
+      [200] getfield #78
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.h I]
+      [203] invokestatic #116
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [206] invokevirtual #108
+        + Methodref [android/widget/TimePicker.setCurrentHour (Ljava/lang/Integer;)V]
+      [209] aload_0 v0
+      [210] getfield #76
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.f Landroid/widget/TimePicker;]
+      [213] aload_0 v0
+      [214] getfield #79
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.i I]
+      [217] invokestatic #116
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [220] invokevirtual #109
+        + Methodref [android/widget/TimePicker.setCurrentMinute (Ljava/lang/Integer;)V]
+      [223] aload_0 v0
+      [224] getfield #77
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.g Landroid/widget/TimePicker;]
+      [227] aload_0 v0
+      [228] getfield #80
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.j I]
+      [231] invokestatic #116
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [234] invokevirtual #108
+        + Methodref [android/widget/TimePicker.setCurrentHour (Ljava/lang/Integer;)V]
+      [237] aload_0 v0
+      [238] getfield #77
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.g Landroid/widget/TimePicker;]
+      [241] aload_0 v0
+      [242] getfield #81
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.k I]
+      [245] invokestatic #116
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [248] invokevirtual #109
+        + Methodref [android/widget/TimePicker.setCurrentMinute (Ljava/lang/Integer;)V]
+      [251] aload_0 v0
+      [252] aload_0 v0
+      [253] ldc #18
+        + Integer [2131034117]
+      [255] invokevirtual #138
+        + Methodref [name/tanglei/www/FlightModeSwitcher.findViewById (I)Landroid/view/View;]
+      [258] checkcast #48
+        + Class [android/widget/RadioButton]
+      [261] putfield #74
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.d Landroid/widget/RadioButton;]
+      [264] aload_0 v0
+      [265] getfield #74
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.d Landroid/widget/RadioButton;]
+      [268] aload_0 v0
+      [269] getfield #87
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.q Landroid/view/View$OnClickListener;]
+      [272] invokevirtual #107
+        + Methodref [android/widget/RadioButton.setOnClickListener (Landroid/view/View$OnClickListener;)V]
+      [275] aload_0 v0
+      [276] aload_0 v0
+      [277] ldc #19
+        + Integer [2131034118]
+      [279] invokevirtual #138
+        + Methodref [name/tanglei/www/FlightModeSwitcher.findViewById (I)Landroid/view/View;]
+      [282] checkcast #48
+        + Class [android/widget/RadioButton]
+      [285] putfield #75
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.e Landroid/widget/RadioButton;]
+      [288] aload_0 v0
+      [289] getfield #75
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.e Landroid/widget/RadioButton;]
+      [292] aload_0 v0
+      [293] getfield #87
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.q Landroid/view/View$OnClickListener;]
+      [296] invokevirtual #107
+        + Methodref [android/widget/RadioButton.setOnClickListener (Landroid/view/View$OnClickListener;)V]
+      [299] iload_3 v3
+      [300] ifeq +22 (target=322)
+      [303] aload_0 v0
+      [304] getfield #74
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.d Landroid/widget/RadioButton;]
+      [307] iconst_0
+      [308] invokevirtual #106
+        + Methodref [android/widget/RadioButton.setChecked (Z)V]
+      [311] aload_0 v0
+      [312] getfield #75
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.e Landroid/widget/RadioButton;]
+      [315] iconst_0
+      [316] invokevirtual #106
+        + Methodref [android/widget/RadioButton.setChecked (Z)V]
+      [319] goto +33 (target=352)
+      [322] aload_0 v0
+      [323] getfield #74
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.d Landroid/widget/RadioButton;]
+      [326] aload_0 v0
+      [327] getfield #82
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.l Z]
+      [330] invokevirtual #106
+        + Methodref [android/widget/RadioButton.setChecked (Z)V]
+      [333] aload_0 v0
+      [334] getfield #75
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.e Landroid/widget/RadioButton;]
+      [337] aload_0 v0
+      [338] getfield #82
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.l Z]
+      [341] ifeq +7 (target=348)
+      [344] iconst_0
+      [345] goto +4 (target=349)
+      [348] iconst_1
+      [349] invokevirtual #106
+        + Methodref [android/widget/RadioButton.setChecked (Z)V]
+      [352] aload_0 v0
+      [353] getfield #76
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.f Landroid/widget/TimePicker;]
+      [356] aload_0 v0
+      [357] invokevirtual #111
+        + Methodref [android/widget/TimePicker.setOnTimeChangedListener (Landroid/widget/TimePicker$OnTimeChangedListener;)V]
+      [360] aload_0 v0
+      [361] getfield #77
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.g Landroid/widget/TimePicker;]
+      [364] aload_0 v0
+      [365] invokevirtual #111
+        + Methodref [android/widget/TimePicker.setOnTimeChangedListener (Landroid/widget/TimePicker$OnTimeChangedListener;)V]
+      [368] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 5):
+        - [144] Var: ...[a:android/content/SharedPreferences][i], Stack: (empty)
+        - [322] Var: ..., Stack: (empty)
+        - [348] Var: ..., Stack: [a:android/widget/RadioButton]
+        - [349] Var: [a:name/tanglei/www/FlightModeSwitcher][a:android/os/Bundle][a:android/content/SharedPreferences][i], Stack: [a:android/widget/RadioButton][i]
+        - [352] Var: ..., Stack: (empty)
+  + Method:       onResume()V
+    Access flags: 0x1
+      = public void onResume()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] invokespecial #90
+        + Methodref [android/app/Activity.onResume ()V]
+      [4] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onStop()V
+    Access flags: 0x1
+      = public void onStop()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 1, stack = 2):
+      [0] aload_0 v0
+      [1] iconst_0
+      [2] invokevirtual #137
+        + Methodref [name/tanglei/www/FlightModeSwitcher.a (Z)V]
+      [5] aload_0 v0
+      [6] invokespecial #91
+        + Methodref [android/app/Activity.onStop ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Z)V
+    Access flags: 0x1
+      = public void a(boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 537, locals = 10, stack = 7):
+      [0] aload_0 v0
+      [1] getfield #74
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.d Landroid/widget/RadioButton;]
+      [4] invokevirtual #105
+        + Methodref [android/widget/RadioButton.isChecked ()Z]
+      [7] ifne +30 (target=37)
+      [10] aload_0 v0
+      [11] getfield #75
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.e Landroid/widget/RadioButton;]
+      [14] invokevirtual #105
+        + Methodref [android/widget/RadioButton.isChecked ()Z]
+      [17] ifne +20 (target=37)
+      [20] aload_0 v0
+      [21] aload_0 v0
+      [22] ldc #11
+        + Integer [2130968593]
+      [24] invokevirtual #140
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getString (I)Ljava/lang/String;]
+      [27] aload_0 v0
+      [28] ldc #12
+        + Integer [2130968594]
+      [30] invokevirtual #140
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getString (I)Ljava/lang/String;]
+      [33] invokevirtual #135
+        + Methodref [name/tanglei/www/FlightModeSwitcher.a (Ljava/lang/String;Ljava/lang/String;)V]
+      [36] return
+      [37] getstatic #71
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [40] new #56
+        + Class [java/lang/StringBuilder]
+      [43] dup
+      [44] ldc #20
+        + String [ auto flight mode start ? ]
+      [46] invokespecial #118
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [49] aload_0 v0
+      [50] getfield #74
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.d Landroid/widget/RadioButton;]
+      [53] invokevirtual #105
+        + Methodref [android/widget/RadioButton.isChecked ()Z]
+      [56] invokevirtual #122
+        + Methodref [java/lang/StringBuilder.append (Z)Ljava/lang/StringBuilder;]
+      [59] invokevirtual #123
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [62] invokestatic #103
+        + Methodref [android/util/Log.d (Ljava/lang/String;Ljava/lang/String;)I]
+      [65] pop
+      [66] aload_0 v0
+      [67] aload_0 v0
+      [68] getfield #74
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.d Landroid/widget/RadioButton;]
+      [71] invokevirtual #105
+        + Methodref [android/widget/RadioButton.isChecked ()Z]
+      [74] putfield #82
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.l Z]
+      [77] aload_0 v0
+      [78] getfield #74
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.d Landroid/widget/RadioButton;]
+      [81] invokevirtual #105
+        + Methodref [android/widget/RadioButton.isChecked ()Z]
+      [84] ifeq +403 (target=487)
+      [87] invokestatic #124
+        + Methodref [java/lang/System.currentTimeMillis ()J]
+      [90] lstore_2 v2
+      [91] getstatic #71
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [94] new #56
+        + Class [java/lang/StringBuilder]
+      [97] dup
+      [98] ldc #23
+        + String [current:]
+      [100] invokespecial #118
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [103] lload_2 v2
+      [104] invokevirtual #120
+        + Methodref [java/lang/StringBuilder.append (J)Ljava/lang/StringBuilder;]
+      [107] invokevirtual #123
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [110] invokestatic #104
+        + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+      [113] pop
+      [114] aload_0 v0
+      [115] getfield #73
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.c Ljava/util/Calendar;]
+      [118] lload_2 v2
+      [119] invokevirtual #130
+        + Methodref [java/util/Calendar.setTimeInMillis (J)V]
+      [122] aload_0 v0
+      [123] getfield #73
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.c Ljava/util/Calendar;]
+      [126] bipush 11
+      [128] aload_0 v0
+      [129] getfield #78
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.h I]
+      [132] invokevirtual #129
+        + Methodref [java/util/Calendar.set (II)V]
+      [135] aload_0 v0
+      [136] getfield #73
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.c Ljava/util/Calendar;]
+      [139] bipush 12
+      [141] aload_0 v0
+      [142] getfield #79
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.i I]
+      [145] invokevirtual #129
+        + Methodref [java/util/Calendar.set (II)V]
+      [148] aload_0 v0
+      [149] getfield #73
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.c Ljava/util/Calendar;]
+      [152] invokevirtual #128
+        + Methodref [java/util/Calendar.getTimeInMillis ()J]
+      [155] lstore v4
+      [157] aload_0 v0
+      [158] new #41
+        + Class [android/content/Intent]
+      [161] dup
+      [162] aload_0 v0
+      [163] ldc #62
+        + Class [name/tanglei/www/AlarmReceiver]
+      [165] invokespecial #101
+        + Methodref [android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V]
+      [168] putfield #83
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.m Landroid/content/Intent;]
+      [171] aload_0 v0
+      [172] getfield #83
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.m Landroid/content/Intent;]
+      [175] ldc #36
+        + String [startState]
+      [177] iconst_1
+      [178] invokevirtual #102
+        + Methodref [android/content/Intent.putExtra (Ljava/lang/String;I)Landroid/content/Intent;]
+      [181] pop
+      [182] aload_0 v0
+      [183] aload_0 v0
+      [184] iconst_0
+      [185] aload_0 v0
+      [186] getfield #83
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.m Landroid/content/Intent;]
+      [189] ldc #2
+        + Integer [134217728]
+      [191] invokestatic #100
+        + Methodref [android/app/PendingIntent.getBroadcast (Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;]
+      [194] putfield #85
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.o Landroid/app/PendingIntent;]
+      [197] aload_0 v0
+      [198] new #41
+        + Class [android/content/Intent]
+      [201] dup
+      [202] aload_0 v0
+      [203] ldc #62
+        + Class [name/tanglei/www/AlarmReceiver]
+      [205] invokespecial #101
+        + Methodref [android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V]
+      [208] putfield #84
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.n Landroid/content/Intent;]
+      [211] aload_0 v0
+      [212] getfield #84
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.n Landroid/content/Intent;]
+      [215] ldc #28
+        + String [endState]
+      [217] iconst_1
+      [218] invokevirtual #102
+        + Methodref [android/content/Intent.putExtra (Ljava/lang/String;I)Landroid/content/Intent;]
+      [221] pop
+      [222] aload_0 v0
+      [223] aload_0 v0
+      [224] iconst_1
+      [225] aload_0 v0
+      [226] getfield #84
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.n Landroid/content/Intent;]
+      [229] ldc #2
+        + Integer [134217728]
+      [231] invokestatic #100
+        + Methodref [android/app/PendingIntent.getBroadcast (Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;]
+      [234] putfield #86
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.p Landroid/app/PendingIntent;]
+      [237] aload_0 v0
+      [238] getfield #73
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.c Ljava/util/Calendar;]
+      [241] bipush 11
+      [243] aload_0 v0
+      [244] getfield #80
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.j I]
+      [247] invokevirtual #129
+        + Methodref [java/util/Calendar.set (II)V]
+      [250] aload_0 v0
+      [251] getfield #73
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.c Ljava/util/Calendar;]
+      [254] bipush 12
+      [256] aload_0 v0
+      [257] getfield #81
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.k I]
+      [260] invokevirtual #129
+        + Methodref [java/util/Calendar.set (II)V]
+      [263] aload_0 v0
+      [264] getfield #73
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.c Ljava/util/Calendar;]
+      [267] invokevirtual #128
+        + Methodref [java/util/Calendar.getTimeInMillis ()J]
+      [270] lstore v6
+      [272] iconst_0
+      [273] istore v8
+      [275] lload_2 v2
+      [276] lload v6
+      [278] lcmp
+      [279] ifge +16 (target=295)
+      [282] lload_2 v2
+      [283] lload v4
+      [285] lcmp
+      [286] ifle +9 (target=295)
+      [289] iconst_1
+      [290] istore v8
+      [292] goto +36 (target=328)
+      [295] lload v4
+      [297] lload_2 v2
+      [298] lcmp
+      [299] ifge +14 (target=313)
+      [302] lload v4
+      [304] ldc2_w #69
+        + Long [86400000]
+      [307] ladd
+      [308] lstore v4
+      [310] goto +18 (target=328)
+      [313] lload v6
+      [315] lload_2 v2
+      [316] lcmp
+      [317] ifge +11 (target=328)
+      [320] lload v6
+      [322] ldc2_w #69
+        + Long [86400000]
+      [325] ladd
+      [326] lstore v6
+      [328] aload_0 v0
+      [329] ldc #22
+        + String [alarm]
+      [331] invokevirtual #141
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
+      [334] checkcast #38
+        + Class [android/app/AlarmManager]
+      [337] astore v9
+      [339] aload v9
+      [341] iconst_0
+      [342] lload v4
+      [344] ldc2_w #67
+        + Long [55000]
+      [347] lsub
+      [348] ldc2_w #69
+        + Long [86400000]
+      [351] aload_0 v0
+      [352] getfield #85
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.o Landroid/app/PendingIntent;]
+      [355] invokevirtual #93
+        + Methodref [android/app/AlarmManager.setRepeating (IJJLandroid/app/PendingIntent;)V]
+      [358] aload v9
+      [360] iconst_0
+      [361] lload v6
+      [363] ldc2_w #67
+        + Long [55000]
+      [366] lsub
+      [367] ldc2_w #69
+        + Long [86400000]
+      [370] aload_0 v0
+      [371] getfield #86
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.p Landroid/app/PendingIntent;]
+      [374] invokevirtual #93
+        + Methodref [android/app/AlarmManager.setRepeating (IJJLandroid/app/PendingIntent;)V]
+      [377] getstatic #71
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [380] new #56
+        + Class [java/lang/StringBuilder]
+      [383] dup
+      [384] ldc #31
+        + String [next start:]
+      [386] invokespecial #118
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [389] lload v4
+      [391] invokevirtual #120
+        + Methodref [java/lang/StringBuilder.append (J)Ljava/lang/StringBuilder;]
+      [394] invokevirtual #123
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [397] invokestatic #104
+        + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+      [400] pop
+      [401] getstatic #71
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [404] new #56
+        + Class [java/lang/StringBuilder]
+      [407] dup
+      [408] ldc #30
+        + String [next end:]
+      [410] invokespecial #118
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [413] lload v6
+      [415] invokevirtual #120
+        + Methodref [java/lang/StringBuilder.append (J)Ljava/lang/StringBuilder;]
+      [418] invokevirtual #123
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [421] invokestatic #104
+        + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+      [424] pop
+      [425] iload_1 v1
+      [426] ifeq +110 (target=536)
+      [429] aload_0 v0
+      [430] aload_0 v0
+      [431] ldc #4
+        + Integer [2130968586]
+      [433] invokevirtual #140
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getString (I)Ljava/lang/String;]
+      [436] iconst_0
+      [437] invokestatic #112
+        + Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+      [440] invokevirtual #113
+        + Methodref [android/widget/Toast.show ()V]
+      [443] iload v8
+      [445] ifne +91 (target=536)
+      [448] aload_0 v0
+      [449] new #56
+        + Class [java/lang/StringBuilder]
+      [452] dup
+      [453] aload_0 v0
+      [454] ldc #14
+        + Integer [2130968596]
+      [456] invokevirtual #140
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getString (I)Ljava/lang/String;]
+      [459] invokestatic #117
+        + Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
+      [462] invokespecial #118
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [465] aload_0 v0
+      [466] lload v4
+      [468] invokevirtual #134
+        + Methodref [name/tanglei/www/FlightModeSwitcher.a (J)Ljava/lang/String;]
+      [471] invokevirtual #121
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [474] invokevirtual #123
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [477] iconst_1
+      [478] invokestatic #112
+        + Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+      [481] invokevirtual #113
+        + Methodref [android/widget/Toast.show ()V]
+      [484] goto +52 (target=536)
+      [487] aload_0 v0
+      [488] ldc #22
+        + String [alarm]
+      [490] invokevirtual #141
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
+      [493] checkcast #38
+        + Class [android/app/AlarmManager]
+      [496] astore_2 v2
+      [497] aload_2 v2
+      [498] aload_0 v0
+      [499] getfield #85
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.o Landroid/app/PendingIntent;]
+      [502] invokevirtual #92
+        + Methodref [android/app/AlarmManager.cancel (Landroid/app/PendingIntent;)V]
+      [505] aload_2 v2
+      [506] aload_0 v0
+      [507] getfield #86
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.p Landroid/app/PendingIntent;]
+      [510] invokevirtual #92
+        + Methodref [android/app/AlarmManager.cancel (Landroid/app/PendingIntent;)V]
+      [513] aload_0 v0
+      [514] iconst_0
+      [515] invokestatic #143
+        + Methodref [name/tanglei/www/a.a (Landroid/content/Context;Z)V]
+      [518] iload_1 v1
+      [519] ifeq +17 (target=536)
+      [522] aload_0 v0
+      [523] aload_0 v0
+      [524] ldc #5
+        + Integer [2130968587]
+      [526] invokevirtual #140
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getString (I)Ljava/lang/String;]
+      [529] iconst_0
+      [530] invokestatic #112
+        + Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+      [533] invokevirtual #113
+        + Methodref [android/widget/Toast.show ()V]
+      [536] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 7):
+        - [37] Var: ..., Stack: (empty)
+        - [295] Var: [a:name/tanglei/www/FlightModeSwitcher][i][l][l][l][i], Stack: 
+        - [313] Var: ..., Stack: (empty)
+        - [328] Var: ..., Stack: (empty)
+        - [484] Var: [a:name/tanglei/www/FlightModeSwitcher][i], Stack: 
+        - [487] Var: ..., Stack: (empty)
+        - [536] Var: ..., Stack: (empty)
+  + Method:       a()V
+    Access flags: 0x1
+      = public void a()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 127, locals = 3, stack = 4):
+      [0] aload_0 v0
+      [1] getstatic #72
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.b Ljava/lang/String;]
+      [4] iconst_0
+      [5] invokevirtual #139
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
+      [8] astore_1 v1
+      [9] aload_1 v1
+      [10] invokeinterface #147
+        + InterfaceMethodref [android/content/SharedPreferences.edit ()Landroid/content/SharedPreferences$Editor;]
+      [15] astore_2 v2
+      [16] aload_2 v2
+      [17] ldc #34
+        + String [startHour]
+      [19] aload_0 v0
+      [20] getfield #78
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.h I]
+      [23] invokeinterface #152
+        + InterfaceMethodref [android/content/SharedPreferences$Editor.putInt (Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;]
+      [28] pop
+      [29] aload_2 v2
+      [30] ldc #35
+        + String [startMinute]
+      [32] aload_0 v0
+      [33] getfield #79
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.i I]
+      [36] invokeinterface #152
+        + InterfaceMethodref [android/content/SharedPreferences$Editor.putInt (Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;]
+      [41] pop
+      [42] aload_2 v2
+      [43] ldc #26
+        + String [endHour]
+      [45] aload_0 v0
+      [46] getfield #80
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.j I]
+      [49] invokeinterface #152
+        + InterfaceMethodref [android/content/SharedPreferences$Editor.putInt (Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;]
+      [54] pop
+      [55] aload_2 v2
+      [56] ldc #27
+        + String [endMinute]
+      [58] aload_0 v0
+      [59] getfield #81
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.k I]
+      [62] invokeinterface #152
+        + InterfaceMethodref [android/content/SharedPreferences$Editor.putInt (Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;]
+      [67] pop
+      [68] aload_2 v2
+      [69] ldc #24
+        + String [currentState]
+      [71] aload_0 v0
+      [72] getfield #82
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.l Z]
+      [75] invokeinterface #151
+        + InterfaceMethodref [android/content/SharedPreferences$Editor.putBoolean (Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;]
+      [80] pop
+      [81] getstatic #71
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [84] new #56
+        + Class [java/lang/StringBuilder]
+      [87] dup
+      [88] ldc #32
+        + String [save time to preference:]
+      [90] invokespecial #118
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [93] aload_0 v0
+      [94] getfield #78
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.h I]
+      [97] invokevirtual #119
+        + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [100] ldc #21
+        + String [:]
+      [102] invokevirtual #121
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [105] aload_0 v0
+      [106] getfield #79
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.i I]
+      [109] invokevirtual #119
+        + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [112] invokevirtual #123
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [115] invokestatic #104
+        + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+      [118] pop
+      [119] aload_2 v2
+      [120] invokeinterface #150
+        + InterfaceMethodref [android/content/SharedPreferences$Editor.commit ()Z]
+      [125] pop
+      [126] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onTimeChanged(Landroid/widget/TimePicker;II)V
+    Access flags: 0x1
+      = public void onTimeChanged(android.widget.TimePicker,int,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 100, locals = 4, stack = 4):
+      [0] aload_1 v1
+      [1] aload_0 v0
+      [2] getfield #76
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.f Landroid/widget/TimePicker;]
+      [5] ifacmpne +48 (target=53)
+      [8] getstatic #71
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [11] new #56
+        + Class [java/lang/StringBuilder]
+      [14] dup
+      [15] ldc #33
+        + String [start time change to  ]
+      [17] invokespecial #118
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [20] iload_2 v2
+      [21] invokevirtual #119
+        + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [24] ldc #21
+        + String [:]
+      [26] invokevirtual #121
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [29] iload_3 v3
+      [30] invokevirtual #119
+        + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [33] invokevirtual #123
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [36] invokestatic #104
+        + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+      [39] pop
+      [40] aload_0 v0
+      [41] iload_2 v2
+      [42] putfield #78
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.h I]
+      [45] aload_0 v0
+      [46] iload_3 v3
+      [47] putfield #79
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.i I]
+      [50] goto +45 (target=95)
+      [53] getstatic #71
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [56] new #56
+        + Class [java/lang/StringBuilder]
+      [59] dup
+      [60] ldc #25
+        + String [end time change to  ]
+      [62] invokespecial #118
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [65] iload_2 v2
+      [66] invokevirtual #119
+        + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [69] ldc #21
+        + String [:]
+      [71] invokevirtual #121
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [74] iload_3 v3
+      [75] invokevirtual #119
+        + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [78] invokevirtual #123
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [81] invokestatic #104
+        + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+      [84] pop
+      [85] aload_0 v0
+      [86] iload_2 v2
+      [87] putfield #80
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.j I]
+      [90] aload_0 v0
+      [91] iload_3 v3
+      [92] putfield #81
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.k I]
+      [95] aload_0 v0
+      [96] invokevirtual #133
+        + Methodref [name/tanglei/www/FlightModeSwitcher.a ()V]
+      [99] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 2):
+        - [53] Var: ..., Stack: (empty)
+        - [95] Var: ..., Stack: (empty)
+  + Method:       onCreateOptionsMenu(Landroid/view/Menu;)Z
+    Access flags: 0x1
+      = public boolean onCreateOptionsMenu(android.view.Menu)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 34, locals = 2, stack = 6):
+      [0] aload_1 v1
+      [1] iconst_0
+      [2] iconst_1
+      [3] iconst_1
+      [4] aload_0 v0
+      [5] ldc #7
+        + Integer [2130968589]
+      [7] invokevirtual #140
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getString (I)Ljava/lang/String;]
+      [10] invokeinterface #153
+        + InterfaceMethodref [android/view/Menu.add (IIILjava/lang/CharSequence;)Landroid/view/MenuItem;]
+      [15] pop
+      [16] aload_1 v1
+      [17] iconst_0
+      [18] iconst_2
+      [19] iconst_2
+      [20] aload_0 v0
+      [21] ldc #6
+        + Integer [2130968588]
+      [23] invokevirtual #140
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getString (I)Ljava/lang/String;]
+      [26] invokeinterface #153
+        + InterfaceMethodref [android/view/Menu.add (IIILjava/lang/CharSequence;)Landroid/view/MenuItem;]
+      [31] pop
+      [32] iconst_1
+      [33] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    Access flags: 0x1
+      = public boolean onOptionsItemSelected(android.view.MenuItem)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 65, locals = 2, stack = 4):
+      [0] aload_1 v1
+      [1] invokeinterface #154
+        + InterfaceMethodref [android/view/MenuItem.getItemId ()I]
+      [6] tableswitch (2 offsets, default=57) (target=63)
+        1: offset = 22, target = 28
+        2: offset = 41, target = 47
+        default: offset = 57, target = 63
+      [28] aload_0 v0
+      [29] aload_0 v0
+      [30] ldc #13
+        + Integer [2130968595]
+      [32] invokevirtual #140
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getString (I)Ljava/lang/String;]
+      [35] aload_0 v0
+      [36] ldc #10
+        + Integer [2130968592]
+      [38] invokevirtual #140
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getString (I)Ljava/lang/String;]
+      [41] invokevirtual #135
+        + Methodref [name/tanglei/www/FlightModeSwitcher.a (Ljava/lang/String;Ljava/lang/String;)V]
+      [44] goto +19 (target=63)
+      [47] aload_0 v0
+      [48] aload_0 v0
+      [49] ldc #8
+        + Integer [2130968590]
+      [51] invokevirtual #140
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getString (I)Ljava/lang/String;]
+      [54] aload_0 v0
+      [55] ldc #9
+        + Integer [2130968591]
+      [57] invokevirtual #140
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getString (I)Ljava/lang/String;]
+      [60] invokevirtual #135
+        + Methodref [name/tanglei/www/FlightModeSwitcher.a (Ljava/lang/String;Ljava/lang/String;)V]
+      [63] iconst_1
+      [64] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 3):
+        - [28] Var: ..., Stack: (empty)
+        - [47] Var: ..., Stack: (empty)
+        - [63] Var: ..., Stack: (empty)
+  + Method:       a(Ljava/lang/String;Ljava/lang/String;)V
+    Access flags: 0x1
+      = public void a(java.lang.String,java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 15, locals = 3, stack = 6):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] aload_2 v2
+      [3] new #66
+        + Class [name/tanglei/www/c]
+      [6] dup
+      [7] aload_0 v0
+      [8] invokespecial #145
+        + Methodref [name/tanglei/www/c.<init> (Lname/tanglei/www/FlightModeSwitcher;)V]
+      [11] invokevirtual #136
+        + Methodref [name/tanglei/www/FlightModeSwitcher.a (Ljava/lang/String;Ljava/lang/String;Landroid/content/DialogInterface$OnClickListener;)V]
+      [14] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Ljava/lang/String;Ljava/lang/String;Landroid/content/DialogInterface$OnClickListener;)V
+    Access flags: 0x1
+      = public void a(java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 51, locals = 5, stack = 3):
+      [0] new #39
+        + Class [android/app/AlertDialog$Builder]
+      [3] dup
+      [4] aload_0 v0
+      [5] invokespecial #94
+        + Methodref [android/app/AlertDialog$Builder.<init> (Landroid/content/Context;)V]
+      [8] astore v4
+      [10] aload v4
+      [12] aload_1 v1
+      [13] invokevirtual #98
+        + Methodref [android/app/AlertDialog$Builder.setTitle (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;]
+      [16] pop
+      [17] aload v4
+      [19] aload_2 v2
+      [20] invokevirtual #96
+        + Methodref [android/app/AlertDialog$Builder.setMessage (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;]
+      [23] pop
+      [24] aload v4
+      [26] iconst_1
+      [27] invokevirtual #95
+        + Methodref [android/app/AlertDialog$Builder.setCancelable (Z)Landroid/app/AlertDialog$Builder;]
+      [30] pop
+      [31] aload v4
+      [33] aload_0 v0
+      [34] ldc #1
+        + Integer [17039370]
+      [36] invokevirtual #140
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getString (I)Ljava/lang/String;]
+      [39] aload_3 v3
+      [40] invokevirtual #97
+        + Methodref [android/app/AlertDialog$Builder.setPositiveButton (Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
+      [43] pop
+      [44] aload v4
+      [46] invokevirtual #99
+        + Methodref [android/app/AlertDialog$Builder.show ()Landroid/app/AlertDialog;]
+      [49] pop
+      [50] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(J)Ljava/lang/String;
+    Access flags: 0x1
+      = public java.lang.String a(long)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 34, locals = 5, stack = 4):
+      [0] new #60
+        + Class [java/util/Date]
+      [3] dup
+      [4] lload_1 v1
+      [5] invokespecial #131
+        + Methodref [java/util/Date.<init> (J)V]
+      [8] astore_3 v3
+      [9] new #58
+        + Class [java/text/SimpleDateFormat]
+      [12] dup
+      [13] aload_0 v0
+      [14] ldc #15
+        + Integer [2130968597]
+      [16] invokevirtual #140
+        + Methodref [name/tanglei/www/FlightModeSwitcher.getString (I)Ljava/lang/String;]
+      [19] invokestatic #132
+        + Methodref [java/util/Locale.getDefault ()Ljava/util/Locale;]
+      [22] invokespecial #125
+        + Methodref [java/text/SimpleDateFormat.<init> (Ljava/lang/String;Ljava/util/Locale;)V]
+      [25] astore v4
+      [27] aload v4
+      [29] aload_3 v3
+      [30] invokevirtual #126
+        + Methodref [java/text/SimpleDateFormat.format (Ljava/util/Date;)Ljava/lang/String;]
+      [33] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: name/tanglei/www/b
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x20
+    = class name.tanglei.www.b extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/view/View$OnClickListener]
+
+Constant Pool (count = 24):
+  + Class [android/view/View$OnClickListener]
+  + Class [java/lang/Object]
+  + Class [name/tanglei/www/FlightModeSwitcher]
+  + Class [name/tanglei/www/b]
+  + Fieldref [name/tanglei/www/b.a Lname/tanglei/www/FlightModeSwitcher;]
+  + Methodref [java/lang/Object.<init> ()V]
+  + Methodref [name/tanglei/www/FlightModeSwitcher.a (Z)V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a (Z)V]
+  + NameAndType [a Lname/tanglei/www/FlightModeSwitcher;]
+  + Utf8 [()V]
+  + Utf8 [(Landroid/view/View;)V]
+  + Utf8 [(Lname/tanglei/www/FlightModeSwitcher;)V]
+  + Utf8 [(Z)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lname/tanglei/www/FlightModeSwitcher;]
+  + Utf8 [a]
+  + Utf8 [android/view/View$OnClickListener]
+  + Utf8 [java/lang/Object]
+  + Utf8 [name/tanglei/www/FlightModeSwitcher]
+  + Utf8 [name/tanglei/www/b]
+  + Utf8 [onClick]
+
+Fields (count = 1):
+  + Field:        a Lname/tanglei/www/FlightModeSwitcher;
+    Access flags: 0x1010
+      = final synthetic name.tanglei.www.FlightModeSwitcher a
+
+Methods (count = 2):
+  - Method:       <init>(Lname/tanglei/www/FlightModeSwitcher;)V
+    Access flags: 0x0
+      = b(name.tanglei.www.FlightModeSwitcher)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #5
+        + Fieldref [name/tanglei/www/b.a Lname/tanglei/www/FlightModeSwitcher;]
+      [5] aload_0 v0
+      [6] invokespecial #6
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onClick(Landroid/view/View;)V
+    Access flags: 0x1
+      = public void onClick(android.view.View)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] getfield #5
+        + Fieldref [name/tanglei/www/b.a Lname/tanglei/www/FlightModeSwitcher;]
+      [4] iconst_1
+      [5] invokevirtual #7
+        + Methodref [name/tanglei/www/FlightModeSwitcher.a (Z)V]
+      [8] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: name/tanglei/www/c
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x20
+    = class name.tanglei.www.c extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/content/DialogInterface$OnClickListener]
+
+Constant Pool (count = 24):
+  + Class [android/content/DialogInterface]
+  + Class [android/content/DialogInterface$OnClickListener]
+  + Class [java/lang/Object]
+  + Class [name/tanglei/www/c]
+  + Fieldref [name/tanglei/www/c.a Lname/tanglei/www/FlightModeSwitcher;]
+  + Methodref [java/lang/Object.<init> ()V]
+  + InterfaceMethodref [android/content/DialogInterface.dismiss ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a Lname/tanglei/www/FlightModeSwitcher;]
+  + NameAndType [dismiss ()V]
+  + Utf8 [()V]
+  + Utf8 [(Landroid/content/DialogInterface;I)V]
+  + Utf8 [(Lname/tanglei/www/FlightModeSwitcher;)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lname/tanglei/www/FlightModeSwitcher;]
+  + Utf8 [a]
+  + Utf8 [android/content/DialogInterface]
+  + Utf8 [android/content/DialogInterface$OnClickListener]
+  + Utf8 [dismiss]
+  + Utf8 [java/lang/Object]
+  + Utf8 [name/tanglei/www/c]
+  + Utf8 [onClick]
+
+Fields (count = 1):
+  + Field:        a Lname/tanglei/www/FlightModeSwitcher;
+    Access flags: 0x1010
+      = final synthetic name.tanglei.www.FlightModeSwitcher a
+
+Methods (count = 2):
+  - Method:       <init>(Lname/tanglei/www/FlightModeSwitcher;)V
+    Access flags: 0x0
+      = c(name.tanglei.www.FlightModeSwitcher)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #5
+        + Fieldref [name/tanglei/www/c.a Lname/tanglei/www/FlightModeSwitcher;]
+      [5] aload_0 v0
+      [6] invokespecial #6
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onClick(Landroid/content/DialogInterface;I)V
+    Access flags: 0x1
+      = public void onClick(android.content.DialogInterface,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 7, locals = 3, stack = 1):
+      [0] aload_1 v1
+      [1] invokeinterface #7
+        + InterfaceMethodref [android/content/DialogInterface.dismiss ()V]
+      [6] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: name/tanglei/www/d
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class name.tanglei.www.d extends java.lang.Object
+
+Interfaces (count = 0):
+
+Constant Pool (count = 139):
+  + String []
+  + String [
+]
+  + String [;]
+  + String [exit
+]
+  + String [false]
+  + String [su]
+  + Class [[B]
+  + Class [[Ljava/lang/String;]
+  + Class [android/util/Log]
+  + Class [java/io/DataOutputStream]
+  + Class [java/io/InputStream]
+  + Class [java/io/OutputStream]
+  + Class [java/lang/Exception]
+  + Class [java/lang/Object]
+  + Class [java/lang/Process]
+  + Class [java/lang/Runtime]
+  + Class [java/lang/String]
+  + Class [java/lang/StringBuffer]
+  + Class [java/lang/StringBuilder]
+  + Class [java/lang/Throwable]
+  + Class [name/tanglei/www/FlightModeSwitcher]
+  + Class [name/tanglei/www/d]
+  + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+  + Fieldref [name/tanglei/www/d.a Ljava/lang/String;]
+  + Methodref [android/util/Log.e (Ljava/lang/String;Ljava/lang/String;)I]
+  + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+  + Methodref [java/io/DataOutputStream.<init> (Ljava/io/OutputStream;)V]
+  + Methodref [java/io/DataOutputStream.close ()V]
+  + Methodref [java/io/DataOutputStream.flush ()V]
+  + Methodref [java/io/DataOutputStream.writeBytes (Ljava/lang/String;)V]
+  + Methodref [java/io/InputStream.read ([B)I]
+  + Methodref [java/lang/Exception.getMessage ()Ljava/lang/String;]
+  + Methodref [java/lang/Process.destroy ()V]
+  + Methodref [java/lang/Process.getInputStream ()Ljava/io/InputStream;]
+  + Methodref [java/lang/Process.getOutputStream ()Ljava/io/OutputStream;]
+  + Methodref [java/lang/Process.waitFor ()I]
+  + Methodref [java/lang/Runtime.exec (Ljava/lang/String;)Ljava/lang/Process;]
+  + Methodref [java/lang/Runtime.getRuntime ()Ljava/lang/Runtime;]
+  + Methodref [java/lang/String.<init> ([BII)V]
+  + Methodref [java/lang/String.split (Ljava/lang/String;)[Ljava/lang/String;]
+  + Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
+  + Methodref [java/lang/StringBuffer.<init> ()V]
+  + Methodref [java/lang/StringBuffer.append (Ljava/lang/String;)Ljava/lang/StringBuffer;]
+  + Methodref [java/lang/StringBuffer.toString ()Ljava/lang/String;]
+  + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+  + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+  + Methodref [name/tanglei/www/d.a (Ljava/io/InputStream;)Ljava/lang/String;]
+  + Methodref [name/tanglei/www/d.a (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;]
+  + NameAndType [<init> ()V]
+  + NameAndType [<init> (Ljava/io/OutputStream;)V]
+  + NameAndType [<init> (Ljava/lang/String;)V]
+  + NameAndType [<init> ([BII)V]
+  + NameAndType [a (Ljava/io/InputStream;)Ljava/lang/String;]
+  + NameAndType [a (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;]
+  + NameAndType [a Ljava/lang/String;]
+  + NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuffer;]
+  + NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + NameAndType [close ()V]
+  + NameAndType [destroy ()V]
+  + NameAndType [e (Ljava/lang/String;Ljava/lang/String;)I]
+  + NameAndType [exec (Ljava/lang/String;)Ljava/lang/Process;]
+  + NameAndType [flush ()V]
+  + NameAndType [getInputStream ()Ljava/io/InputStream;]
+  + NameAndType [getMessage ()Ljava/lang/String;]
+  + NameAndType [getOutputStream ()Ljava/io/OutputStream;]
+  + NameAndType [getRuntime ()Ljava/lang/Runtime;]
+  + NameAndType [i (Ljava/lang/String;Ljava/lang/String;)I]
+  + NameAndType [read ([B)I]
+  + NameAndType [split (Ljava/lang/String;)[Ljava/lang/String;]
+  + NameAndType [toString ()Ljava/lang/String;]
+  + NameAndType [valueOf (Ljava/lang/Object;)Ljava/lang/String;]
+  + NameAndType [waitFor ()I]
+  + NameAndType [writeBytes (Ljava/lang/String;)V]
+  + Utf8 []
+  + Utf8 [
+]
+  + Utf8 [()I]
+  + Utf8 [()Ljava/io/InputStream;]
+  + Utf8 [()Ljava/io/OutputStream;]
+  + Utf8 [()Ljava/lang/Runtime;]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()V]
+  + Utf8 [(Ljava/io/InputStream;)Ljava/lang/String;]
+  + Utf8 [(Ljava/io/OutputStream;)V]
+  + Utf8 [(Ljava/lang/Object;)Ljava/lang/String;]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/Process;]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/String;]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuffer;]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Utf8 [(Ljava/lang/String;)V]
+  + Utf8 [(Ljava/lang/String;)[Ljava/lang/String;]
+  + Utf8 [(Ljava/lang/String;Ljava/lang/String;)I]
+  + Utf8 [(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;]
+  + Utf8 [([B)I]
+  + Utf8 [([BII)V]
+  + Utf8 [;]
+  + Utf8 [<clinit>]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Ljava/lang/String;]
+  + Utf8 [StackMapTable]
+  + Utf8 [[B]
+  + Utf8 [[Ljava/lang/String;]
+  + Utf8 [a]
+  + Utf8 [android/util/Log]
+  + Utf8 [append]
+  + Utf8 [close]
+  + Utf8 [destroy]
+  + Utf8 [e]
+  + Utf8 [exec]
+  + Utf8 [exit
+]
+  + Utf8 [false]
+  + Utf8 [flush]
+  + Utf8 [getInputStream]
+  + Utf8 [getMessage]
+  + Utf8 [getOutputStream]
+  + Utf8 [getRuntime]
+  + Utf8 [i]
+  + Utf8 [java/io/DataOutputStream]
+  + Utf8 [java/io/InputStream]
+  + Utf8 [java/io/OutputStream]
+  + Utf8 [java/lang/Exception]
+  + Utf8 [java/lang/Object]
+  + Utf8 [java/lang/Process]
+  + Utf8 [java/lang/Runtime]
+  + Utf8 [java/lang/String]
+  + Utf8 [java/lang/StringBuffer]
+  + Utf8 [java/lang/StringBuilder]
+  + Utf8 [java/lang/Throwable]
+  + Utf8 [name/tanglei/www/FlightModeSwitcher]
+  + Utf8 [name/tanglei/www/d]
+  + Utf8 [read]
+  + Utf8 [split]
+  + Utf8 [su]
+  + Utf8 [toString]
+  + Utf8 [valueOf]
+  + Utf8 [waitFor]
+  + Utf8 [writeBytes]
+
+Fields (count = 1):
+  + Field:        a Ljava/lang/String;
+    Access flags: 0xa
+      = private static java.lang.String a
+
+Methods (count = 4):
+  - Method:       <clinit>()V
+    Access flags: 0x8
+      = static void <clinit>()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 7, locals = 0, stack = 1):
+      [0] getstatic #23
+        + Fieldref [name/tanglei/www/FlightModeSwitcher.a Ljava/lang/String;]
+      [3] putstatic #24
+        + Fieldref [name/tanglei/www/d.a Ljava/lang/String;]
+      [6] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Ljava/lang/String;)Ljava/lang/String;
+    Access flags: 0x9
+      = public static java.lang.String a(java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 7, locals = 1, stack = 2):
+      [0] aload_0 v0
+      [1] ldc #3
+        + String [;]
+      [3] invokestatic #49
+        + Methodref [name/tanglei/www/d.a (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;]
+      [6] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    Access flags: 0x9
+      = public static java.lang.String a(java.lang.String,java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 285, locals = 13, stack = 3):
+      [0] aconst_null
+      [1] astore_2 v2
+      [2] aconst_null
+      [3] astore_3 v3
+      [4] ldc #5
+        + String [false]
+      [6] astore v4
+      [8] invokestatic #38
+        + Methodref [java/lang/Runtime.getRuntime ()Ljava/lang/Runtime;]
+      [11] ldc #6
+        + String [su]
+      [13] invokevirtual #37
+        + Methodref [java/lang/Runtime.exec (Ljava/lang/String;)Ljava/lang/Process;]
+      [16] astore_2 v2
+      [17] aload_2 v2
+      [18] invokevirtual #35
+        + Methodref [java/lang/Process.getOutputStream ()Ljava/io/OutputStream;]
+      [21] astore v5
+      [23] new #10
+        + Class [java/io/DataOutputStream]
+      [26] dup
+      [27] aload v5
+      [29] invokespecial #27
+        + Methodref [java/io/DataOutputStream.<init> (Ljava/io/OutputStream;)V]
+      [32] astore v6
+      [34] ldc #1
+        + String []
+      [36] astore v7
+      [38] aload_0 v0
+      [39] aload_1 v1
+      [40] invokevirtual #40
+        + Methodref [java/lang/String.split (Ljava/lang/String;)[Ljava/lang/String;]
+      [43] astore v8
+      [45] iconst_0
+      [46] istore v9
+      [48] goto +36 (target=84)
+      [51] new #19
+        + Class [java/lang/StringBuilder]
+      [54] dup
+      [55] aload v7
+      [57] invokestatic #41
+        + Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
+      [60] invokespecial #45
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [63] aload v8
+      [65] iload v9
+      [67] aaload
+      [68] invokevirtual #46
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [71] ldc #2
+        + String [
+]
+      [73] invokevirtual #46
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [76] invokevirtual #47
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [79] astore v7
+      [81] iinc v9, 1
+      [84] iload v9
+      [86] aload v8
+      [88] arraylength
+      [89] ificmplt -38 (target=51)
+      [92] aload v6
+      [94] aload v7
+      [96] invokevirtual #30
+        + Methodref [java/io/DataOutputStream.writeBytes (Ljava/lang/String;)V]
+      [99] aload v6
+      [101] invokevirtual #29
+        + Methodref [java/io/DataOutputStream.flush ()V]
+      [104] aload v6
+      [106] ldc #4
+        + String [exit
+]
+      [108] invokevirtual #30
+        + Methodref [java/io/DataOutputStream.writeBytes (Ljava/lang/String;)V]
+      [111] aload v6
+      [113] invokevirtual #29
+        + Methodref [java/io/DataOutputStream.flush ()V]
+      [116] aload_2 v2
+      [117] invokevirtual #36
+        + Methodref [java/lang/Process.waitFor ()I]
+      [120] pop
+      [121] aload_2 v2
+      [122] invokevirtual #34
+        + Methodref [java/lang/Process.getInputStream ()Ljava/io/InputStream;]
+      [125] invokestatic #48
+        + Methodref [name/tanglei/www/d.a (Ljava/io/InputStream;)Ljava/lang/String;]
+      [128] astore v4
+      [130] getstatic #24
+        + Fieldref [name/tanglei/www/d.a Ljava/lang/String;]
+      [133] aload v7
+      [135] invokestatic #26
+        + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+      [138] pop
+      [139] goto +105 (target=244)
+      [142] astore v5
+      [144] getstatic #24
+        + Fieldref [name/tanglei/www/d.a Ljava/lang/String;]
+      [147] aload v5
+      [149] invokevirtual #32
+        + Methodref [java/lang/Exception.getMessage ()Ljava/lang/String;]
+      [152] invokestatic #25
+        + Methodref [android/util/Log.e (Ljava/lang/String;Ljava/lang/String;)I]
+      [155] pop
+      [156] aload v4
+      [158] astore v11
+      [160] getstatic #24
+        + Fieldref [name/tanglei/www/d.a Ljava/lang/String;]
+      [163] aload v4
+      [165] invokestatic #26
+        + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+      [168] pop
+      [169] aload_3 v3
+      [170] ifnull +7 (target=177)
+      [173] aload_3 v3
+      [174] invokevirtual #28
+        + Methodref [java/io/DataOutputStream.close ()V]
+      [177] aload_2 v2
+      [178] invokevirtual #33
+        + Methodref [java/lang/Process.destroy ()V]
+      [181] goto +17 (target=198)
+      [184] astore v12
+      [186] getstatic #24
+        + Fieldref [name/tanglei/www/d.a Ljava/lang/String;]
+      [189] aload v12
+      [191] invokevirtual #32
+        + Methodref [java/lang/Exception.getMessage ()Ljava/lang/String;]
+      [194] invokestatic #25
+        + Methodref [android/util/Log.e (Ljava/lang/String;Ljava/lang/String;)I]
+      [197] pop
+      [198] aload v11
+      [200] areturn
+      [201] astore v10
+      [203] getstatic #24
+        + Fieldref [name/tanglei/www/d.a Ljava/lang/String;]
+      [206] aload v4
+      [208] invokestatic #26
+        + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+      [211] pop
+      [212] aload_3 v3
+      [213] ifnull +7 (target=220)
+      [216] aload_3 v3
+      [217] invokevirtual #28
+        + Methodref [java/io/DataOutputStream.close ()V]
+      [220] aload_2 v2
+      [221] invokevirtual #33
+        + Methodref [java/lang/Process.destroy ()V]
+      [224] goto +17 (target=241)
+      [227] astore v12
+      [229] getstatic #24
+        + Fieldref [name/tanglei/www/d.a Ljava/lang/String;]
+      [232] aload v12
+      [234] invokevirtual #32
+        + Methodref [java/lang/Exception.getMessage ()Ljava/lang/String;]
+      [237] invokestatic #25
+        + Methodref [android/util/Log.e (Ljava/lang/String;Ljava/lang/String;)I]
+      [240] pop
+      [241] aload v10
+      [243] athrow
+      [244] getstatic #24
+        + Fieldref [name/tanglei/www/d.a Ljava/lang/String;]
+      [247] aload v4
+      [249] invokestatic #26
+        + Methodref [android/util/Log.i (Ljava/lang/String;Ljava/lang/String;)I]
+      [252] pop
+      [253] aload_3 v3
+      [254] ifnull +7 (target=261)
+      [257] aload_3 v3
+      [258] invokevirtual #28
+        + Methodref [java/io/DataOutputStream.close ()V]
+      [261] aload_2 v2
+      [262] invokevirtual #33
+        + Methodref [java/lang/Process.destroy ()V]
+      [265] goto +17 (target=282)
+      [268] astore v12
+      [270] getstatic #24
+        + Fieldref [name/tanglei/www/d.a Ljava/lang/String;]
+      [273] aload v12
+      [275] invokevirtual #32
+        + Methodref [java/lang/Exception.getMessage ()Ljava/lang/String;]
+      [278] invokestatic #25
+        + Methodref [android/util/Log.e (Ljava/lang/String;Ljava/lang/String;)I]
+      [281] pop
+      [282] aload v4
+      [284] areturn
+      Code attribute exceptions (count = 5):
+      - ExceptionInfo (8 -> 139: 142):
+      + Class [java/lang/Exception]
+      - ExceptionInfo (169 -> 181: 184):
+      + Class [java/lang/Exception]
+      - ExceptionInfo (8 -> 160: 201):
+      - ExceptionInfo (212 -> 224: 227):
+      + Class [java/lang/Exception]
+      - ExceptionInfo (253 -> 265: 268):
+      + Class [java/lang/Exception]
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 14):
+        - [51] Var: [a:java/lang/String][a:java/lang/String][a:java/lang/Process][a:java/io/DataOutputStream][a:java/lang/String][a:java/io/OutputStream][a:java/io/DataOutputStream][a:java/lang/String][a:[Ljava/lang/String;][i], Stack: 
+        - [84] Var: ..., Stack: (empty)
+        - [142] Var: [a:java/lang/String][a:java/lang/String][a:java/lang/Process][a:java/io/DataOutputStream][a:java/lang/String], Stack: [a:java/lang/Exception]
+        - [177] Var: [a:java/lang/String][a:java/lang/String][a:java/lang/Process][a:java/io/DataOutputStream][a:java/lang/String][a:java/lang/Exception][T][T][T][T][T][a:java/lang/String], Stack: 
+        - [184] Var: ..., Stack: [a:java/lang/Exception]
+        - [198] Var: ..., Stack: (empty)
+        - [201] Var: [a:java/lang/String][a:java/lang/String][a:java/lang/Process][a:java/io/DataOutputStream][a:java/lang/String], Stack: [a:java/lang/Throwable]
+        - [220] Var: [a:java/lang/String][a:java/lang/String][a:java/lang/Process][a:java/io/DataOutputStream][a:java/lang/String][T][T][T][T][T][a:java/lang/Throwable], Stack: 
+        - [227] Var: ..., Stack: [a:java/lang/Exception]
+        - [241] Var: ..., Stack: (empty)
+        - [244] Var: [a:java/lang/String][a:java/lang/String][a:java/lang/Process][a:java/io/DataOutputStream][a:java/lang/String], Stack: 
+        - [261] Var: ..., Stack: (empty)
+        - [268] Var: ..., Stack: [a:java/lang/Exception]
+        - [282] Var: ..., Stack: (empty)
+  + Method:       a(Ljava/io/InputStream;)Ljava/lang/String;
+    Access flags: 0xa
+      = private static java.lang.String a(java.io.InputStream)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 48, locals = 4, stack = 6):
+      [0] new #18
+        + Class [java/lang/StringBuffer]
+      [3] dup
+      [4] invokespecial #42
+        + Methodref [java/lang/StringBuffer.<init> ()V]
+      [7] astore_1 v1
+      [8] sipush 1024
+      [11] newarray 8
+      [13] astore_2 v2
+      [14] goto +18 (target=32)
+      [17] aload_1 v1
+      [18] new #17
+        + Class [java/lang/String]
+      [21] dup
+      [22] aload_2 v2
+      [23] iconst_0
+      [24] iload_3 v3
+      [25] invokespecial #39
+        + Methodref [java/lang/String.<init> ([BII)V]
+      [28] invokevirtual #43
+        + Methodref [java/lang/StringBuffer.append (Ljava/lang/String;)Ljava/lang/StringBuffer;]
+      [31] pop
+      [32] aload_0 v0
+      [33] aload_2 v2
+      [34] invokevirtual #31
+        + Methodref [java/io/InputStream.read ([B)I]
+      [37] dup
+      [38] istore_3 v3
+      [39] iconst_m1
+      [40] ificmpne -23 (target=17)
+      [43] aload_1 v1
+      [44] invokevirtual #44
+        + Methodref [java/lang/StringBuffer.toString ()Ljava/lang/String;]
+      [47] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 2):
+        - [17] Var: ...[a:java/lang/StringBuffer][a:[B][i], Stack: (empty)
+        - [32] Var: -1, Stack: (empty)
+
+Class file attributes (count = 0):
+

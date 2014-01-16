@@ -1,0 +1,55 @@
+name.tanglei.www.AirplaneModeService -> name.tanglei.www.a:
+    int ALLOW_WRITE_SECURE_SETTINGS -> a
+    java.lang.String HigherAirplaneModePref1 -> b
+    java.lang.String HigherAirplaneModePref2 -> c
+    void setAirplane(android.content.Context,boolean) -> a
+    boolean isAirplaneModeOn(android.content.Context) -> a
+    boolean isAirplaneModeOnLow(android.content.Context) -> b
+    void changeAirplaneMode(android.content.Context,int) -> a
+    boolean isAirplaneModeOnHigh(android.content.Context) -> c
+    void setSettingsOnHigh(android.content.Context,int) -> b
+    void setSettingsOnLow(android.content.Context,int) -> c
+name.tanglei.www.AlarmReceiver -> name.tanglei.www.AlarmReceiver:
+    android.content.Context context -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+    void setAirPlaneState(boolean) -> a
+name.tanglei.www.FlightModeSwitcher -> name.tanglei.www.FlightModeSwitcher:
+    java.lang.String TAG -> a
+    java.lang.String PreferenceKey -> b
+    java.util.Calendar calendar -> c
+    android.widget.RadioButton startBtn -> d
+    android.widget.RadioButton stopBtn -> e
+    android.widget.TimePicker startTimePicker -> f
+    android.widget.TimePicker stopTimePicker -> g
+    int startHour -> h
+    int startMinute -> i
+    int stopHour -> j
+    int stopMinute -> k
+    boolean currentState -> l
+    android.content.Intent startIntent -> m
+    android.content.Intent endIntent -> n
+    android.app.PendingIntent startPendingIntent -> o
+    android.app.PendingIntent endPendingIntent -> p
+    android.view.View$OnClickListener controlBtnClickListener -> q
+    void onCreate(android.os.Bundle) -> onCreate
+    void onResume() -> onResume
+    void onStop() -> onStop
+    void startSchedule(boolean) -> a
+    void setTimeToPreference() -> a
+    void onTimeChanged(android.widget.TimePicker,int,int) -> onTimeChanged
+    boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    void showAlertDialog(java.lang.String,java.lang.String) -> a
+    void showAlertDialog(java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener) -> a
+    java.lang.String formatTime(long) -> a
+name.tanglei.www.FlightModeSwitcher$1 -> name.tanglei.www.b:
+    name.tanglei.www.FlightModeSwitcher this$0 -> a
+    void onClick(android.view.View) -> onClick
+name.tanglei.www.FlightModeSwitcher$2 -> name.tanglei.www.c:
+    name.tanglei.www.FlightModeSwitcher this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+name.tanglei.www.ShellUtil -> name.tanglei.www.d:
+    java.lang.String TAG -> a
+    java.lang.String runRootCmd(java.lang.String) -> a
+    java.lang.String runRootCmd(java.lang.String,java.lang.String) -> a
+    java.lang.String inputStreamToString(java.io.InputStream) -> a

@@ -1,0 +1,37 @@
+name.tanglei.www.AlarmReceiver
+name.tanglei.www.AlarmReceiver: AlarmReceiver()
+name.tanglei.www.FlightModeSwitcher
+name.tanglei.www.FlightModeSwitcher: FlightModeSwitcher()
+name.tanglei.www.R$drawable: int ic_action_airplane_mode_off
+name.tanglei.www.R$drawable: int ic_lancher
+name.tanglei.www.R$id: int currentstate
+name.tanglei.www.R$id: int endTimePicker
+name.tanglei.www.R$id: int line1
+name.tanglei.www.R$id: int line2
+name.tanglei.www.R$id: int start
+name.tanglei.www.R$id: int startTimePicker
+name.tanglei.www.R$id: int stop
+name.tanglei.www.R$layout: int main
+name.tanglei.www.R$string: int aboutContent
+name.tanglei.www.R$string: int aboutTitle
+name.tanglei.www.R$string: int airplanemode_error
+name.tanglei.www.R$string: int airplanemode_off_tip
+name.tanglei.www.R$string: int airplanemode_on_tip
+name.tanglei.www.R$string: int app_name
+name.tanglei.www.R$string: int belowtip
+name.tanglei.www.R$string: int endtime_tip
+name.tanglei.www.R$string: int helpContent
+name.tanglei.www.R$string: int helpTitle
+name.tanglei.www.R$string: int menuAbout
+name.tanglei.www.R$string: int menuHelp
+name.tanglei.www.R$string: int nextStartTipPref
+name.tanglei.www.R$string: int noCheckContent
+name.tanglei.www.R$string: int noCheckTitle
+name.tanglei.www.R$string: int noRootError
+name.tanglei.www.R$string: int setup_off
+name.tanglei.www.R$string: int setup_on
+name.tanglei.www.R$string: int start
+name.tanglei.www.R$string: int starttime_tip
+name.tanglei.www.R$string: int state
+name.tanglei.www.R$string: int stop
+name.tanglei.www.R$string: int timeFormat
