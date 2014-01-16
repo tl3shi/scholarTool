@@ -38,6 +38,9 @@ public class AlarmReceiver extends BroadcastReceiver
 
 	public void setAirPlaneState(boolean state)
 	{
+		boolean isEnabled = AirplaneModeService.isAirplaneModeOn(context);
+		if (isEnabled == state)
+			return;
 		try
 		{
 			AirplaneModeService.setAirplane(context, state);
