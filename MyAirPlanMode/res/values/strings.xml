@@ -17,6 +17,8 @@
     <string name="aboutTitle">关于</string>
     <string name="aboutContent">意见反馈：admin@tanglei.name</string>
     <string name="helpContent">应该不用教吧?</string>
+    <string name="noCheckTitle">您在开玩笑?</string>
+    <string name="noCheckContent">没选是否开启呢?</string>
     <string name="helpTitle">帮助</string>
     <string name="nextStartTipPref">下次飞行模式时间是： </string>
     <string name="timeFormat">MM月dd日  HH:mm</string>

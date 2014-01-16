@@ -97,10 +97,9 @@ public class AirplaneModeService
 	}
 
 	// settings put global airplane_mode_on 1(0)
-	// am broadcast -a android.intent.action.AIRPLANE_MODE --ez state
-	// true(false)
+	// am broadcast -a android.intent.action.AIRPLANE_MODE --ez state true(false)
 
-	private static String HigherAirplaneModePref1 = "settings put global airplane_mode_on ";
-	private static String HigherAirplaneModePref2 = "am broadcast -a android.intent.action.AIRPLANE_MODE --ez state ";
+	public static String HigherAirplaneModePref1 = "settings put global airplane_mode_on ";
+	public static String HigherAirplaneModePref2 = "am broadcast -a android.intent.action.AIRPLANE_MODE --ez state ";
 
 }

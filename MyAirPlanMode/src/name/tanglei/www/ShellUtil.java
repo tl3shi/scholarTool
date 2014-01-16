@@ -38,7 +38,12 @@ public class ShellUtil
 	
 	//http://blog.csdn.net/alexander_xfl/article/details/9150971
 	//command can be some cmd, use ; to split
+	
 	public static String runRootCmd(String command)
+	{
+		return runRootCmd(command,  ";");
+	}
+	public static String runRootCmd(String command, String split)
 	{
 		Process process = null;
 		DataOutputStream os = null;
@@ -49,7 +54,7 @@ public class ShellUtil
 			OutputStream outstream = process.getOutputStream();
 			DataOutputStream dataOutputStream = new DataOutputStream(outstream);
 			String temp = "";
-			String [] cmds = command.split(";");
+			String [] cmds = command.split(split);
 			for(int i = 0; i < cmds.length; i++)
 				temp += cmds[i] + "\n";
 			dataOutputStream.writeBytes(temp);
@@ -58,13 +63,15 @@ public class ShellUtil
 			dataOutputStream.flush();
 			process.waitFor();
 			result = inputStreamToString(process.getInputStream());
-			Log.e(TAG, result);
+			Log.i(TAG, temp);
+			
 		} catch (Exception e)
 		{
+			Log.e(TAG, e.getMessage());
 			return result;
 		} finally
 		{
-
+			Log.i(TAG, result);
 			try
 			{
 				if (os != null)
@@ -74,6 +81,7 @@ public class ShellUtil
 				process.destroy();
 			} catch (Exception e)
 			{
+				Log.e(TAG, e.getMessage());
 			}
 		}
 		return result;

@@ -61,9 +61,6 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 		startTimePicker.setIs24HourView(true);
 		stopTimePicker.setIs24HourView(true);
 		
-		startTimePicker.setOnTimeChangedListener(this);
-		stopTimePicker.setOnTimeChangedListener(this);
-		
 		SharedPreferences preferences = getSharedPreferences(
 				PreferenceKey, Context.MODE_PRIVATE);
 		startHour = preferences.getInt("startHour", 0);
@@ -75,8 +72,9 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 			firsttime = true;
 		currentState = preferences.getBoolean("currentState", true);
 		
-		startTimePicker.setCurrentHour(startHour);
-		startTimePicker.setCurrentMinute(startMinute);
+		Log.i(TAG, "load time data from preference:" + startHour + ":" + startMinute);
+		startTimePicker.setCurrentHour(startHour); //this should put before the set on timechangelisten
+		startTimePicker.setCurrentMinute(startMinute);//for it will invoke the timechange
 		stopTimePicker.setCurrentHour(stopHour);
 		stopTimePicker.setCurrentMinute(stopMinute);
 
@@ -94,6 +92,8 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 			stopBtn.setChecked(!currentState);
 		}
 		
+		startTimePicker.setOnTimeChangedListener(this);
+		stopTimePicker.setOnTimeChangedListener(this);
 	}
 	void test()
 	{
@@ -145,10 +145,10 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 	{
 		if(!(startBtn.isChecked() || stopBtn.isChecked()))
 		{	
-			showAlertDialog("", "");
+			showAlertDialog(getString(R.string.noCheckTitle), getString(R.string.noCheckContent));
 			return;
 		}
-		Log.d(TAG, " auto flight mode start ?" + startBtn.isChecked());
+		Log.d(TAG, " auto flight mode start ? " + startBtn.isChecked());
 		if(startBtn.isChecked())
 		{
 			calendar.setTimeInMillis(System.currentTimeMillis());
@@ -167,7 +167,7 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 				nextStarttime += 24 * 60 * 60 * 1000;
 			
 			alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
-					nextStarttime, 24 * 60 * 60 * 1000, startPendingIntent);
+					nextStarttime - 55*1000, 24 * 60 * 60 * 1000, startPendingIntent);
 					
 			endIntent = new Intent(this, AlarmReceiver.class);
 			endIntent.putExtra("endState", 1);
@@ -182,7 +182,7 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 				nextEndtime += 24 * 60 * 60 * 1000;
 			
 			alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
-					nextEndtime, 24 * 60 * 60 * 1000,
+					nextEndtime - 55*1000, 24 * 60 * 60 * 1000,
 					endPendingIntent);
 			
 			Log.i(TAG, "next start:" + nextStarttime);
@@ -221,6 +221,7 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 		editor.putInt("endMinute", stopMinute);
 		editor.putBoolean("currentState", currentState);
 		
+		Log.i(TAG, "save time to preference:" + startHour + ":" + startMinute);
 		editor.commit();
 	}
 
