@@ -214,6 +214,7 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 				Toast.makeText(FlightModeSwitcher.this, getString(R.string.setup_off),
 						Toast.LENGTH_SHORT).show();
 		}
+		setTimeToPreference();
 	}
 	
 	public void setTimeToPreference()
