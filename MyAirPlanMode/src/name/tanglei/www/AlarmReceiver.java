@@ -49,7 +49,7 @@ public class AlarmReceiver extends BroadcastReceiver
 			else 
 				tip = context.getString(R.string.airplanemode_off_tip);
 			
-			Toast.makeText(context, tip, Toast.LENGTH_SHORT).show();
+			Toast.makeText(context, tip, Toast.LENGTH_LONG).show();
 		} catch (Exception e)
 		{
 			Log.e(FlightModeSwitcher.TAG, e.getMessage());
