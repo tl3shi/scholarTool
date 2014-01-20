@@ -8,7 +8,6 @@ import android.widget.Toast;
 
 public class AlarmReceiver extends BroadcastReceiver
 {
-	//private String action = "name.tanglei.www.ACTION_RECEIVE";
 	private Context context;
 
 	@Override

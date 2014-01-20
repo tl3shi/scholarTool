@@ -73,7 +73,7 @@
             android:textSize="20sp"
             android:text="@string/state" />
 
-        <RadioGroup
+        <!-- <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -92,9 +92,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/stop" />
-        </RadioGroup>
+        </RadioGroup> -->
+        
+      <de.ankri.views.Switch   
+        android:id="@+id/btn_switch"  
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"  
+        android:layout_marginRight="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:textOn="@string/start"  
+        android:textOff="@string/stop"  
+        />
         
     </RelativeLayout>
+    
+      <!-- <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_below="@id/currentstate"
+            android:layout_alignParentRight="true"
+            android:minWidth="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/menuSetOnRightnow" /> -->
+     
+     
+      
     <!-- remote the bottom tip
     <TextView
         android:layout_width="fill_parent"

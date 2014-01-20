@@ -4,7 +4,7 @@
 	<string name="belowtip">意见反馈：admin@tanglei.name</string>
 	<string name="endtime_tip">关闭飞行模式</string>
 	<string name="starttime_tip">开启飞行模式</string>
-	<string name="state">        当 前 状 态</string>
+	<string name="state">当  前  状  态</string>
 	<string name="start">开启</string>
 	<string name="stop">关闭</string>
 	<string name="airplanemode_on_tip">正在开启飞行模式</string>
@@ -14,6 +14,8 @@
     <string name="setup_off">设置已经关闭</string>
     <string name="menuAbout">关于</string>
     <string name="menuHelp">帮助</string>
+    <string name="menuSetOnRightnow">立即启动飞行模式</string>
+    <string name="menuSetOffRightnow">立即关闭飞行模式</string>
     <string name="aboutTitle">关于</string>
     <string name="aboutContent">意见反馈：admin@tanglei.name</string>
     <string name="helpContent">应该不用教吧?</string>
@@ -23,4 +25,7 @@
     <string name="nextStartTipPref">下次飞行模式时间是： </string>
     <string name="timeFormat">MM月dd日  HH:mm</string>
     <string name="noRootError">您的手机没有Root，我搞不定。。。</string>
+    <string name="firstTimeTip">您的手机版本太高端(>=4.2)了，且没有Root，我搞不定</string>
+    <string name="firstTimeTipNormal">首次启动</string>
+    <string name="firstTimeTipTitle">欢迎您使用，任何意见建议请发送邮件:admin@tanglei.name</string>
 </resources>
