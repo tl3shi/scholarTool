@@ -29,7 +29,7 @@
     <string name="firstTimeTipNormal">首次启动</string>
     <string name="firstTimeTipTitle">欢迎您使用，任何意见建议请发送邮件:admin@tanglei.name</string>
     
-    <string name="confirmAirmodeTitle">手机即将进入飞行模式？</string>
+    <string name="confirmAirmodeTitle">飞行模式确认</string>
     <string name="confirmAirmodeContent">您的手机即将进入飞行模式，点“确定”马上进入飞行模式，点“取消”跳过本次设置</string>
     <string name="confirmAirmodeButtonOK">确定</string>
     <string name="confirmAirmodeButtonCancel">取消</string>
