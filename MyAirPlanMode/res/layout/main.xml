@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
-    android:orientation="vertical" >
+    android:orientation="vertical" xmlns:app="http://schemas.android.com/apk/res/name.tanglei.www">
 
     <RelativeLayout
         android:id="@+id/line1"
@@ -100,10 +100,9 @@
         android:layout_height="wrap_content"  
         android:layout_marginRight="20dp"
         android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:textOn="@string/start"  
-        android:textOff="@string/stop"  
-        />
+        android:layout_alignParentRight="true" 
+        app:textOn="@string/start"  
+        app:textOff="@string/stop"  />
         
     </RelativeLayout>
     

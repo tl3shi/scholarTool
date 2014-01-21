@@ -2,7 +2,6 @@ package name.tanglei.www;
 
 import android.app.Activity;
 import android.app.AlarmManager;
-import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -236,7 +235,7 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 	}
 	
 	public void showAlertDialog(String title, String content) {
-        showAlertDialog(title, content, new OnClickListener() {
+        Utils.showAlertDialog(this, title, content, new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
@@ -244,17 +243,7 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
         });
     }
 
-    public void showAlertDialog(String title, String content,
-            DialogInterface.OnClickListener listener) {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                this);
-        alertDialogBuilder.setTitle(title);
-        alertDialogBuilder.setMessage(content);
-        alertDialogBuilder.setCancelable(true);
-        alertDialogBuilder.setPositiveButton(
-        		this.getString(android.R.string.ok), listener);
-        alertDialogBuilder.show();
-    }
+    
     
     
 }

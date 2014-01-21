@@ -7,8 +7,10 @@ import java.util.Date;
 import java.util.Locale;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -172,18 +174,38 @@ public class Utils
 	
 	public static boolean isRooted()
 	{
-        boolean root = false;  
-        try {  
-            if ((!new File("/system/bin/su").exists())  
-                    && (!new File("/system/xbin/su").exists())) {  
-                root = false;  
-            } else {  
-                root = true;  
-            }  
-        } catch (Exception e) {  
-        	root = false;
-        	Log.i(TAG, e.getLocalizedMessage());
-        }  
-        return root;  
+		boolean root = false;
+		try
+		{
+			if ((!new File("/system/bin/su").exists())
+					&& (!new File("/system/xbin/su").exists()))
+			{
+				root = false;
+			} else
+			{
+				root = true;
+			}
+		} catch (Exception e)
+		{
+			root = false;
+			Log.i(TAG, e.getLocalizedMessage());
+		}
+		return root;
 	}
+	
+	public static void showAlertDialog(Context context, String title,
+			String content, DialogInterface.OnClickListener listener)
+	{
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+				context);
+		alertDialogBuilder.setTitle(title);
+		alertDialogBuilder.setMessage(content);
+		alertDialogBuilder.setCancelable(true);
+		alertDialogBuilder.setPositiveButton(
+				context.getString(android.R.string.ok), listener);
+		alertDialogBuilder.show();
+	}
+	
+	
+	
 }

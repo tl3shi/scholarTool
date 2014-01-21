@@ -4,18 +4,14 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
-import android.widget.Toast;
 
 public class AlarmReceiver extends BroadcastReceiver
 {
-	private Context context;
-
+	public final static String ACTION_TAG = "airmode_action";
 	@Override
 	public void onReceive(Context context, Intent intent)
 	{
 		Log.d(FlightModeSwitcher.TAG, "the alarm time is up");
-		
-		this.context = context;
 		
 		int startState = intent.getIntExtra("startState", -1);
 		int endState = intent.getIntExtra("endState", -1);
@@ -23,37 +19,31 @@ public class AlarmReceiver extends BroadcastReceiver
 		Log.d(FlightModeSwitcher.TAG, "start state:" + startState);
 		Log.d(FlightModeSwitcher.TAG, "end state:" + endState);
 		
+		boolean isEnabled = AirplaneModeService.isAirplaneModeOn(context);
+		
+		
 		if (startState == 1)
 		{
-			Log.d(FlightModeSwitcher.TAG, "set the fly mode true");
-			setAirPlaneState(true);
+			if (isEnabled == true)
+				return;
+			
+			Intent i = new Intent(context, ReceivedAction.class); 
+		    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); 
+		    i.putExtra(ACTION_TAG, true);
+		    context.startActivity(i);
+			
 		}
 		if (endState == 1)
 		{
-			Log.d(FlightModeSwitcher.TAG, "set the fly mode false");
-			setAirPlaneState(false);
-		}
-	}
-
-	public void setAirPlaneState(boolean state)
-	{
-		boolean isEnabled = AirplaneModeService.isAirplaneModeOn(context);
-		if (isEnabled == state)
-			return;
-		try
-		{
-			AirplaneModeService.setAirplane(context, state);
-			String tip = "";
-			if(state)
-				tip = context.getString(R.string.airplanemode_on_tip);
-			else 
-				tip = context.getString(R.string.airplanemode_off_tip);
+			if(isEnabled == false)
+				return;
 			
-			Toast.makeText(context, tip, Toast.LENGTH_LONG).show();
-		} catch (Exception e)
-		{
-			Log.e(FlightModeSwitcher.TAG, e.getMessage());
-			Toast.makeText(context, context.getString(R.string.airplanemode_error), Toast.LENGTH_SHORT).show();
+			Intent i = new Intent(context, ReceivedAction.class); 
+		    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); 
+		    i.putExtra(ACTION_TAG, false);
+		    context.startActivity(i);
 		}
 	}
+	
+	
 }
