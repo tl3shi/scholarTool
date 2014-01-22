@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.provider.Settings;
 import android.util.Log;
-import android.widget.Toast;
 
 public class AirplaneModeService
 {
@@ -85,10 +84,9 @@ public class AirplaneModeService
 			commond += HigherAirplaneModePref2 + "true";
 		else
 			commond += HigherAirplaneModePref2 + "false";
-		Log.i("www.tanglei.name", commond);
+		Log.i(TAG, commond);
 		String result = ShellUtil.runRootCmd(commond);
-		if(!result.contains("result=0"))
-			Toast.makeText(context, context.getString(R.string.noRootError), Toast.LENGTH_SHORT).show();
+		Log.i(TAG, result);
 	}
 
 	@SuppressWarnings("deprecation")

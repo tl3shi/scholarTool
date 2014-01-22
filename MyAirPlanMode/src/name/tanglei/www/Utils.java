@@ -56,7 +56,7 @@ public class Utils
 				.edit();
 		editor.putBoolean("rooted", root);
 		editor.commit();
-		Log.i(TAG, "rooted ? " + root + "write to preference.");
+		Log.i(TAG, "rooted ? " + root + " write to preference.");
 	}
 	
 	
