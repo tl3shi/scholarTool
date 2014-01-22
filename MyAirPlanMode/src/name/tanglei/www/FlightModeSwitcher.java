@@ -47,6 +47,12 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+		
+		if(! Utils.getStoredPreferenceRooted(this) && android.os.Build.VERSION.SDK_INT >= 17)//no root
+		{
+			iCannotDoit();
+		}
+		
 		setContentView(R.layout.main);
 		startTimePicker = (TimePicker) findViewById(R.id.startTimePicker);
 		stopTimePicker = (TimePicker) findViewById(R.id.endTimePicker);
@@ -89,20 +95,13 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 			
 			if(android.os.Build.VERSION.SDK_INT >= 17 && !Utils.isRooted())
 			{
-				showAlertDialog(getString(R.string.noRootErrorTitle), getString(R.string.noRootError));
 				Utils.setStoredPreferenceRooted(this, false);
-				this.finish();
-				System.exit(0);
+				iCannotDoit();
 			}
 			
 			Utils.setStoredPreferenceRooted(this, true);
 		}
-		if(! Utils.getStoredPreferenceRooted(this) && android.os.Build.VERSION.SDK_INT >= 17)//no root
-		{
-			showAlertDialog(getString(R.string.noRootErrorTitle), getString(R.string.noRootError));
-			this.finish();
-			System.exit(0);
-		}
+		
 		startSchedule(false);
 	}
 	
@@ -256,7 +255,20 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
             }
         });
     }
-
+	
+	public void iCannotDoit()
+	{
+		Log.i(TAG, "no root and sdk =" + android.os.Build.VERSION.SDK_INT);
+		
+		Utils.showAlertDialog(this, getString(R.string.noRootErrorTitle), getString(R.string.noRootError), new OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+    			FlightModeSwitcher.this.finish();
+    			System.exit(0);
+            }
+        });
+	}
     
     
     

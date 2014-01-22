@@ -45,7 +45,7 @@ public class Utils
 	{
 		SharedPreferences preferences = context.getSharedPreferences(
 				PreferenceKey, Context.MODE_PRIVATE);
-		return preferences.getBoolean("root", true);
+		return preferences.getBoolean("rooted", true);
 	}
 	
 	public static void setStoredPreferenceRooted(Context context, boolean root)

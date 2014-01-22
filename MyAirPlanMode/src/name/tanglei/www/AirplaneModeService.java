@@ -54,12 +54,18 @@ public class AirplaneModeService
 			setSettingsOnLow(context, value);
 		else
 			setSettingsOnHigh(context, value);
-
-		// should send a broad cast, or else, it will not take effect
-		Intent intent = new Intent(Intent.ACTION_AIRPLANE_MODE_CHANGED);
-		intent.putExtra("state", value == 1);
-		context.sendBroadcast(intent);
-		Log.i(TAG, "ACTION_AIRPLANE_MODE_CHANGED: " + value);
+		try{
+			// should send a broad cast, or else, it will not take effect
+			Intent intent = new Intent(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+			intent.putExtra("state", value == 1);
+			context.sendBroadcast(intent);
+			Log.i(TAG, "ACTION_AIRPLANE_MODE_CHANGED: " + value);
+		}catch(Exception e)
+		{
+			//TODO java.lang.SecurityException: Permission Denial: 
+			//not allowed to send broadcast android.intent.action.AIRPLANE_MODE from pid=912, uid=10039
+			Log.e(TAG, e.getLocalizedMessage());
+		}
 	}
 
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
