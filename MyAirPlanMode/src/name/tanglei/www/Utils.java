@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class Utils
 {
 	private static final String PreferenceKey = FlightModeSwitcher.class.getName();
-	private static final String TAG = FlightModeSwitcher.class.getName();
+	private static final String TAG = Utils.class.getName();
 	
 	private static final String START_HOUR_KEY  = "startHour";
 	private static final String STOP_HOUR_KEY  = "stopHour";
@@ -40,6 +40,25 @@ public class Utils
 		
 		return new Config(startHour, startMinute, stopHour, stopMinute, currentState);
 	}
+	
+	public static boolean getStoredPreferenceRooted(Context context)
+	{
+		SharedPreferences preferences = context.getSharedPreferences(
+				PreferenceKey, Context.MODE_PRIVATE);
+		return preferences.getBoolean("root", true);
+	}
+	
+	public static void setStoredPreferenceRooted(Context context, boolean root)
+	{
+		SharedPreferences preferences = context.getSharedPreferences(
+				PreferenceKey, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences
+				.edit();
+		editor.putBoolean("rooted", root);
+		editor.commit();
+		Log.i(TAG, "rooted ? " + root + "write to preference.");
+	}
+	
 	
 	public static boolean updatePreference(Context context, Config config)
 	{
@@ -180,10 +199,14 @@ public class Utils
 			if ((!new File("/system/bin/su").exists())
 					&& (!new File("/system/xbin/su").exists()))
 			{
-				root = false;
+				return false;
 			} else
 			{
-				root = true;
+				String result = ShellUtil.runRootCmd("ls /system/bin");
+				if(result.length() == 0)
+				     return false;
+				else
+					return true;
 			}
 		} catch (Exception e)
 		{

@@ -9,6 +9,7 @@
 	<string name="stop">关闭</string>
 	<string name="airplanemode_on_tip">正在开启飞行模式</string>
     <string name="airplanemode_off_tip">正在关闭飞行模式</string>
+    <string name="airplanemode_action_title">飞行模式调整中</string>
     <string name="airplanemode_error">飞行模式设置失败</string>
     <string name="setup_on">设置已经启用</string>
     <string name="setup_off">设置已经关闭</string>
@@ -24,13 +25,13 @@
     <string name="helpTitle">帮助</string>
     <string name="nextStartTipPref">下次飞行模式时间是： </string>
     <string name="timeFormat">MM月dd日  HH:mm</string>
-    <string name="noRootError">您的手机没有Root，我搞不定。。。</string>
-    <string name="firstTimeTip">您的手机版本太高端(>=4.2)了，且没有Root，我搞不定</string>
-    <string name="firstTimeTipNormal">首次启动</string>
-    <string name="firstTimeTipTitle">欢迎您使用，任何意见建议请发送邮件:admin@tanglei.name</string>
+    <string name="noRootError">您的手机版本太高端(>=4.2)了，且没有Root，我搞不定～～</string>
+    <string name="noRootErrorTitle">高端货～</string>
+    <string name="firstTimeTipNormal">欢迎您使用，任何意见建议请发送邮件至:admin@tanglei.name</string>
+    <string name="firstTimeTipTitle">欢迎您～</string>
     
     <string name="confirmAirmodeTitle">飞行模式确认</string>
-    <string name="confirmAirmodeContent">您的手机即将进入飞行模式，点“确定”马上进入飞行模式，点“取消”跳过本次设置</string>
+    <string name="confirmAirmodeContentHtml"><Data><![CDATA[<small>您的手机即将进入飞行模式，点<b>“确定”</b>马上进入飞行模式，点<b>“取消”</b>跳过本次设置</small> ]]></Data></string>
     <string name="confirmAirmodeButtonOK">确定</string>
     <string name="confirmAirmodeButtonCancel">取消</string>
     <string name="cancelAirmodeToast">取消成功</string>

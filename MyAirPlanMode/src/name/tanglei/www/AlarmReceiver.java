@@ -8,16 +8,17 @@ import android.util.Log;
 public class AlarmReceiver extends BroadcastReceiver
 {
 	public final static String ACTION_TAG = "airmode_action";
+	private String TAG = AlarmReceiver.class.getName();
 	@Override
 	public void onReceive(Context context, Intent intent)
 	{
-		Log.d(FlightModeSwitcher.TAG, "the alarm time is up");
+		Log.d(TAG, "the alarm time is up");
 		
 		int startState = intent.getIntExtra("startState", -1);
 		int endState = intent.getIntExtra("endState", -1);
 		
-		Log.d(FlightModeSwitcher.TAG, "start state:" + startState);
-		Log.d(FlightModeSwitcher.TAG, "end state:" + endState);
+		Log.d(TAG, "start state:" + startState);
+		Log.d(TAG, "end state:" + endState);
 		
 		boolean isEnabled = AirplaneModeService.isAirplaneModeOn(context);
 		

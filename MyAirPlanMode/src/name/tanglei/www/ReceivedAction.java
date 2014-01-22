@@ -4,35 +4,56 @@ import java.lang.ref.WeakReference;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
+import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.Html;
+import android.text.Spanned;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ReceivedAction extends Activity
 {
+	public static String TAG = ReceivedAction.class.getName();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
+		Log.i(TAG, "ReceivedAction received the action from alarmreceiver");
 	    super.onCreate(savedInstanceState);
 	    Intent intent = this.getIntent();
         boolean action = intent.getBooleanExtra(AlarmReceiver.ACTION_TAG, false);
         
+        IntentFilter intentFilter = new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+
+    	BroadcastReceiver airmodechanged_receiver = new BroadcastReceiver() {
+    	      @Override
+    	      public void onReceive(Context context, Intent intent) {
+    	    	    ReceivedAction.this.finish();
+    	            Log.d(TAG, "airplane mode state has changed");
+    	            dismissProgressDialog();
+    	      }
+    	};
+
+    	this.registerReceiver(airmodechanged_receiver, intentFilter);
+    	
         if(action)
         {
 	        String title = this.getString(R.string.confirmAirmodeTitle);
-			String content = this.getString(R.string.confirmAirmodeContent);
+			String content = this.getString(R.string.confirmAirmodeContentHtml);
 			
 			showAlertDialog(this, title, content, 
 							R.string.confirmAirmodeButtonOK, 
 							R.string.confirmAirmodeButtonCancel, 
-							oKListener, cancelListener, 3);
+							oKListener, cancelListener);
         }else
         {
         	setAirPlaneState(false);
@@ -45,10 +66,9 @@ public class ReceivedAction extends Activity
 		@Override
 		public void onClick(DialogInterface dialog, int which)
 		{
-			//showProcessdialog
-			Log.d(FlightModeSwitcher.TAG, "set the fly mode true");
+			Log.d(TAG, "user confirm true");
 			setAirPlaneState(true);
-			ReceivedAction.this.finish();
+			
 		}
 	};
 	
@@ -58,7 +78,7 @@ public class ReceivedAction extends Activity
 		public void onClick(DialogInterface dialog, int which)
 		{
 			ReceivedAction.this.finish();
-			Log.d(FlightModeSwitcher.TAG, "cancel the fly mode true");
+			Log.d(TAG, "user confirm false");
 			dialog.dismiss();
 			Toast.makeText(ReceivedAction.this, ReceivedAction.this.getString(R.string.cancelAirmodeToast), Toast.LENGTH_SHORT).show();
 		}
@@ -68,13 +88,21 @@ public class ReceivedAction extends Activity
 	private Button positiveButton;
 	
 	public  void showAlertDialog(Context context, String title,
-			String content, int positive_id, int negative_id, DialogInterface.OnClickListener okListener, 
-			DialogInterface.OnClickListener cancelListener, int delay_seconds)
+			String htmlContent, int positive_id, int negative_id, DialogInterface.OnClickListener okListener, 
+			DialogInterface.OnClickListener cancelListener)
 	{
-		Builder alertDialogBuilder = new AlertDialog.Builder(
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
 				context);
 		alertDialogBuilder.setTitle(title);
-		alertDialogBuilder.setMessage(content);
+		//alertDialogBuilder.setMessage(content);
+		
+		TextView txtView = new TextView(context);
+		txtView.setTextSize(20f);
+		Spanned text = Html.fromHtml(htmlContent);
+		txtView.setText(text);
+		
+		alertDialogBuilder.setView(txtView);
+	   
 		alertDialogBuilder.setPositiveButton(
 				context.getString(positive_id), okListener);
 		alertDialogBuilder.setNegativeButton(
@@ -112,7 +140,7 @@ public class ReceivedAction extends Activity
 		{
 			if(dialog != null)
 			{
-				String txt = this.getString(R.string.confirmAirmodeButtonOK) + "(" + delaycount + " s )";
+				String txt = this.getString(R.string.confirmAirmodeButtonOK) + " (" + delaycount + " s )";
 				positiveButton.setText(txt);
 				countDownTimeHander.sendEmptyMessageDelayed(0, 1000); 
 			}
@@ -122,31 +150,71 @@ public class ReceivedAction extends Activity
 			
 			if(dialog.isShowing())//user does not action
 			{
-				ReceivedAction.this.finish();
-				this.setAirPlaneState(true);
 				dialog.dismiss();
+				this.setAirPlaneState(true);
 			}
 		}
 	}
 	
 	private int delaycount = 5;
 	
+	private ProgressDialog                 progressDialog = null;
+	
 	public void setAirPlaneState(boolean state)
 	{
+		final boolean air_action = state;
 		try
 		{
-			AirplaneModeService.setAirplane(this, state);
 			String tip = "";
 			if(state)
 				tip = this.getString(R.string.airplanemode_on_tip);
 			else 
 				tip = this.getString(R.string.airplanemode_off_tip);
 			
-			Toast.makeText(this, tip, Toast.LENGTH_LONG).show();
+			//Toast.makeText(this, tip, Toast.LENGTH_LONG).show();
+			showProgressDialog(this.getString(R.string.airplanemode_action_title), tip);
+			
+			new Thread()
+			{
+				public void run()
+				{
+					try
+					{
+						Thread.sleep(1*1000);
+					} catch (InterruptedException e)
+					{
+						e.printStackTrace();
+					}
+					AirplaneModeService.setAirplane(ReceivedAction.this,
+							air_action);
+				}
+			}.start();
+			
 		} catch (Exception e)
 		{
-			Log.e(FlightModeSwitcher.TAG, e.getMessage());
+			Log.e(TAG, e.getMessage());
 			Toast.makeText(this, this.getString(R.string.airplanemode_error), Toast.LENGTH_SHORT).show();
-		}
+			dismissProgressDialog();
+		} 
 	}
+	
+	 public void showProgressDialog(String title, String content) 
+	 {
+		 if(progressDialog == null)
+	        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle(title);
+        progressDialog.setMessage(content);
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+        Log.i(TAG, "show progress dialog");
+	 }
+	 
+	 public void dismissProgressDialog() 
+	 {
+		 if(!progressDialog.isShowing())
+			 return;
+		 progressDialog.dismiss();
+		 Log.i(TAG, "dismiss progress dialog");
+	 }
+	
 }

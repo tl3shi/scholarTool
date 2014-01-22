@@ -16,7 +16,9 @@ public class AirplaneModeService
 	// System that have moved to Settings.Global, the write operation will
 	// silently fail
 	// when running on Android 4.2 and higher.
-
+	
+	private static String TAG = AirplaneModeService.class.getName();
+	
 	public static int ALLOW_WRITE_SECURE_SETTINGS = 17; // my defy ok.miui
 														// 2.3.7, os kerner 2.2
 
@@ -58,7 +60,7 @@ public class AirplaneModeService
 		Intent intent = new Intent(Intent.ACTION_AIRPLANE_MODE_CHANGED);
 		intent.putExtra("state", value == 1);
 		context.sendBroadcast(intent);
-		Log.i(FlightModeSwitcher.TAG, "ACTION_AIRPLANE_MODE_CHANGED: " + value);
+		Log.i(TAG, "ACTION_AIRPLANE_MODE_CHANGED: " + value);
 	}
 
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)

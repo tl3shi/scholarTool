@@ -9,7 +9,7 @@ import android.util.Log;
 
 public class ShellUtil
 {
-	private static String TAG = FlightModeSwitcher.TAG;
+	private static String TAG = ShellUtil.class.getName();
 
 	public static String runCommand(String command)
 	{
@@ -43,6 +43,7 @@ public class ShellUtil
 	{
 		return runRootCmd(command,  ";");
 	}
+	
 	public static String runRootCmd(String command, String split)
 	{
 		Process process = null;

@@ -20,7 +20,7 @@ import de.ankri.views.Switch;
 
 public class FlightModeSwitcher extends Activity implements OnTimeChangedListener
 {
-	static final String TAG = FlightModeSwitcher.class.getName();
+	private static final String TAG = FlightModeSwitcher.class.getName();
 	
 	
 	//private RadioButton startBtn = null;
@@ -85,9 +85,23 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 		
 		if(Utils.isFirstTime(this))
 		{
-			if(android.os.Build.VERSION.SDK_INT >= 17)
-				showAlertDialog(getString(R.string.firstTimeTipTitle), getString(R.string.firstTimeTipNormal));
+			showAlertDialog(getString(R.string.firstTimeTipTitle), getString(R.string.firstTimeTipNormal));
 			
+			if(android.os.Build.VERSION.SDK_INT >= 17 && !Utils.isRooted())
+			{
+				showAlertDialog(getString(R.string.noRootErrorTitle), getString(R.string.noRootError));
+				Utils.setStoredPreferenceRooted(this, false);
+				this.finish();
+				System.exit(0);
+			}
+			
+			Utils.setStoredPreferenceRooted(this, true);
+		}
+		if(! Utils.getStoredPreferenceRooted(this) && android.os.Build.VERSION.SDK_INT >= 17)//no root
+		{
+			showAlertDialog(getString(R.string.noRootErrorTitle), getString(R.string.noRootError));
+			this.finish();
+			System.exit(0);
 		}
 		startSchedule(false);
 	}
