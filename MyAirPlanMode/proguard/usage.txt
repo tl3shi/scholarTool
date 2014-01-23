@@ -19,11 +19,9 @@ de.ankri.views.Switch:
     private static final int SANS
     private static final int SERIF
     private static final int MONOSPACE
-name.tanglei.www.AlarmReceiver:
-    public static final java.lang.String ACTION_TAG
 name.tanglei.www.BuildConfig
 name.tanglei.www.FlightModeSwitcher:
-    111:119:void test()
+    116:124:void test()
 name.tanglei.www.R
 name.tanglei.www.R$attr
 name.tanglei.www.R$drawable
@@ -32,6 +30,9 @@ name.tanglei.www.R$layout
 name.tanglei.www.R$string
 name.tanglei.www.R$style
 name.tanglei.www.R$styleable
+name.tanglei.www.ReceivedAction:
+    public static final java.lang.String ACTION_TAG
+    public static final java.lang.String USERACTION_TAG
 name.tanglei.www.ShellUtil:
     16:36:public static java.lang.String runCommand(java.lang.String)
 name.tanglei.www.Utils:
@@ -40,3 +41,4 @@ name.tanglei.www.Utils:
     private static final java.lang.String START_MINUTE_KEY
     private static final java.lang.String STOP_MINUTE_KEY
     private static final java.lang.String CURRENT_STATE_KEY
+    249:253:public static void sendBroadcastNow(android.content.Context,boolean)

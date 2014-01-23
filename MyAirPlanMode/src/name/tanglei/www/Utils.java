@@ -191,7 +191,7 @@ public class Utils
 		PendingIntent startPendingIntent = PendingIntent.getBroadcast(
 				context, 0, startIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 		
-		Log.i(TAG, "old:" + old_mini_seconds + " new:" + delay_mini_seconds);
+		Log.i(TAG, "old:" + old_mini_seconds + " delay:" + delay_mini_seconds);
 		
 		AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 		

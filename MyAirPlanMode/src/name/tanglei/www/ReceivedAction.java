@@ -24,6 +24,9 @@ public class ReceivedAction extends Activity
 {
 	public static String TAG = ReceivedAction.class.getName();
 
+	public final static String ACTION_TAG = "airmode_action";
+	public final static String USERACTION_TAG = "user_force_Action";
+	
 	private BroadcastReceiver airmodechanged_receiver;
 
 	//if user force action, do not write alarm
@@ -32,20 +35,24 @@ public class ReceivedAction extends Activity
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
-		Log.i(TAG, "ReceivedAction received the action from alarmreceiver");
+		Log.i(TAG, "ReceivedAction received the action");
 	    super.onCreate(savedInstanceState);
 	    Intent intent = this.getIntent();
-        boolean action = intent.getBooleanExtra(AlarmReceiver.ACTION_TAG, false);
-        is_user_force_action  = intent.getBooleanExtra(AlarmReceiver.USERACTION_TAG, false);
+        boolean action = intent.getBooleanExtra(ACTION_TAG, false);
+        is_user_force_action  = intent.getBooleanExtra(USERACTION_TAG, false);
         
         IntentFilter intentFilter = new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
-
+        final String toggle_success_tip = action ? this.getString(R.string.toggle_success_on) : this.getString(R.string.toggle_success_off);
+        
     	airmodechanged_receiver = new BroadcastReceiver() {
     	      @Override
     	      public void onReceive(Context context, Intent intent) {
     	    	    ReceivedAction.this.finish();
     	            Log.d(TAG, "airplane mode state has changed");
     	            dismissProgressDialog();
+    	            
+    	            Toast.makeText(ReceivedAction.this, 
+    	            		toggle_success_tip, Toast.LENGTH_SHORT).show();
     	      }
     	};
     	
@@ -94,7 +101,7 @@ public class ReceivedAction extends Activity
 				Utils.delayOnSchedule(ReceivedAction.this, System.currentTimeMillis(), 24 * 60 * 60 * 1000);
 			
 			ReceivedAction.this.finish();
-			Log.d(TAG, "user confirm false");
+			Log.d(TAG, "user confirm false, is_user_force_action = " + is_user_force_action);
 			dialog.dismiss();
 			Toast.makeText(ReceivedAction.this, ReceivedAction.this.getString(R.string.cancelAirmodeToast), Toast.LENGTH_SHORT).show();
 		}
@@ -110,6 +117,7 @@ public class ReceivedAction extends Activity
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
 				context);
 		alertDialogBuilder.setTitle(title);
+		alertDialogBuilder.setIcon(R.drawable.ic_action_warning);
 		//alertDialogBuilder.setMessage(content);
 		
 		TextView txtView = new TextView(context);

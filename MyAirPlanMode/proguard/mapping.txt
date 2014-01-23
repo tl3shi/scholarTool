@@ -174,6 +174,8 @@ name.tanglei.www.FlightModeSwitcher -> name.tanglei.www.FlightModeSwitcher:
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
     void showAlertDialog(java.lang.String,java.lang.String) -> a
     void iCannotDoit() -> b
+    void showHelpDialog() -> c
+    void showAboutDialog() -> d
 name.tanglei.www.FlightModeSwitcher$1 -> name.tanglei.www.c:
     name.tanglei.www.FlightModeSwitcher this$0 -> a
     void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
@@ -183,43 +185,54 @@ name.tanglei.www.FlightModeSwitcher$2 -> name.tanglei.www.d:
 name.tanglei.www.FlightModeSwitcher$3 -> name.tanglei.www.e:
     name.tanglei.www.FlightModeSwitcher this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
+name.tanglei.www.FlightModeSwitcher$4 -> name.tanglei.www.f:
+    name.tanglei.www.FlightModeSwitcher this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+name.tanglei.www.FlightModeSwitcher$5 -> name.tanglei.www.g:
+    name.tanglei.www.FlightModeSwitcher this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
 name.tanglei.www.ReceivedAction -> name.tanglei.www.ReceivedAction:
     java.lang.String TAG -> a
-    android.content.DialogInterface$OnClickListener oKListener -> b
-    android.content.DialogInterface$OnClickListener cancelListener -> c
-    android.app.AlertDialog dialog -> d
-    android.widget.Button positiveButton -> e
-    android.os.Handler countDownTimeHander -> f
-    int delaycount -> g
-    android.app.ProgressDialog progressDialog -> h
+    android.content.BroadcastReceiver airmodechanged_receiver -> b
+    boolean is_user_force_action -> c
+    android.content.DialogInterface$OnClickListener oKListener -> d
+    android.content.DialogInterface$OnClickListener cancelListener -> e
+    android.app.AlertDialog dialog -> f
+    android.widget.Button positiveButton -> g
+    android.os.Handler countDownTimeHander -> h
+    int delaycount -> i
+    android.app.ProgressDialog progressDialog -> j
     void onCreate(android.os.Bundle) -> onCreate
+    void onStop() -> onStop
     void showAlertDialog(android.content.Context,java.lang.String,java.lang.String,int,int,android.content.DialogInterface$OnClickListener,android.content.DialogInterface$OnClickListener) -> a
     void handleMessage(android.os.Message) -> a
     void setAirPlaneState(boolean) -> a
     void showProgressDialog(java.lang.String,java.lang.String) -> a
     void dismissProgressDialog() -> a
-name.tanglei.www.ReceivedAction$1 -> name.tanglei.www.f:
+    boolean access$0(name.tanglei.www.ReceivedAction) -> a
+name.tanglei.www.ReceivedAction$1 -> name.tanglei.www.h:
     name.tanglei.www.ReceivedAction this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-name.tanglei.www.ReceivedAction$2 -> name.tanglei.www.g:
+name.tanglei.www.ReceivedAction$2 -> name.tanglei.www.i:
     name.tanglei.www.ReceivedAction this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-name.tanglei.www.ReceivedAction$3 -> name.tanglei.www.h:
+name.tanglei.www.ReceivedAction$3 -> name.tanglei.www.j:
     name.tanglei.www.ReceivedAction this$0 -> a
+    java.lang.String val$toggle_success_tip -> b
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
-name.tanglei.www.ReceivedAction$4 -> name.tanglei.www.i:
+name.tanglei.www.ReceivedAction$4 -> name.tanglei.www.k:
     name.tanglei.www.ReceivedAction this$0 -> a
     boolean val$air_action -> b
     void run() -> run
-name.tanglei.www.ReceivedAction$MsgHandler -> name.tanglei.www.j:
+name.tanglei.www.ReceivedAction$MsgHandler -> name.tanglei.www.l:
     java.lang.ref.WeakReference mActivity -> a
     void handleMessage(android.os.Message) -> handleMessage
-name.tanglei.www.ShellUtil -> name.tanglei.www.k:
+name.tanglei.www.ShellUtil -> name.tanglei.www.m:
     java.lang.String TAG -> a
     java.lang.String runRootCmd(java.lang.String) -> a
     java.lang.String runRootCmd(java.lang.String,java.lang.String) -> a
     java.lang.String inputStreamToString(java.io.InputStream) -> a
-name.tanglei.www.Utils -> name.tanglei.www.l:
+name.tanglei.www.Utils -> name.tanglei.www.n:
     java.lang.String PreferenceKey -> a
     java.lang.String TAG -> b
     name.tanglei.www.Config getStoredPreference(android.content.Context) -> a
@@ -229,6 +242,7 @@ name.tanglei.www.Utils -> name.tanglei.www.l:
     boolean isFirstTime(android.content.Context) -> c
     boolean startSchedule(android.content.Context,name.tanglei.www.Config,boolean) -> a
     boolean stopSchedule(android.content.Context,boolean) -> b
+    void delayOnSchedule(android.content.Context,long,long) -> a
     java.lang.String formatTime(android.content.Context,long) -> a
     boolean isRooted() -> a
     void showAlertDialog(android.content.Context,java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener) -> a

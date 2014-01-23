@@ -112,7 +112,10 @@ name.tanglei.www.R$attr: int thumb
 name.tanglei.www.R$attr: int thumbTextPadding
 name.tanglei.www.R$attr: int track
 name.tanglei.www.R$attr: int typeface
+name.tanglei.www.R$drawable: int ic_action_about
 name.tanglei.www.R$drawable: int ic_action_airplane_mode_off
+name.tanglei.www.R$drawable: int ic_action_help
+name.tanglei.www.R$drawable: int ic_action_warning
 name.tanglei.www.R$drawable: int ic_lancher
 name.tanglei.www.R$drawable: int switch_bg_disabled_holo_dark
 name.tanglei.www.R$drawable: int switch_bg_disabled_holo_light
@@ -139,7 +142,8 @@ name.tanglei.www.R$id: int line1
 name.tanglei.www.R$id: int line2
 name.tanglei.www.R$id: int startTimePicker
 name.tanglei.www.R$layout: int main
-name.tanglei.www.R$string: int aboutContent
+name.tanglei.www.R$string: int aboutContentHtml
+name.tanglei.www.R$string: int aboutOkButton
 name.tanglei.www.R$string: int aboutTitle
 name.tanglei.www.R$string: int airplanemode_action_title
 name.tanglei.www.R$string: int airplanemode_error
@@ -155,7 +159,8 @@ name.tanglei.www.R$string: int confirmAirmodeTitle
 name.tanglei.www.R$string: int endtime_tip
 name.tanglei.www.R$string: int firstTimeTipNormal
 name.tanglei.www.R$string: int firstTimeTipTitle
-name.tanglei.www.R$string: int helpContent
+name.tanglei.www.R$string: int helpContentHhml
+name.tanglei.www.R$string: int helpOkButton
 name.tanglei.www.R$string: int helpTitle
 name.tanglei.www.R$string: int menuAbout
 name.tanglei.www.R$string: int menuHelp
@@ -175,6 +180,8 @@ name.tanglei.www.R$string: int stop
 name.tanglei.www.R$string: int textOff
 name.tanglei.www.R$string: int textOn
 name.tanglei.www.R$string: int timeFormat
+name.tanglei.www.R$string: int toggle_success_off
+name.tanglei.www.R$string: int toggle_success_on
 name.tanglei.www.R$style: int AppThemeDark
 name.tanglei.www.R$style: int AppThemeLight
 name.tanglei.www.R$style: int TextAppearance

@@ -2,6 +2,7 @@ package name.tanglei.www;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,11 +10,15 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.TimePicker.OnTimeChangedListener;
 import de.ankri.views.Switch;
@@ -216,14 +221,22 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 		switch(item.getItemId())
 		{
 			case MENU_HELP:
-				showAlertDialog(getString(R.string.helpTitle), getString(R.string.helpContent));
+				//showAlertDialog(getString(R.string.helpTitle), getString(R.string.helpContent));
+				showHelpDialog();
 				break;
 			case MENU_ABOUT:
-				showAlertDialog(getString(R.string.aboutTitle), getString(R.string.aboutContent));
+				//showAlertDialog(getString(R.string.aboutTitle), getString(R.string.aboutContent));
+				showAboutDialog();
 				break;
 			case MENU_TOGGLE_RIGHTNOW:
 				//AirplaneModeService.setAirplane(this, !currentAirplaneOn);
-				Utils.sendBroadcastNow(this, !currentAirplaneOn);
+				//Utils.sendBroadcastNow(this, !currentAirplaneOn);
+				Intent i = new Intent(this, ReceivedAction.class); 
+			    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); 
+			    i.putExtra(ReceivedAction.ACTION_TAG, !currentAirplaneOn);
+			    i.putExtra(ReceivedAction.USERACTION_TAG, true);
+			    this.startActivity(i);
+			    
 				break;
 		}
 		return true;
@@ -251,7 +264,58 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
             }
         });
 	}
+	
+	public void showHelpDialog()
+	{
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		alertDialogBuilder.setTitle(this.getString(R.string.helpTitle));
+		alertDialogBuilder.setIcon(R.drawable.ic_action_help);
+		TextView txtView = new TextView(this);
+		txtView.setTextSize(15f);
+		Spanned text = Html.fromHtml(this.getString(R.string.helpContentHhml));
+		txtView.setText(text);
+		txtView.setClickable(true);
+		txtView.setMovementMethod(LinkMovementMethod.getInstance());
+		alertDialogBuilder.setView(txtView);
+
+		alertDialogBuilder.setPositiveButton(
+				this.getString(R.string.helpOkButton), new OnClickListener()
+				{
+					@Override
+					public void onClick(DialogInterface dialog, int which)
+					{
+						dialog.dismiss();
+					}
+				});
+		AlertDialog dialog = alertDialogBuilder.create();
+		dialog.show();
+	}
     
+	public void showAboutDialog()
+	{
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		alertDialogBuilder.setTitle(this.getString(R.string.aboutTitle));
+		alertDialogBuilder.setIcon(R.drawable.ic_action_about);
+		TextView txtView = new TextView(this);
+		txtView.setTextSize(15f);
+		Spanned text = Html.fromHtml(this.getString(R.string.aboutContentHtml));
+		txtView.setText(text);
+		txtView.setClickable(true);
+		txtView.setMovementMethod(LinkMovementMethod.getInstance());
+		alertDialogBuilder.setView(txtView);
+
+		alertDialogBuilder.setPositiveButton(
+				this.getString(R.string.aboutOkButton), new OnClickListener()
+				{
+					@Override
+					public void onClick(DialogInterface dialog, int which)
+					{
+						dialog.dismiss();
+					}
+				});
+		AlertDialog dialog = alertDialogBuilder.create();
+		dialog.show();
+	}
     
     
 }

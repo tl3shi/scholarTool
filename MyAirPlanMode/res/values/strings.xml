@@ -18,11 +18,18 @@
     <string name="menuSetOnRightnow">立即启动飞行模式</string>
     <string name="menuSetOffRightnow">立即关闭飞行模式</string>
     <string name="aboutTitle">关于</string>
-    <string name="aboutContent">意见反馈：admin@tanglei.name</string>
-    <string name="helpContent">应该不用教吧?</string>
+    <string name="aboutContentHtml"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;业余时间做的，明显不够专业～比如UI啊，交互之类的还有待完善。<br/>
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;当然，如果您有什么意见或者建议欢迎交流反馈：<a href="mailto:admin@tanglei.name?subject=airplanemode-switcher反馈">admin@tanglei.name</a><br/>]]></string>
+    <string name="helpContentHhml"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;1.分别设定好需要开启、关闭飞行模式的时间，默认情况下为凌晨12点30分开启飞行模式，早上7点关闭飞行模式。然后打开当前状态的按钮即可，打开后会提示下次切换飞行模式的时间。<br/>
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;2.设定的时间到之后，App会自动尝试去启用飞行模式状态，当然得允许了(最好添加到信任程序列表，不然每次弹框)。<br/>
+        另外，设定的时间到之后，有可能你还正在使用手机而不想马上切换飞行模式，App会给你5s的时间考虑，5秒之后你没有操作，app就会自动启用飞行模式了。你可以选择取消本次切换，不过当你通过按手机返回键(Home键不会)或者杀掉这个进程再重新启动这个App的时候，会根据时间设定满足规则则自动切换。<br/>
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;3.切换"关闭"状态即取消设定功能，若当前手机正处于飞行模式状态，也会切换为正常状态。<br/>
+        <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;4.Bug反馈及交流请访问：<a href="http://www.tanglei.name/android-airplanemode-auto-switcher/">tanglei\'s blog</a><br/>]]></string>
     <string name="noCheckTitle">您在开玩笑?</string>
     <string name="noCheckContent">没选是否开启呢?</string>
     <string name="helpTitle">帮助</string>
+    <string name="helpOkButton">确定</string>
+    <string name="aboutOkButton">确定</string>
     <string name="nextStartTipPref">下次飞行模式时间是： </string>
     <string name="timeFormat">MM月dd日  HH:mm</string>
     <string name="noRootError">您的手机版本太高端(>=4.2)了，且没有Root，我搞不定～～</string>
@@ -35,7 +42,8 @@
     <string name="confirmAirmodeButtonOK">确定</string>
     <string name="confirmAirmodeButtonCancel">取消</string>
     <string name="cancelAirmodeToast">取消成功</string>
-    
+    <string name="toggle_success_on">开启成功</string>
+    <string name="toggle_success_off">关闭成功</string>
     
     
 </resources>
