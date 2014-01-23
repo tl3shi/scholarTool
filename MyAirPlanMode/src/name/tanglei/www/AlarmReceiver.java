@@ -8,6 +8,7 @@ import android.util.Log;
 public class AlarmReceiver extends BroadcastReceiver
 {
 	public final static String ACTION_TAG = "airmode_action";
+	public final static String USERACTION_TAG = "user_force_Action";
 	private String TAG = AlarmReceiver.class.getName();
 	@Override
 	public void onReceive(Context context, Intent intent)
@@ -16,6 +17,8 @@ public class AlarmReceiver extends BroadcastReceiver
 		
 		int startState = intent.getIntExtra("startState", -1);
 		int endState = intent.getIntExtra("endState", -1);
+		
+		boolean useraction = intent.getBooleanExtra("useraction", false);//flag if the user force action,do not write alarm
 		
 		Log.d(TAG, "start state:" + startState);
 		Log.d(TAG, "end state:" + endState);
@@ -31,6 +34,7 @@ public class AlarmReceiver extends BroadcastReceiver
 			Intent i = new Intent(context, ReceivedAction.class); 
 		    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); 
 		    i.putExtra(ACTION_TAG, true);
+		    i.putExtra(USERACTION_TAG, useraction);
 		    context.startActivity(i);
 			
 		}

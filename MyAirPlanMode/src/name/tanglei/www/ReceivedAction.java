@@ -23,6 +23,11 @@ import android.widget.Toast;
 public class ReceivedAction extends Activity
 {
 	public static String TAG = ReceivedAction.class.getName();
+
+	private BroadcastReceiver airmodechanged_receiver;
+
+	//if user force action, do not write alarm
+	private boolean is_user_force_action = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -31,10 +36,11 @@ public class ReceivedAction extends Activity
 	    super.onCreate(savedInstanceState);
 	    Intent intent = this.getIntent();
         boolean action = intent.getBooleanExtra(AlarmReceiver.ACTION_TAG, false);
+        is_user_force_action  = intent.getBooleanExtra(AlarmReceiver.USERACTION_TAG, false);
         
         IntentFilter intentFilter = new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
 
-    	BroadcastReceiver airmodechanged_receiver = new BroadcastReceiver() {
+    	airmodechanged_receiver = new BroadcastReceiver() {
     	      @Override
     	      public void onReceive(Context context, Intent intent) {
     	    	    ReceivedAction.this.finish();
@@ -42,7 +48,7 @@ public class ReceivedAction extends Activity
     	            dismissProgressDialog();
     	      }
     	};
-
+    	
     	this.registerReceiver(airmodechanged_receiver, intentFilter);
     	
         if(action)
@@ -61,6 +67,13 @@ public class ReceivedAction extends Activity
         
 	}
 	
+	@Override
+	protected void onStop()
+	{
+	    unregisterReceiver(airmodechanged_receiver);
+	    super.onStop();
+	}
+	
 	private DialogInterface.OnClickListener oKListener = new DialogInterface.OnClickListener()
 	{
 		@Override
@@ -77,6 +90,9 @@ public class ReceivedAction extends Activity
 		@Override
 		public void onClick(DialogInterface dialog, int which)
 		{
+			if(!is_user_force_action)
+				Utils.delayOnSchedule(ReceivedAction.this, System.currentTimeMillis(), 24 * 60 * 60 * 1000);
+			
 			ReceivedAction.this.finish();
 			Log.d(TAG, "user confirm false");
 			dialog.dismiss();

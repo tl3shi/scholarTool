@@ -1,14 +1,42 @@
-name.tanglei.www.AirplaneModeService:
-    11:11:public AirplaneModeService()
+de.ankri.R:
+    9:9:public R()
+de.ankri.R$attr:
+    10:10:public R$attr()
+de.ankri.R$drawable
+de.ankri.R$string
+de.ankri.R$style
+de.ankri.R$styleable:
+    62:62:public R$styleable()
+de.ankri.text.method.AllCapsTransformationMethod:
+    private static final java.lang.String TAG
+    56:56:public void onFocusChanged(android.view.View,java.lang.CharSequence,boolean,int,android.graphics.Rect)
+de.ankri.text.method.TransformationMethodCompat:
+    public abstract void onFocusChanged(android.view.View,java.lang.CharSequence,boolean,int,android.graphics.Rect)
+de.ankri.views.Switch:
+    private static final int TOUCH_MODE_IDLE
+    private static final int TOUCH_MODE_DOWN
+    private static final int TOUCH_MODE_DRAGGING
+    private static final int SANS
+    private static final int SERIF
+    private static final int MONOSPACE
+name.tanglei.www.AlarmReceiver:
+    public static final java.lang.String ACTION_TAG
 name.tanglei.www.BuildConfig
 name.tanglei.www.FlightModeSwitcher:
-    100:108:void test()
+    111:119:void test()
 name.tanglei.www.R
 name.tanglei.www.R$attr
 name.tanglei.www.R$drawable
 name.tanglei.www.R$id
 name.tanglei.www.R$layout
 name.tanglei.www.R$string
+name.tanglei.www.R$style
+name.tanglei.www.R$styleable
 name.tanglei.www.ShellUtil:
-    10:10:public ShellUtil()
     16:36:public static java.lang.String runCommand(java.lang.String)
+name.tanglei.www.Utils:
+    private static final java.lang.String START_HOUR_KEY
+    private static final java.lang.String STOP_HOUR_KEY
+    private static final java.lang.String START_MINUTE_KEY
+    private static final java.lang.String STOP_MINUTE_KEY
+    private static final java.lang.String CURRENT_STATE_KEY

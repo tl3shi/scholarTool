@@ -9,7 +9,7 @@
 	<string name="stop">关闭</string>
 	<string name="airplanemode_on_tip">正在开启飞行模式</string>
     <string name="airplanemode_off_tip">正在关闭飞行模式</string>
-    <string name="airplanemode_action_title">飞行模式调整中</string>
+    <string name="airplanemode_action_title">飞行模式切换中</string>
     <string name="airplanemode_error">飞行模式设置失败</string>
     <string name="setup_on">设置已经启用</string>
     <string name="setup_off">设置已经关闭</string>

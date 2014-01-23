@@ -1,4 +1,124 @@
+de.ankri.R -> de.ankri.a:
+de.ankri.R$attr -> de.ankri.b:
+    int fontFamily -> fontFamily
+    int switchMinWidth -> switchMinWidth
+    int switchPadding -> switchPadding
+    int switchStyle -> switchStyle
+    int switchTextAppearance -> switchTextAppearance
+    int textAllCaps -> textAllCaps
+    int textAppearance -> textAppearance
+    int textColor -> textColor
+    int textColorHighlight -> textColorHighlight
+    int textColorHint -> textColorHint
+    int textColorLink -> textColorLink
+    int textOff -> textOff
+    int textOn -> textOn
+    int textSize -> textSize
+    int textStyle -> textStyle
+    int thumb -> thumb
+    int thumbTextPadding -> thumbTextPadding
+    int track -> track
+    int typeface -> typeface
+de.ankri.R$styleable -> de.ankri.c:
+    int[] Switch -> Switch
+    int Switch_switchMinWidth -> Switch_switchMinWidth
+    int Switch_switchPadding -> Switch_switchPadding
+    int Switch_switchTextAppearance -> Switch_switchTextAppearance
+    int Switch_textOff -> Switch_textOff
+    int Switch_textOn -> Switch_textOn
+    int Switch_thumb -> Switch_thumb
+    int Switch_thumbTextPadding -> Switch_thumbTextPadding
+    int Switch_track -> Switch_track
+    int[] TextAppearanceSwitch -> TextAppearanceSwitch
+    int TextAppearanceSwitch_fontFamily -> TextAppearanceSwitch_fontFamily
+    int TextAppearanceSwitch_textAllCaps -> TextAppearanceSwitch_textAllCaps
+    int TextAppearanceSwitch_textColor -> TextAppearanceSwitch_textColor
+    int TextAppearanceSwitch_textColorHighlight -> TextAppearanceSwitch_textColorHighlight
+    int TextAppearanceSwitch_textColorHint -> TextAppearanceSwitch_textColorHint
+    int TextAppearanceSwitch_textColorLink -> TextAppearanceSwitch_textColorLink
+    int TextAppearanceSwitch_textSize -> TextAppearanceSwitch_textSize
+    int TextAppearanceSwitch_textStyle -> TextAppearanceSwitch_textStyle
+    int TextAppearanceSwitch_typeface -> TextAppearanceSwitch_typeface
+de.ankri.text.method.AllCapsTransformationMethod -> de.ankri.a.a.a:
+    boolean mEnabled -> a
+    java.util.Locale mLocale -> b
+    java.lang.CharSequence getTransformation(java.lang.CharSequence,android.view.View) -> a
+    void setLengthChangesAllowed(boolean) -> a
+de.ankri.text.method.TransformationMethodCompat -> de.ankri.a.a.b:
+    java.lang.CharSequence getTransformation(java.lang.CharSequence,android.view.View) -> a
+de.ankri.text.method.TransformationMethodCompat2 -> de.ankri.a.a.c:
+    void setLengthChangesAllowed(boolean) -> a
+de.ankri.views.Switch -> de.ankri.views.Switch:
+    android.graphics.drawable.Drawable mThumbDrawable -> a
+    android.graphics.drawable.Drawable mTrackDrawable -> b
+    int mThumbTextPadding -> c
+    int mSwitchMinWidth -> d
+    int mSwitchPadding -> e
+    java.lang.CharSequence mTextOn -> f
+    java.lang.CharSequence mTextOff -> g
+    int mTouchMode -> h
+    int mTouchSlop -> i
+    float mTouchX -> j
+    float mTouchY -> k
+    android.view.VelocityTracker mVelocityTracker -> l
+    int mMinFlingVelocity -> m
+    float mThumbPosition -> n
+    int mSwitchWidth -> o
+    int mSwitchHeight -> p
+    int mThumbWidth -> q
+    int mSwitchLeft -> r
+    int mSwitchTop -> s
+    int mSwitchRight -> t
+    int mSwitchBottom -> u
+    android.text.TextPaint mTextPaint -> v
+    android.content.res.ColorStateList mTextColors -> w
+    android.text.Layout mOnLayout -> x
+    android.text.Layout mOffLayout -> y
+    de.ankri.text.method.TransformationMethodCompat2 mSwitchTransformationMethod -> z
+    android.graphics.Rect mTempRect -> A
+    int[] CHECKED_STATE_SET -> B
+    void setSwitchTextAppearance(android.content.Context,int) -> a
+    void setSwitchTypefaceByIndex(int,int) -> a
+    void setSwitchTypeface(android.graphics.Typeface,int) -> a
+    void setSwitchTypeface(android.graphics.Typeface) -> setSwitchTypeface
+    void setSwitchPadding(int) -> setSwitchPadding
+    int getSwitchPadding() -> getSwitchPadding
+    void setSwitchMinWidth(int) -> setSwitchMinWidth
+    int getSwitchMinWidth() -> getSwitchMinWidth
+    void setThumbTextPadding(int) -> setThumbTextPadding
+    int getThumbTextPadding() -> getThumbTextPadding
+    void setTrackDrawable(android.graphics.drawable.Drawable) -> setTrackDrawable
+    void setTrackResource(int) -> setTrackResource
+    android.graphics.drawable.Drawable getTrackDrawable() -> getTrackDrawable
+    void setThumbDrawable(android.graphics.drawable.Drawable) -> setThumbDrawable
+    void setThumbResource(int) -> setThumbResource
+    android.graphics.drawable.Drawable getThumbDrawable() -> getThumbDrawable
+    java.lang.CharSequence getTextOn() -> getTextOn
+    void setTextOn(java.lang.CharSequence) -> setTextOn
+    java.lang.CharSequence getTextOff() -> getTextOff
+    void setTextOff(java.lang.CharSequence) -> setTextOff
+    void onMeasure(int,int) -> onMeasure
+    android.text.Layout makeLayout(java.lang.CharSequence) -> a
+    boolean hitThumb(float,float) -> a
+    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    void cancelSuperTouch(android.view.MotionEvent) -> a
+    void stopDrag(android.view.MotionEvent) -> b
+    void animateThumbToCheckedState(boolean) -> a
+    boolean getTargetCheckedState() -> getTargetCheckedState
+    void setThumbPosition(boolean) -> setThumbPosition
+    void setChecked(boolean) -> setChecked
+    void onLayout(boolean,int,int,int,int) -> onLayout
+    void onDraw(android.graphics.Canvas) -> onDraw
+    int getCompoundPaddingRight() -> getCompoundPaddingRight
+    int getThumbScrollRange() -> getThumbScrollRange
+    int[] onCreateDrawableState(int) -> onCreateDrawableState
+    void drawableStateChanged() -> drawableStateChanged
+    boolean verifyDrawable(android.graphics.drawable.Drawable) -> verifyDrawable
+de.ankri.views.Switch$1 -> de.ankri.views.a:
+    de.ankri.views.Switch this$0 -> a
+    void onClick(android.view.View) -> onClick
 name.tanglei.www.AirplaneModeService -> name.tanglei.www.a:
+    java.lang.String TAG -> d
     int ALLOW_WRITE_SECURE_SETTINGS -> a
     java.lang.String HigherAirplaneModePref1 -> b
     java.lang.String HigherAirplaneModePref2 -> c
@@ -10,27 +130,39 @@ name.tanglei.www.AirplaneModeService -> name.tanglei.www.a:
     void setSettingsOnHigh(android.content.Context,int) -> b
     void setSettingsOnLow(android.content.Context,int) -> c
 name.tanglei.www.AlarmReceiver -> name.tanglei.www.AlarmReceiver:
-    android.content.Context context -> a
+    java.lang.String TAG -> a
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
-    void setAirPlaneState(boolean) -> a
+name.tanglei.www.BootBroadcastReceiver -> name.tanglei.www.BootBroadcastReceiver:
+    java.lang.String TAG -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+name.tanglei.www.Config -> name.tanglei.www.b:
+    int startHour -> a
+    int stopHour -> b
+    int startMinute -> c
+    int stopMinute -> d
+    boolean currentState -> e
+    int getStartHour() -> a
+    int getStopHour() -> b
+    void setStopHour(int) -> a
+    int getStopMinute() -> c
+    void setStopMinute(int) -> b
+    void setStartHour(int) -> c
+    int getStartMinute() -> d
+    void setStartMinute(int) -> d
+    boolean isCurrentState() -> e
+    java.lang.String toString() -> toString
+    void setCurrentState(boolean) -> a
 name.tanglei.www.FlightModeSwitcher -> name.tanglei.www.FlightModeSwitcher:
     java.lang.String TAG -> a
-    java.lang.String PreferenceKey -> b
-    java.util.Calendar calendar -> c
-    android.widget.RadioButton startBtn -> d
-    android.widget.RadioButton stopBtn -> e
-    android.widget.TimePicker startTimePicker -> f
-    android.widget.TimePicker stopTimePicker -> g
-    int startHour -> h
-    int startMinute -> i
-    int stopHour -> j
-    int stopMinute -> k
-    boolean currentState -> l
-    android.content.Intent startIntent -> m
-    android.content.Intent endIntent -> n
-    android.app.PendingIntent startPendingIntent -> o
-    android.app.PendingIntent endPendingIntent -> p
-    android.view.View$OnClickListener controlBtnClickListener -> q
+    de.ankri.views.Switch btn_switch -> b
+    android.widget.TimePicker startTimePicker -> c
+    android.widget.TimePicker stopTimePicker -> d
+    name.tanglei.www.Config config -> e
+    boolean currentAirplaneOn -> f
+    android.widget.CompoundButton$OnCheckedChangeListener switchChangeListerner -> g
+    int MENU_HELP -> h
+    int MENU_ABOUT -> i
+    int MENU_TOGGLE_RIGHTNOW -> j
     void onCreate(android.os.Bundle) -> onCreate
     void onResume() -> onResume
     void onStop() -> onStop
@@ -38,18 +170,65 @@ name.tanglei.www.FlightModeSwitcher -> name.tanglei.www.FlightModeSwitcher:
     void setTimeToPreference() -> a
     void onTimeChanged(android.widget.TimePicker,int,int) -> onTimeChanged
     boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
+    boolean onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
     void showAlertDialog(java.lang.String,java.lang.String) -> a
-    void showAlertDialog(java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener) -> a
-    java.lang.String formatTime(long) -> a
-name.tanglei.www.FlightModeSwitcher$1 -> name.tanglei.www.b:
+    void iCannotDoit() -> b
+name.tanglei.www.FlightModeSwitcher$1 -> name.tanglei.www.c:
     name.tanglei.www.FlightModeSwitcher this$0 -> a
-    void onClick(android.view.View) -> onClick
-name.tanglei.www.FlightModeSwitcher$2 -> name.tanglei.www.c:
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+name.tanglei.www.FlightModeSwitcher$2 -> name.tanglei.www.d:
     name.tanglei.www.FlightModeSwitcher this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-name.tanglei.www.ShellUtil -> name.tanglei.www.d:
+name.tanglei.www.FlightModeSwitcher$3 -> name.tanglei.www.e:
+    name.tanglei.www.FlightModeSwitcher this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+name.tanglei.www.ReceivedAction -> name.tanglei.www.ReceivedAction:
+    java.lang.String TAG -> a
+    android.content.DialogInterface$OnClickListener oKListener -> b
+    android.content.DialogInterface$OnClickListener cancelListener -> c
+    android.app.AlertDialog dialog -> d
+    android.widget.Button positiveButton -> e
+    android.os.Handler countDownTimeHander -> f
+    int delaycount -> g
+    android.app.ProgressDialog progressDialog -> h
+    void onCreate(android.os.Bundle) -> onCreate
+    void showAlertDialog(android.content.Context,java.lang.String,java.lang.String,int,int,android.content.DialogInterface$OnClickListener,android.content.DialogInterface$OnClickListener) -> a
+    void handleMessage(android.os.Message) -> a
+    void setAirPlaneState(boolean) -> a
+    void showProgressDialog(java.lang.String,java.lang.String) -> a
+    void dismissProgressDialog() -> a
+name.tanglei.www.ReceivedAction$1 -> name.tanglei.www.f:
+    name.tanglei.www.ReceivedAction this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+name.tanglei.www.ReceivedAction$2 -> name.tanglei.www.g:
+    name.tanglei.www.ReceivedAction this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+name.tanglei.www.ReceivedAction$3 -> name.tanglei.www.h:
+    name.tanglei.www.ReceivedAction this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+name.tanglei.www.ReceivedAction$4 -> name.tanglei.www.i:
+    name.tanglei.www.ReceivedAction this$0 -> a
+    boolean val$air_action -> b
+    void run() -> run
+name.tanglei.www.ReceivedAction$MsgHandler -> name.tanglei.www.j:
+    java.lang.ref.WeakReference mActivity -> a
+    void handleMessage(android.os.Message) -> handleMessage
+name.tanglei.www.ShellUtil -> name.tanglei.www.k:
     java.lang.String TAG -> a
     java.lang.String runRootCmd(java.lang.String) -> a
     java.lang.String runRootCmd(java.lang.String,java.lang.String) -> a
     java.lang.String inputStreamToString(java.io.InputStream) -> a
+name.tanglei.www.Utils -> name.tanglei.www.l:
+    java.lang.String PreferenceKey -> a
+    java.lang.String TAG -> b
+    name.tanglei.www.Config getStoredPreference(android.content.Context) -> a
+    boolean getStoredPreferenceRooted(android.content.Context) -> b
+    void setStoredPreferenceRooted(android.content.Context,boolean) -> a
+    boolean updatePreference(android.content.Context,name.tanglei.www.Config) -> a
+    boolean isFirstTime(android.content.Context) -> c
+    boolean startSchedule(android.content.Context,name.tanglei.www.Config,boolean) -> a
+    boolean stopSchedule(android.content.Context,boolean) -> b
+    java.lang.String formatTime(android.content.Context,long) -> a
+    boolean isRooted() -> a
+    void showAlertDialog(android.content.Context,java.lang.String,java.lang.String,android.content.DialogInterface$OnClickListener) -> a

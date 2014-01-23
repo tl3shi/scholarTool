@@ -184,6 +184,21 @@ public class Utils
 		return true;
 	}
 	
+	public static void delayOnSchedule(Context context, long old_mini_seconds, long delay_mini_seconds)
+	{
+		Intent startIntent = new Intent(context, AlarmReceiver.class);
+		startIntent.putExtra("startState", 1);
+		PendingIntent startPendingIntent = PendingIntent.getBroadcast(
+				context, 0, startIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+		
+		Log.i(TAG, "old:" + old_mini_seconds + " new:" + delay_mini_seconds);
+		
+		AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+		
+		alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
+				old_mini_seconds + delay_mini_seconds, 24 * 60 * 60 * 1000, startPendingIntent);
+	}
+	
 	public static String formatTime(Context context, long mini)
     {
     	Date date = new Date(mini);
@@ -229,6 +244,11 @@ public class Utils
 		alertDialogBuilder.show();
 	}
 	
-	
-	
+	public static void sendBroadcastNow(Context context, boolean onairplaemode)
+	{
+		Intent startIntent = new Intent(context, AlarmReceiver.class);
+		startIntent.putExtra("startState", onairplaemode ? 1: 0);
+		startIntent.putExtra("useraction", true);
+		context.sendBroadcast(startIntent);
+	}
 }

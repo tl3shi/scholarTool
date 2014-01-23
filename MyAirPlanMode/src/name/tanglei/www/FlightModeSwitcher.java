@@ -127,29 +127,10 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 	//when activity is not visible
 	public void onStop()
 	{
-		startSchedule(false);
+		//startSchedule(false);, if user has cancel
 		super.onStop();
 	}
 	
-//	private RadioButton.OnClickListener controlBtnClickListener = new RadioButton.OnClickListener()
-//	{
-//		@Override
-//		public void onClick(View v)
-//		{
-//			/*if (startBtn.isChecked())
-//			{
-//				startBtn.setEnabled(false);
-//				stopBtn.setEnabled(true);
-//			}
-//			if (stopBtn.isChecked())
-//			{
-//				stopBtn.setEnabled(false);
-//				startBtn.setEnabled(true);
-//			}*/
-//			
-//			startSchedule(true);
-//		}
-//	};
 	
 	private OnCheckedChangeListener switchChangeListerner = new OnCheckedChangeListener()
 	{
@@ -241,7 +222,8 @@ public class FlightModeSwitcher extends Activity implements OnTimeChangedListene
 				showAlertDialog(getString(R.string.aboutTitle), getString(R.string.aboutContent));
 				break;
 			case MENU_TOGGLE_RIGHTNOW:
-				AirplaneModeService.setAirplane(this, !currentAirplaneOn);
+				//AirplaneModeService.setAirplane(this, !currentAirplaneOn);
+				Utils.sendBroadcastNow(this, !currentAirplaneOn);
 				break;
 		}
 		return true;
