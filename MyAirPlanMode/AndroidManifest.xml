@@ -12,8 +12,9 @@
     <!-- <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/> -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    
-     <!-- android:theme="@android:style/Theme.Black" -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+    <!-- android:theme="@android:style/Theme.Black" -->
     <application 
         android:icon="@drawable/ic_lancher" 
         android:allowBackup="true"

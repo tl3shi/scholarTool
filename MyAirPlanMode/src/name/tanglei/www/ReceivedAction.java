@@ -16,6 +16,7 @@ import android.os.Message;
 import android.text.Html;
 import android.text.Spanned;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,19 +28,86 @@ public class ReceivedAction extends Activity
 	public final static String ACTION_TAG = "airmode_action";
 	public final static String USERACTION_TAG = "user_force_Action";
 	
+	private AlertDialog dialog = null;
+	private Button positiveButton = null;
+	private int delaycount = 5;
+	private ProgressDialog                 progressDialog = null;
+
 	private BroadcastReceiver airmodechanged_receiver;
 
 	//if user force action, do not write alarm
 	private boolean is_user_force_action = false;
+
+	private boolean isScreenLocked = false;
 	
+	@Override
+	protected void onDestroy()
+	{
+		Log.i(TAG, "onDestroy");
+		super.onDestroy();
+	}
+
+
+	@Override
+	protected void onPause()
+	{
+		// TODO Auto-generated method stub
+		super.onPause();
+		Log.i(TAG, "onPause");
+	}
+
+
+	@Override
+	protected void onRestart()
+	{
+		// TODO Auto-generated method stub
+		super.onRestart();
+		Log.i(TAG, "onRestart");
+	}
+
+
+	@Override
+	protected void onResume()
+	{
+		// TODO Auto-generated method stub
+		super.onResume();
+		Log.i(TAG, "onResume");
+	}
+
+
+	@Override
+	protected void onStart()
+	{
+		// TODO Auto-generated method stub
+		super.onStart();
+		Log.i(TAG, "onStart");
+	}
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		Log.i(TAG, "ReceivedAction received the action");
+		/*getWindow().addFlags(
+		        WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD|
+		        WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON|
+		        WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+		*/
 	    super.onCreate(savedInstanceState);
 	    Intent intent = this.getIntent();
         boolean action = intent.getBooleanExtra(ACTION_TAG, false);
         is_user_force_action  = intent.getBooleanExtra(USERACTION_TAG, false);
+        
+        isScreenLocked = Utils.isScreenLocked(this);
+        //fix bug,
+        if (isScreenLocked)
+        {
+        	Log.i(TAG, "screenLocked no dialog, direct set airplanemode");
+        	AirplaneModeService.setAirplane(ReceivedAction.this,
+        			action);
+        	return;
+        }
+        			
         
         IntentFilter intentFilter = new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
         final String toggle_success_tip = action ? this.getString(R.string.toggle_success_on) : this.getString(R.string.toggle_success_off);
@@ -63,7 +131,7 @@ public class ReceivedAction extends Activity
 	        String title = this.getString(R.string.confirmAirmodeTitle);
 			String content = this.getString(R.string.confirmAirmodeContentHtml);
 			
-			showAlertDialog(this, title, content, 
+			showAlertDialog(title, content, 
 							R.string.confirmAirmodeButtonOK, 
 							R.string.confirmAirmodeButtonCancel, 
 							oKListener, cancelListener);
@@ -74,11 +142,23 @@ public class ReceivedAction extends Activity
         
 	}
 	
+	
 	@Override
 	protected void onStop()
 	{
-	    unregisterReceiver(airmodechanged_receiver);
-	    super.onStop();
+		if(!isScreenLocked)
+		{
+			try //no api to detect if receiver is registered
+			{
+				unregisterReceiver(airmodechanged_receiver);
+			} catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+		ReceivedAction.this.finish();
+		dismissProgressDialog();
+		super.onStop();
 	}
 	
 	private DialogInterface.OnClickListener oKListener = new DialogInterface.OnClickListener()
@@ -107,31 +187,31 @@ public class ReceivedAction extends Activity
 		}
 	};
 
-	private AlertDialog dialog;
-	private Button positiveButton;
 	
-	public  void showAlertDialog(Context context, String title,
+	public  void showAlertDialog(String title,
 			String htmlContent, int positive_id, int negative_id, DialogInterface.OnClickListener okListener, 
 			DialogInterface.OnClickListener cancelListener)
 	{
-		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-				context);
-		alertDialogBuilder.setTitle(title);
-		alertDialogBuilder.setIcon(R.drawable.ic_action_warning);
-		//alertDialogBuilder.setMessage(content);
-		
-		TextView txtView = new TextView(context);
-		txtView.setTextSize(20f);
-		Spanned text = Html.fromHtml(htmlContent);
-		txtView.setText(text);
-		
-		alertDialogBuilder.setView(txtView);
-	   
-		alertDialogBuilder.setPositiveButton(
-				context.getString(positive_id), okListener);
-		alertDialogBuilder.setNegativeButton(
-				context.getString(negative_id), cancelListener);
-		dialog = alertDialogBuilder.create();
+		if(dialog == null)
+		{
+			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+					this);
+			alertDialogBuilder.setTitle(title);
+			alertDialogBuilder.setIcon(R.drawable.ic_action_warning);
+			//alertDialogBuilder.setMessage(content);
+			
+			TextView txtView = new TextView(this);
+			txtView.setTextSize(20f);
+			Spanned text = Html.fromHtml(htmlContent);
+			txtView.setText(text);
+			alertDialogBuilder.setView(txtView);
+		   
+			alertDialogBuilder.setPositiveButton(
+					this.getString(positive_id), okListener);
+			alertDialogBuilder.setNegativeButton(
+					this.getString(negative_id), cancelListener);
+			dialog = alertDialogBuilder.create();
+		}
 		dialog.show();
 		positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
 		countDownTimeHander.sendEmptyMessageDelayed(0, 100);
@@ -180,9 +260,6 @@ public class ReceivedAction extends Activity
 		}
 	}
 	
-	private int delaycount = 5;
-	
-	private ProgressDialog                 progressDialog = null;
 	
 	public void setAirPlaneState(boolean state)
 	{
@@ -235,6 +312,8 @@ public class ReceivedAction extends Activity
 	 
 	 public void dismissProgressDialog() 
 	 {
+		 if(progressDialog == null)
+			 return;
 		 if(!progressDialog.isShowing())
 			 return;
 		 progressDialog.dismiss();

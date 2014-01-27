@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.PowerManager;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -251,4 +252,16 @@ public class Utils
 		startIntent.putExtra("useraction", true);
 		context.sendBroadcast(startIntent);
 	}
+	public final static boolean isScreenLocked(Context c) {
+        /*
+		//does not take effeckt
+		android.app.KeyguardManager mKeyguardManager = (KeyguardManager) c.getSystemService(Context.KEYGUARD_SERVICE);
+        boolean locked = mKeyguardManager.inKeyguardRestrictedInputMode();
+        return locked;
+        */
+		PowerManager pm = (PowerManager) c.getSystemService(Context.POWER_SERVICE);
+		boolean locked = !pm.isScreenOn();
+        Log.i(TAG, "screen locked? "+locked);
+        return locked;
+    }
 }
