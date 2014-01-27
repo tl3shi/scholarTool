@@ -16,7 +16,6 @@ import android.os.Message;
 import android.text.Html;
 import android.text.Spanned;
 import android.util.Log;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +44,12 @@ public class ReceivedAction extends Activity
 	{
 		Log.i(TAG, "onDestroy");
 		super.onDestroy();
+		if(this.isScreenLocked)
+		{
+			Intent mIntent=new Intent(Intent.ACTION_MAIN);  
+			mIntent.addCategory(Intent.CATEGORY_HOME);  
+			this.startActivity(mIntent);  
+		}
 	}
 
 
@@ -97,7 +102,6 @@ public class ReceivedAction extends Activity
 	    Intent intent = this.getIntent();
         boolean action = intent.getBooleanExtra(ACTION_TAG, false);
         is_user_force_action  = intent.getBooleanExtra(USERACTION_TAG, false);
-        
         isScreenLocked = Utils.isScreenLocked(this);
         //fix bug,
         if (isScreenLocked)
