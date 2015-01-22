@@ -14,6 +14,8 @@ Debug/*
 
 *.bak
 
+_cookie
+
 thumbs.db
 
 # Compiled Object files
